@@ -355,52 +355,77 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Leaderboards page — reads the daily JSON snapshots written by GitHub Actions
+// Leaderboards page — reads saved hourly JSON snapshots written by GitHub Actions
 (function(){
-  const weeklyGrid = document.getElementById("lbWeeklyGrid");
-  const lifetimeGrid = document.getElementById("lbLifetimeGrid");
-  if(!weeklyGrid || !lifetimeGrid) return;
-
-  function fmtInt(n){
-    return Math.round(n).toLocaleString("en-US");
-  }
-
-  function medalRank(i){
-    return i + 1;
-  }
-
-  function buildCategory(title, rows, valueFmt, deltaLabel){
-    if(!rows.length) return "";
-    let html = '<div class="lb-category"><h3>' + title + "</h3>";
-    rows.slice(0, 5).forEach(function(row, i){
-      html += '<div class="lb-row">'
-        + '<div class="lb-rank">' + medalRank(i) + "</div>"
-        + '<div class="lb-name">' + row.name + "</div>"
-        + '<div class="lb-value">' + valueFmt(row.value)
-        + (deltaLabel ? '<span class="lb-delta">' + deltaLabel + "</span>" : "")
-        + "</div></div>";
-    });
-    html += "</div>";
-    return html;
-  }
-
-  function topBy(entries, key, n){
-    return entries
-      .filter(function(e){ return typeof e[key] === "number" && !isNaN(e[key]); })
-      .sort(function(a,b){ return b[key] - a[key]; })
-      .slice(0, n || 5)
-      .map(function(e){ return { name: e.displayName, value: e[key] }; });
-  }
-
+  const pastDayGrid=document.getElementById("lbPastDayGrid");
+  const pastWeekGrid=document.getElementById("lbPastWeekGrid");
+  const lifetimeGrid=document.getElementById("lbLifetimeGrid");
   const lifetimeRefreshNote=document.getElementById("lbLifetimeRefreshNote");
+  if(!pastDayGrid||!pastWeekGrid||!lifetimeGrid)return;
+
   const DAY_MS=24*60*60*1000;
+  const WEEK_MS=7*DAY_MS;
   const BASELINE_TOLERANCE_MS=6*60*60*1000;
 
+  function fmtInt(n){return Math.round(n).toLocaleString("en-US");}
+  function medalRank(i){return i+1;}
+
+  function buildCategory(title,rows,valueFmt){
+    if(!rows.length)return "";
+    let html='<div class="lb-category"><h3>'+title+"</h3>";
+    rows.slice(0,5).forEach(function(row,i){
+      html+='<div class="lb-row"><div class="lb-rank">'+medalRank(i)+"</div>"
+        +'<div class="lb-name">'+row.name+"</div>"
+        +'<div class="lb-value">'+valueFmt(row.value)+"</div></div>";
+    });
+    return html+="</div>";
+  }
+
+  function topBy(entries,key,n){
+    return entries.filter(function(e){return typeof e[key]==="number"&&!isNaN(e[key]);})
+      .sort(function(a,b){return b[key]-a[key];})
+      .slice(0,n||5)
+      .map(function(e){return {name:e.displayName,value:e[key]};});
+  }
+
   function formatPacific(value){
-    return new Intl.DateTimeFormat("en-US",{
-      timeZone:"America/Los_Angeles",
-      month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"
-    }).format(new Date(value));
+    return new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(value));
+  }
+
+  function findBaseline(snapshots,targetTime){
+    return snapshots
+      .filter(function(snapshot){return snapshot&&snapshot.players&&Number.isFinite(Date.parse(snapshot.fetchedAt));})
+      .sort(function(a,b){return Math.abs(Date.parse(a.fetchedAt)-targetTime)-Math.abs(Date.parse(b.fetchedAt)-targetTime);})
+      .find(function(snapshot){return Math.abs(Date.parse(snapshot.fetchedAt)-targetTime)<=BASELINE_TOLERANCE_MS;});
+  }
+
+  function buildDeltaEntries(latest,baseline){
+    const entries=[];
+    Object.keys(latest.players).forEach(function(id){
+      const cur=latest.players[id];
+      const prev=baseline.players[id];
+      if(!prev)return;
+      if(prev.username&&cur.username&&prev.username!==cur.username)return;
+      const deltaKills=cur.kills-prev.kills;
+      const deltaWins=cur.wins-prev.wins;
+      const deltaMatches=cur.matches-prev.matches;
+      if(deltaKills<0||deltaWins<0||deltaMatches<0)return;
+      entries.push({displayName:cur.displayName,deltaKills:deltaKills,deltaWins:deltaWins,deltaMatches:deltaMatches});
+    });
+    return entries;
+  }
+
+  function renderPeriod(grid,latest,baseline,waitingMessage,periodLabel){
+    if(!baseline||!baseline.players||!Object.keys(baseline.players).length){
+      grid.innerHTML='<p class="lb-empty">'+waitingMessage+"</p>";
+      return;
+    }
+    const entries=buildDeltaEntries(latest,baseline);
+    let html="";
+    html+=buildCategory("Most Kills ("+periodLabel+")",topBy(entries,"deltaKills"),fmtInt);
+    html+=buildCategory("Most Wins ("+periodLabel+")",topBy(entries,"deltaWins"),fmtInt);
+    html+=buildCategory("Most Matches ("+periodLabel+")",topBy(entries,"deltaMatches"),fmtInt);
+    grid.innerHTML=html||'<p class="lb-empty">No player activity recorded yet.</p>';
   }
 
   Promise.all([
@@ -409,61 +434,23 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   ]).then(function(results){
     const latest=results[0];
     const history=results[1];
-    const latestTime=latest&&Date.parse(latest.fetchedAt);
+    if(!latest||!latest.players||!Object.keys(latest.players).length)return;
+    const latestTime=Date.parse(latest.fetchedAt);
     const snapshots=history&&Array.isArray(history.snapshots)?history.snapshots:[];
-    const targetTime=latestTime-DAY_MS;
-    const previous=snapshots
-      .filter(function(snapshot){return snapshot&&snapshot.players&&Number.isFinite(Date.parse(snapshot.fetchedAt));})
-      .sort(function(a,b){return Math.abs(Date.parse(a.fetchedAt)-targetTime)-Math.abs(Date.parse(b.fetchedAt)-targetTime);})
-      .find(function(snapshot){return Math.abs(Date.parse(snapshot.fetchedAt)-targetTime)<=BASELINE_TOLERANCE_MS;});
 
-    if(lifetimeRefreshNote&&latest&&latest.fetchedAt){
+    if(lifetimeRefreshNote&&latest.fetchedAt){
       lifetimeRefreshNote.textContent="Last updated "+formatPacific(latest.fetchedAt)+". Refreshes hourly on the hour.";
     }
 
-    if(!latest || !latest.players || !Object.keys(latest.players).length){
-      // No snapshot yet — leave the "waiting on first snapshot" placeholders as-is.
-      return;
-    }
+    const lifetimeEntries=Object.values(latest.players);
+    let lifetimeHtml="";
+    lifetimeHtml+=buildCategory("Best K/D",topBy(lifetimeEntries,"kd"),function(v){return v.toFixed(2);});
+    lifetimeHtml+=buildCategory("Most Kills (Lifetime)",topBy(lifetimeEntries,"kills"),fmtInt);
+    lifetimeHtml+=buildCategory("Most Wins (Lifetime)",topBy(lifetimeEntries,"wins"),fmtInt);
+    lifetimeGrid.innerHTML=lifetimeHtml||lifetimeGrid.innerHTML;
 
-    // ---- Lifetime leaders (current totals from the latest snapshot) ----
-    const lifetimeEntries = Object.values(latest.players);
-    let lifetimeHtml = "";
-    lifetimeHtml += buildCategory("Best K/D", topBy(lifetimeEntries, "kd"), function(v){ return v.toFixed(2); });
-    lifetimeHtml += buildCategory("Most Kills (Lifetime)", topBy(lifetimeEntries, "kills"), fmtInt);
-    lifetimeHtml += buildCategory("Most Wins (Lifetime)", topBy(lifetimeEntries, "wins"), fmtInt);
-    lifetimeGrid.innerHTML = lifetimeHtml || lifetimeGrid.innerHTML;
-
-    // ---- Past 24 hours (compare against the snapshot closest to 24 hours earlier) ----
-    if(!previous || !previous.players || !Object.keys(previous.players).length){
-      weeklyGrid.innerHTML = '<p class="lb-empty">24-hour stats will be ready tomorrow.</p>';
-      return;
-    }
-
-    const deltaEntries = [];
-    Object.keys(latest.players).forEach(function(id){
-      const cur = latest.players[id];
-      const prev = previous.players[id];
-      if(!prev) return; // player is new since last snapshot, no delta yet
-      if(prev.username && cur.username && prev.username !== cur.username) return; // username was corrected — not the same account, skip until both snapshots agree
-      const deltaKills = cur.kills - prev.kills;
-      const deltaWins = cur.wins - prev.wins;
-      const deltaMatches = cur.matches - prev.matches;
-      if(deltaKills < 0 || deltaWins < 0 || deltaMatches < 0) return; // guard against a bad/reset read
-      deltaEntries.push({
-        displayName: cur.displayName,
-        deltaKills: deltaKills,
-        deltaWins: deltaWins,
-        deltaMatches: deltaMatches
-      });
-    });
-
-    let weeklyHtml = "";
-    weeklyHtml += buildCategory("Most Kills Today", topBy(deltaEntries, "deltaKills"), fmtInt);
-    weeklyHtml += buildCategory("Most Wins Today", topBy(deltaEntries, "deltaWins"), fmtInt);
-    weeklyHtml += buildCategory("Most Matches Today", topBy(deltaEntries, "deltaMatches"), fmtInt);
-
-    weeklyGrid.innerHTML = weeklyHtml || '<p class="lb-empty">No daily change detected yet.</p>';
+    renderPeriod(pastDayGrid,latest,findBaseline(snapshots,latestTime-DAY_MS),"24-hour stats will be ready tomorrow.","24 Hours");
+    renderPeriod(pastWeekGrid,latest,findBaseline(snapshots,latestTime-WEEK_MS),"Weekly stats will be ready next week.","7 Days");
   });
 })();
 

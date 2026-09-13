@@ -1,7 +1,7 @@
 // Runs every hour via GitHub Actions (.github/workflows/weekly-stats.yml).
 // Fetches current lifetime stats for every player in data/roster.json,
 // then keeps a short timestamped history so the site can compare a current
-// snapshot against the one closest to 24 hours earlier.
+// snapshots against the ones closest to 24 hours and 7 days earlier.
 //
 // The API key is read from an environment variable (set as a GitHub Actions
 // secret, FORTNITE_API_KEY) so it is never committed to the repo or exposed
@@ -15,7 +15,7 @@ const DATA_DIR = path.join(__dirname, "..", "data");
 const ROSTER_PATH = path.join(DATA_DIR, "roster.json");
 const LATEST_PATH = path.join(DATA_DIR, "latest.json");
 const HISTORY_PATH = path.join(DATA_DIR, "history.json");
-const HISTORY_RETENTION_MS = 30 * 60 * 60 * 1000;
+const HISTORY_RETENTION_MS = 8 * 24 * 60 * 60 * 1000;
 
 const API_KEY = process.env.FORTNITE_API_KEY;
 if (!API_KEY) {
