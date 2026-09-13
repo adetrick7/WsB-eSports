@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-13T03:47:41.811Z",
+  "fetchedAt": "2026-09-13T03:55:12.312Z",
   "players": {
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
@@ -13,11 +13,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.091,
-      "winrate": 11.484,
+      "kd": 3.09,
+      "winrate": 11.482,
       "wins": 646,
-      "kills": 15388,
-      "matches": 5625
+      "kills": 15389,
+      "matches": 5626
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -64,26 +64,8 @@
       "kills": 37838,
       "matches": 11425
     },
-    "ghost": {
-      "displayName": "Ǥнσsτ 艾",
-      "username": "Ǥнσsτ 艾",
-      "kd": 3.991,
-      "winrate": 12.967,
-      "wins": 4332,
-      "kills": 116035,
-      "matches": 33408
-    },
-    "marky": {
-      "displayName": "WsB_Marky!",
-      "username": "NOT Markyǃ",
-      "kd": 5.225,
-      "winrate": 17.693,
-      "wins": 4782,
-      "kills": 116226,
-      "matches": 27028
-    },
     "allieontt": {
-      "displayName": "ALLIEONTT",
+      "displayName": "WsB_Allie",
       "username": "ALLIEONTT",
       "kd": 1.761,
       "winrate": 13.599,
@@ -95,10 +77,10 @@
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
       "kd": 7.049,
-      "winrate": 24.765,
+      "winrate": 24.764,
       "wins": 6707,
-      "kills": 143629,
-      "matches": 27083
+      "kills": 143630,
+      "matches": 27084
     }
   }
 }
