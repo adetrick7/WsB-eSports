@@ -55,7 +55,7 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 .bio-modal-info{padding:34px 36px;position:relative;display:flex;flex-direction:column}
 .bio-modal-info #bioRole{margin-bottom:8px}
 .bio-modal-info h3{font-size:clamp(32px,5vw,44px);line-height:.92;margin-bottom:18px;font-style:italic}
-.bio-modal-info p:not(.label){color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:26px;white-space:pre-line}
+.bio-modal-info p:not(.label){color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:26px;white-space:pre-line}.bio-gif{width:100%;margin-bottom:26px;overflow:hidden;border:1px solid var(--line);background:#05030a}.bio-gif img{display:block;width:100%;height:auto}
 .bio-modal-info .chrome-btn{align-self:flex-start;margin-top:auto}
 .bio-close{position:absolute;top:14px;right:14px;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);background:#05030a88;color:#f7f4ff;font-size:15px;cursor:pointer;z-index:3;border-radius:2px}
 .bio-close:hover{border-color:#bc62ffaa;color:#c36cff}

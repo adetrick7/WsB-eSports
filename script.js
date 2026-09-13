@@ -7,6 +7,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   const role=document.getElementById("bioRole");
   const name=document.getElementById("bioName");
   const text=document.getElementById("bioText");
+  const gif=document.getElementById("bioGif");
   const tiktok=document.getElementById("bioTiktok");
   const cards=document.querySelectorAll(".player-card");
   if(!modal||!cards.length)return;
@@ -17,7 +18,10 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     photo.style.backgroundImage=bg||"none";
     role.textContent=card.dataset.role||"";
     name.textContent=nameEl?nameEl.textContent.trim():"";
-    text.textContent=card.dataset.bio||"Bio coming soon.";
+    const hasGif=card.dataset.bioGif==="tenor-jetpack-cat";
+    text.textContent=card.dataset.bio||(hasGif?"":"Bio coming soon.");
+    text.hidden=hasGif&&!card.dataset.bio;
+    if(gif)gif.hidden=!hasGif;
     const link=card.dataset.tiktok;
     if(link){tiktok.href=link;tiktok.style.display="inline-flex";}
     else{tiktok.style.display="none";}
