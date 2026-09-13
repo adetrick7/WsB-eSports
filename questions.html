@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WsB | Questions</title>
+  <meta name="description" content="WsB — frequently asked questions about the team, joining, and the site.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site-glow"></div>
+
+<header class="nav">
+  <span class="spooky-web left" aria-hidden="true">🕸️</span>
+  <span class="spooky-web right" aria-hidden="true">🕸️</span>
+  <a class="mini-brand" href="index.html#home">
+    <img src="wsb-logo.png" alt="WsB logo">
+    <span>WsB</span>
+  </a>
+  <nav id="navlinks">
+    <a href="index.html#team">ROSTER</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="members.html">MEMBERS</a>
+    <a href="leaderboards.html">LEADERBOARDS</a>
+    <a href="announcements.html">ANNOUNCEMENTS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="questions.html">QUESTIONS</a>
+    <a href="index.html#join">JOIN WsB</a>
+  </nav>
+  <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
+  <button class="menu" aria-label="Toggle navigation">☰</button>
+</header>
+
+<main>
+  <section class="section faq-hero">
+    <div class="heading-row">
+      <div>
+        <p class="label">GOT SOMETHING TO ASK?</p>
+        <h2>QUESTIONS.</h2>
+      </div>
+      <p class="intro">Answers to what people ask us most. Don't see yours? Reach out — someone will get back to you.</p>
+    </div>
+
+    <!-- Dev note: each .faq-item is one question. Copy a block to add more.
+         Click the question to expand/collapse the answer. -->
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How do I join WsB?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Hit the "JOIN WsB" button up top, or the tryout button at the bottom of the homepage — both link straight to our TikTok, where you can DM us directly. We're always scouting for players who bring pressure, chemistry, and clutch plays.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How do I get my profile added to the Members page?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Send a screenshot of your Fortnite Tracker overview page (or your Tracker profile link) to our TikTok — <a href="https://www.tiktok.com/@wsb.esports0" target="_blank" rel="noopener">@wsb.esports0</a> — and we'll get your stats added.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Who do I contact if I have a question about the team?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Any of us! Reach out to anyone on the Roster page — no question is too small, and someone will always get back to you. You can also message the team TikTok directly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Is WsB affiliated with Epic Games or Fortnite?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No — WsB is an independent, fan-run Fortnite esports team. We're not affiliated with or endorsed by Epic Games.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How often do the stats and leaderboards update?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most Members page stats pull live from your account each time the page loads. The Leaderboards page updates automatically every Monday, tracking real week-over-week progress across the roster.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-contact">
+      <p class="label">STILL HAVE A QUESTION?</p>
+      <h3>Ask Us Anything.</h3>
+      <p>Whatever it is, don't be shy. Send it our way and we'll get back to you.</p>
+      <a class="chrome-btn" href="https://www.tiktok.com/@wsb.esports0" target="_blank" rel="noopener">MESSAGE US ON TIKTOK <b>→</b></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="spooky-spider" aria-hidden="true">🕷️</span>
+  <div class="footer-brand"><img src="wsb-logo.png" alt="WsB"><span>WE SHOOT BODIES</span></div>
+  <div class="socials">
+    <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
+  </div>
+  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

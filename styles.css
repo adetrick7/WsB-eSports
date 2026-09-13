@@ -71,8 +71,14 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 .members-howto{border:1px solid var(--line);background:linear-gradient(150deg,#15091f,#09060e);padding:28px 30px;margin-bottom:36px;max-width:640px}
 .members-howto p{color:var(--muted);font-size:14px;line-height:1.6;margin-top:10px;max-width:520px}
 .members-howto p a{color:#c36cff;text-decoration:underline}
-.members-howto-img{display:block;width:100%;max-width:520px;margin-top:18px;border:1px solid #bc62ff44;border-radius:4px}
-.members-howto-caption{display:block;margin-top:8px;font-size:10px;letter-spacing:.5px;color:#78667f}
+.howto-steps{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.howto-steps-label{font-size:9px;margin-bottom:8px}
+.howto-steps ol{margin:14px 0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.9}
+.howto-steps li{margin-bottom:2px}
+.howto-steps li b{color:var(--text);font-weight:700}
+.howto-steps-body{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.howto-steps-body ol{margin:0;flex:1;min-width:220px}
+.howto-img{flex:1;min-width:280px;max-width:420px;border:1px solid #bc62ff44;border-radius:4px;display:block}
 .members-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:16px;align-items:stretch}
 @media(max-width:900px){.members-grid{grid-template-columns:repeat(2,1fr)}.member-card-wrap{grid-column:auto;grid-row:auto}}
 @media(max-width:520px){.members-grid{grid-template-columns:1fr}}
@@ -156,7 +162,6 @@ body.halloween-theme .member-emblem{border-color:#ff9c4455;box-shadow:0 0 20px #
 body.halloween-theme .member-meta b{color:#ff9c44}
 body.halloween-theme .members-howto{border-color:rgba(255,140,40,.25);background:linear-gradient(150deg,#170c04,#050302)}
 body.halloween-theme .members-howto p a{color:#ff9c44}
-body.halloween-theme .members-howto-img{border-color:#ff9c4444}
 body.halloween-theme footer{background:#050302}
 body.halloween-theme .nav nav a:hover,body.halloween-theme .socials a:hover{color:#ff9c44}
 body.halloween-theme .join-modal-card,body.halloween-theme .member-modal-card,body.halloween-theme .bio-modal-card{border-color:#ff9c4466;box-shadow:0 0 90px #b3470055;background:linear-gradient(160deg,#1a0e05,#050302)}
@@ -256,3 +261,41 @@ body.halloween-theme .cd-label{color:#e0a86e}
 .event-info h3{font-size:24px;font-style:italic;margin:6px 0 10px;color:var(--text)}
 .event-info p{color:var(--muted);font-size:14px;line-height:1.6;max-width:480px}
 @media(max-width:600px){.event-card{flex-direction:column}.event-countdown{flex-wrap:wrap}}
+
+/* Questions/FAQ page */
+.faq-hero{padding-top:150px}
+.faq-list{display:flex;flex-direction:column;gap:2px;max-width:760px;margin-top:10px}
+.faq-item{background:linear-gradient(150deg,#15091f,#09060e);border:1px solid var(--line)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;background:none;border:none;color:var(--text);font:700 16px Rajdhani,sans-serif;text-align:left;cursor:pointer}
+.faq-question:hover{color:#c36cff}
+.faq-icon{flex-shrink:0;font:300 22px "Barlow Condensed",sans-serif;color:#c36cff;transition:transform .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-answer p{padding:0 26px 22px;color:var(--muted);font-size:14px;line-height:1.7;max-width:620px}
+.faq-answer p a{color:#c36cff;text-decoration:underline}
+.faq-contact{max-width:760px;margin-top:44px;padding-top:40px;border-top:1px solid var(--line)}
+.faq-contact h3{font-size:32px;font-style:italic;line-height:1;margin:10px 0 14px;background:linear-gradient(#fff,#8c3bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.faq-contact p{color:var(--muted);font-size:15px;line-height:1.7;max-width:480px;margin-bottom:22px}
+
+/* Tryouts page */
+.tryout-hero{padding-top:150px}
+.tryout-crest{text-align:center;margin-bottom:60px;position:relative}
+.tryout-crown{display:block;font-size:34px;margin-bottom:8px;filter:drop-shadow(0 0 10px #a62cff99)}
+.tryout-emblem{width:120px;filter:drop-shadow(0 0 24px #a62cff88)}
+.tryout-eyebrow{font:800 20px "Barlow Condensed",sans-serif;letter-spacing:4px;margin-top:14px}
+.tryout-tagline{font-size:11px;letter-spacing:4px;color:#c36cff;font-weight:700;margin-top:4px}
+.tryout-heading-row{margin-bottom:40px}
+.tryout-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:10px}
+.tryout-card{background:linear-gradient(150deg,#15091f,#09060e);border:1px solid var(--line);padding:30px 26px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.tryout-icon{width:38px;height:38px;color:#c36cff;margin-bottom:16px}
+.tryout-card .label{margin-bottom:14px}
+.tryout-card p{color:var(--muted);font-size:14px;line-height:1.6}
+.tryout-card ul{list-style:none;padding:0;margin:0;text-align:left;width:100%}
+.tryout-card ul li{position:relative;padding-left:16px;color:var(--muted);font-size:14px;line-height:2}
+.tryout-card ul li:before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:#c36cff}
+.tryout-big-stat{font:800 44px "Barlow Condensed",sans-serif;color:#f7f4ff;margin-bottom:8px}
+.tryout-card .arrow-link{margin-top:14px;display:inline-block}
+.tryout-banner{text-align:center;margin-top:60px;padding-top:44px;border-top:1px solid var(--line)}
+.tryout-banner p{color:var(--muted);font-size:13px;letter-spacing:2px;font-weight:700}
+.tryout-banner h3{font-size:clamp(28px,4vw,42px);font-style:italic;margin:8px 0 20px;background:linear-gradient(#fff,#8c3bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tryout-motto{display:block;font-size:11px;letter-spacing:2px;color:#8f759f}
