@@ -45,7 +45,7 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 .word-break-mobile{display:none}
 @media(max-width:850px){.nav{padding:0 7vw}.nav nav{display:none}.menu{display:block}.hero{padding:130px 8vw 70px;min-height:850px}.hero-copy{width:100%;z-index:4}.hero-logo-wrap{right:-12vw;top:16%;width:85vw;opacity:.4}.hero-rings{right:-45vw}.hero-side{display:none}.heading-row{align-items:start;flex-direction:column;gap:20px}.roster,.media-grid{grid-template-columns:1fr}.player-card{height:330px}.about{grid-template-columns:1fr;padding:100px 8vw}.about-copy{grid-column:auto}.about-media{grid-column:auto;order:-1;margin-bottom:20px}.clip-track{min-height:640px}.clip-prev{left:-6px}.clip-next{right:-6px}.about-mark{font-size:65vw}.section{padding:90px 8vw}.values{gap:18px}.media-card{min-height:260px}.nav nav.open{display:flex;position:absolute;right:7vw;top:70px;flex-direction:row;flex-wrap:wrap;gap:14px 22px;max-width:86vw;background:#0c0613;border:1px solid var(--line);padding:20px}.socials{flex-wrap:wrap;justify-content:flex-end}footer{grid-template-columns:1fr}.bio-modal-card{grid-template-columns:1fr}.bio-modal-photo{min-height:220px}.word-break-mobile{display:inline}}
 
-.bio-modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:20px}
+.lb-refresh-note{margin:10px 0 32px;color:var(--muted);font-size:12px;letter-spacing:.4px}.bio-modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:20px}
 .bio-modal.open{display:grid}
 .bio-modal-backdrop{position:absolute;inset:0;background:#05030add;backdrop-filter:blur(8px)}
 .bio-modal-card{position:relative;width:min(720px,94vw);max-height:88vh;overflow:auto;display:grid;grid-template-columns:240px 1fr;background:linear-gradient(150deg,#170a22,#09060e);border:1px solid #bc62ff55;box-shadow:0 0 70px #7911c655;animation:bioIn .22s ease}
@@ -71,6 +71,7 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 .members-howto{border:1px solid var(--line);background:linear-gradient(150deg,#15091f,#09060e);padding:28px 30px;margin-bottom:36px;max-width:640px}
 .members-howto p{color:var(--muted);font-size:14px;line-height:1.6;margin-top:10px;max-width:520px}
 .members-howto p a{color:#c36cff;text-decoration:underline}
+.members-refresh-note{margin:-8px 0 28px;color:var(--muted);font-size:12px;letter-spacing:.4px}
 .howto-steps{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .howto-steps-label{font-size:9px;margin-bottom:8px}
 .howto-steps ol{margin:14px 0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.9}
@@ -83,7 +84,7 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 @media(max-width:900px){.members-grid{grid-template-columns:repeat(2,1fr)}.member-card-wrap{grid-column:auto;grid-row:auto}}
 @media(max-width:520px){.members-grid{grid-template-columns:1fr}}
 .member-card{position:relative;height:100%;background:linear-gradient(150deg,#15091f,#09060e);border:1px solid var(--line);padding:28px 18px;text-align:center;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center}
-.member-card:hover{border-color:#bc62ff88;transform:translateY(-3px)}
+.member-card:hover{border-color:#bc62ff88;transform:translateY(-3px)}.member-card.sync-issue{border-color:#ff4d6d88}.member-sync-status{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:#ff4d6d;box-shadow:0 0 0 3px #ff4d6d22,0 0 12px #ff4d6dbb;animation:syncPulse 1.8s ease-in-out infinite}.member-sync-status:after{content:"";position:absolute;inset:-4px;border:1px solid #ff4d6d88;border-radius:50%;animation:syncRing 1.8s ease-out infinite}@keyframes syncPulse{50%{transform:scale(.82);opacity:.8}}@keyframes syncRing{70%,100%{transform:scale(1.7);opacity:0}}
 .member-emblem{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;background-size:cover;background-position:center;background-color:#1a0c28;border:1px solid #bc62ff55;box-shadow:0 0 20px #7911c644;display:grid;place-items:center;font:800 26px "Barlow Condensed";color:#c36cff;flex-shrink:0}
 .member-name{font:700 17px Rajdhani,sans-serif;margin-bottom:8px;word-break:break-word;color:var(--text)}
 .member-meta{font-size:10px;letter-spacing:1.4px;color:#a99ab8;line-height:1.8}

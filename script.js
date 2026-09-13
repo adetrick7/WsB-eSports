@@ -262,14 +262,36 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Daily Fortnite stats snapshot (Members page)
-// The server refreshes this file once a day, so the page loads one saved file instead
+// Saved Fortnite stats snapshot (Members page)
+// The server refreshes this file regularly, so the page loads one saved file instead
 // of making a separate live API request for every member card.
 (function(){
   const cards=document.querySelectorAll("[data-fn-user]");
+  const refreshNote=document.getElementById("membersRefreshNote");
   if(!cards.length)return;
 
   function fmtInt(n){return Math.round(n).toLocaleString("en-US");}
+
+  function formatPacific(timestamp){
+    return new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZone:"America/Los_Angeles",timeZoneName:"short"}).format(new Date(timestamp));
+  }
+
+  function setSyncIssue(card,hasIssue){
+    const existing=card.querySelector(".member-sync-status");
+    if(!hasIssue){
+      if(existing)existing.remove();
+      card.classList.remove("sync-issue");
+      return;
+    }
+    card.classList.add("sync-issue");
+    if(existing)return;
+    const indicator=document.createElement("span");
+    indicator.className="member-sync-status";
+    indicator.setAttribute("role","img");
+    indicator.setAttribute("aria-label","Stats sync needs attention");
+    indicator.title="Stats sync needs attention";
+    card.appendChild(indicator);
+  }
 
   function applyStats(card,stats){
     const map={
@@ -290,11 +312,15 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     .then(function(res){return res.ok?res.json():null;})
     .then(function(snapshot){
       if(!snapshot||!snapshot.players)return;
+      if(refreshNote&&snapshot.fetchedAt){
+        refreshNote.textContent="Last updated "+formatPacific(snapshot.fetchedAt)+". Refreshes hourly on the hour.";
+      }
       const byUsername=new Map(Object.values(snapshot.players).map(function(player){
         return [player.username,player];
       }));
       cards.forEach(function(card){
         const stats=byUsername.get(card.getAttribute("data-fn-user"));
+        setSyncIssue(card,!stats);
         if(stats)applyStats(card,stats);
       });
     })
@@ -366,12 +392,34 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       .map(function(e){ return { name: e.displayName, value: e[key] }; });
   }
 
+  const lifetimeRefreshNote=document.getElementById("lbLifetimeRefreshNote");
+  const DAY_MS=24*60*60*1000;
+  const BASELINE_TOLERANCE_MS=6*60*60*1000;
+
+  function formatPacific(value){
+    return new Intl.DateTimeFormat("en-US",{
+      timeZone:"America/Los_Angeles",
+      month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"
+    }).format(new Date(value));
+  }
+
   Promise.all([
-    fetch("data/latest.json").then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
-    fetch("data/previous.json").then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    fetch("data/latest.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+    fetch("data/history.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
   ]).then(function(results){
-    const latest = results[0];
-    const previous = results[1];
+    const latest=results[0];
+    const history=results[1];
+    const latestTime=latest&&Date.parse(latest.fetchedAt);
+    const snapshots=history&&Array.isArray(history.snapshots)?history.snapshots:[];
+    const targetTime=latestTime-DAY_MS;
+    const previous=snapshots
+      .filter(function(snapshot){return snapshot&&snapshot.players&&Number.isFinite(Date.parse(snapshot.fetchedAt));})
+      .sort(function(a,b){return Math.abs(Date.parse(a.fetchedAt)-targetTime)-Math.abs(Date.parse(b.fetchedAt)-targetTime);})
+      .find(function(snapshot){return Math.abs(Date.parse(snapshot.fetchedAt)-targetTime)<=BASELINE_TOLERANCE_MS;});
+
+    if(lifetimeRefreshNote&&latest&&latest.fetchedAt){
+      lifetimeRefreshNote.textContent="Last updated "+formatPacific(latest.fetchedAt)+". Refreshes hourly on the hour.";
+    }
 
     if(!latest || !latest.players || !Object.keys(latest.players).length){
       // No snapshot yet — leave the "waiting on first snapshot" placeholders as-is.
@@ -386,9 +434,9 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     lifetimeHtml += buildCategory("Most Wins (Lifetime)", topBy(lifetimeEntries, "wins"), fmtInt);
     lifetimeGrid.innerHTML = lifetimeHtml || lifetimeGrid.innerHTML;
 
-    // ---- Past 24 hours (delta between the latest two daily snapshots) ----
+    // ---- Past 24 hours (compare against the snapshot closest to 24 hours earlier) ----
     if(!previous || !previous.players || !Object.keys(previous.players).length){
-      weeklyGrid.innerHTML = '<p class="lb-empty">This is the first snapshot on record, so there\'s nothing to compare it to yet. Daily totals will show up after the next refresh.</p>';
+      weeklyGrid.innerHTML = '<p class="lb-empty">24-hour stats will be ready tomorrow.</p>';
       return;
     }
 

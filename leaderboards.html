@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | Leaderboards</title>
-  <meta name="description" content="WsB — weekly and lifetime leaderboards, updated automatically every Monday.">
+  <meta name="description" content="WsB — hourly and lifetime leaderboards, refreshed automatically every hour.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -38,22 +38,23 @@
   <section class="section lb-hero">
     <div class="heading-row">
       <div>
-        <p class="label">UPDATED DAILY</p>
+        <p class="label">LIVE STATS</p>
         <h2>LEADER<br class="word-break-mobile"><span>BOARDS.</span></h2>
       </div>
     </div>
-
     <div class="lb-board" id="lbWeekly">
       <p class="label lb-board-label">PAST 24 HOURS</p>
+      <p class="lb-refresh-note" id="lbPastRefreshNote">Player activity from the last 24 hours.</p>
       <div class="lb-grid" id="lbWeeklyGrid">
-        <p class="lb-empty">Waiting for the next daily update.</p>
+        <p class="lb-empty">24-hour stats will be ready tomorrow.</p>
       </div>
     </div>
 
     <div class="lb-board" id="lbLifetime">
       <p class="label lb-board-label">LIFETIME LEADERS</p>
+      <p class="lb-refresh-note" id="lbLifetimeRefreshNote">Updates hourly on the hour.</p>
       <div class="lb-grid" id="lbLifetimeGrid">
-        <p class="lb-empty">Waiting on the first weekly snapshot.</p>
+        <p class="lb-empty">Loading lifetime leaders.</p>
       </div>
     </div>
   </section>
@@ -67,6 +68,6 @@
   </div>
   <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
-<script src="script.js"></script>
+<script src="script.js?v=hourly-history-update-20260913"></script>
 </body>
 </html>

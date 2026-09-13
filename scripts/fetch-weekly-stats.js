@@ -1,8 +1,7 @@
-// Runs daily via GitHub Actions (.github/workflows/weekly-stats.yml).
+// Runs every hour via GitHub Actions (.github/workflows/weekly-stats.yml).
 // Fetches current lifetime stats for every player in data/roster.json,
-// then rotates the snapshot files so the site can show daily changes:
-//   data/latest.json   -> becomes data/previous.json
-//   fresh fetch         -> becomes the new data/latest.json
+// then keeps a short timestamped history so the site can compare a current
+// snapshot against the one closest to 24 hours earlier.
 //
 // The API key is read from an environment variable (set as a GitHub Actions
 // secret, FORTNITE_API_KEY) so it is never committed to the repo or exposed
@@ -15,7 +14,8 @@ const path = require("path");
 const DATA_DIR = path.join(__dirname, "..", "data");
 const ROSTER_PATH = path.join(DATA_DIR, "roster.json");
 const LATEST_PATH = path.join(DATA_DIR, "latest.json");
-const PREVIOUS_PATH = path.join(DATA_DIR, "previous.json");
+const HISTORY_PATH = path.join(DATA_DIR, "history.json");
+const HISTORY_RETENTION_MS = 30 * 60 * 60 * 1000;
 
 const API_KEY = process.env.FORTNITE_API_KEY;
 if (!API_KEY) {
@@ -68,11 +68,6 @@ async function fetchPlayerStats(username, platform) {
 async function main() {
   const roster = JSON.parse(fs.readFileSync(ROSTER_PATH, "utf8"));
 
-  // Rotate: whatever was "latest" becomes "previous" before we overwrite it.
-  if (fs.existsSync(LATEST_PATH)) {
-    fs.copyFileSync(LATEST_PATH, PREVIOUS_PATH);
-  }
-
   const results = {};
   for (const player of roster) {
     console.log(`Fetching ${player.displayName} ("${player.username}")...`);
@@ -96,8 +91,33 @@ async function main() {
     players: results
   };
 
+  const existingHistory = fs.existsSync(HISTORY_PATH)
+    ? JSON.parse(fs.readFileSync(HISTORY_PATH, "utf8"))
+    : { snapshots: [] };
+  const snapshots = Array.isArray(existingHistory.snapshots) ? existingHistory.snapshots : [];
+
+  // One-time migration: preserve the two legacy snapshots when history starts.
+  if (!snapshots.length) {
+    for (const legacyPath of [path.join(DATA_DIR, "previous.json"), LATEST_PATH]) {
+      if (!fs.existsSync(legacyPath)) continue;
+      const legacy = JSON.parse(fs.readFileSync(legacyPath, "utf8"));
+      if (legacy && legacy.fetchedAt && legacy.players) snapshots.push(legacy);
+    }
+  }
+
+  snapshots.push(snapshot);
+  const deduped = new Map();
+  snapshots.forEach((item) => {
+    if (item && item.fetchedAt && item.players) deduped.set(item.fetchedAt, item);
+  });
+  const cutoff = Date.now() - HISTORY_RETENTION_MS;
+  const history = Array.from(deduped.values())
+    .filter((item) => Date.parse(item.fetchedAt) >= cutoff)
+    .sort((a, b) => Date.parse(a.fetchedAt) - Date.parse(b.fetchedAt));
+
   fs.writeFileSync(LATEST_PATH, JSON.stringify(snapshot, null, 2));
-  console.log(`\nWrote ${Object.keys(results).length} player snapshots to data/latest.json`);
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify({ snapshots: history }, null, 2));
+  console.log(`\nWrote ${Object.keys(results).length} player snapshots to data/latest.json and retained ${history.length} history snapshots.`);
 }
 
 main();

@@ -1,13 +1,11 @@
-name: Daily Fortnite Stats Snapshot
+name: Fortnite Stats Refresh
 
 on:
   schedule:
-    # Daily at 3:17 AM Los Angeles time. An odd minute avoids the busiest Actions queue period.
-    - cron: "17 3 * * *"
+    # Refreshes at the start of every hour, Pacific time.
+    - cron: "0 * * * *"
       timezone: "America/Los_Angeles"
   workflow_dispatch: {}
-    # Lets you trigger this manually from the Actions tab any time —
-    # useful for the very first run instead of waiting for Monday.
 
 permissions:
   contents: write
@@ -24,15 +22,15 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch today's stats
+      - name: Fetch current stats
         env:
           FORTNITE_API_KEY: ${{ secrets.FORTNITE_API_KEY }}
         run: node scripts/fetch-weekly-stats.js
 
-      - name: Commit and push updated snapshots
+      - name: Commit and push refreshed snapshots
         run: |
           git config user.name "wsb-stats-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/latest.json data/previous.json
-          git diff --quiet --cached || git commit -m "Daily stats snapshot: $(date -u +'%Y-%m-%d')"
+          git add data/latest.json data/history.json
+          git diff --quiet --cached || git commit -m "Stats snapshot: $(date -u +'%Y-%m-%d')"
           git push
