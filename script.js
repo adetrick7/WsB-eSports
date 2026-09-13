@@ -262,78 +262,45 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Live Fortnite stats via fortnite-api.com (Members page)
-// NOTE: this key is publicly visible in this file since it's a static site with
-// no backend to hide it behind. If it ever gets abused, generate a fresh one at
-// dash.fortnite-api.com and swap it in below.
-// Every card keeps its manually-entered numbers as a fallback — if a lookup fails
-// (wrong username, rate limit, CORS block, etc.) the existing static stats just stay put.
+// Daily Fortnite stats snapshot (Members page)
+// The server refreshes this file once a day, so the page loads one saved file instead
+// of making a separate live API request for every member card.
 (function(){
-  const API_KEY = "0d88443d-d00a-42aa-b4c2-77ec9bc5acd8";
-  const cards = document.querySelectorAll("[data-fn-user]");
-  if(!cards.length) return;
+  const cards=document.querySelectorAll("[data-fn-user]");
+  if(!cards.length)return;
 
-  // fortnite-api.com uses "epic" for PC/Epic accounts rather than "pc"
-  const PLATFORM_MAP = { pc: "epic", epic: "epic", xbl: "xbl", psn: "psn" };
+  function fmtInt(n){return Math.round(n).toLocaleString("en-US");}
 
-  function fmtInt(n){
-    return Math.round(n).toLocaleString("en-US");
-  }
-
-  function pickStats(json){
-    // Defensive parsing in case the response shape shifts.
-    try{
-      const overall = json.data.stats.all.overall;
-      if(overall){
-        const winRateRaw = parseFloat(overall.winRate);
-        return {
-          kd: parseFloat(overall.kd),
-          winrate: winRateRaw <= 1 ? winRateRaw*100 : winRateRaw,
-          wins: parseFloat(overall.wins),
-          kills: parseFloat(overall.kills),
-          matches: parseFloat(overall.matches)
-        };
-      }
-    }catch(e){}
-    return null;
-  }
-
-  function applyStats(card, stats){
-    const map = {
-      kd: v => v.toFixed(2),
-      winrate: v => v.toFixed(1) + "%",
-      wins: v => fmtInt(v),
-      kills: v => fmtInt(v),
-      matches: v => fmtInt(v)
+  function applyStats(card,stats){
+    const map={
+      kd:v=>v.toFixed(2),
+      winrate:v=>v.toFixed(1)+"%",
+      wins:v=>fmtInt(v),
+      kills:v=>fmtInt(v),
+      matches:v=>fmtInt(v)
     };
     Object.keys(map).forEach(function(key){
-      if(stats[key]===undefined || isNaN(stats[key])) return;
-      const el = card.querySelector('[data-stat="'+key+'"]');
-      if(el) el.textContent = map[key](stats[key]);
+      if(stats[key]===undefined||isNaN(stats[key]))return;
+      const el=card.querySelector('[data-stat="'+key+'"]');
+      if(el)el.textContent=map[key](stats[key]);
     });
   }
 
-  async function updateCard(card){
-    const user = card.getAttribute("data-fn-user");
-    const rawPlatform = card.getAttribute("data-fn-platform") || "pc";
-    const accountType = PLATFORM_MAP[rawPlatform] || "epic";
-    try{
-      const url = "https://fortnite-api.com/v2/stats/br/v2?name="
-        + encodeURIComponent(user) + "&accountType=" + accountType;
-      const res = await fetch(url, { headers: { "Authorization": API_KEY } });
-      if(!res.ok) return; // leave static fallback numbers as-is
-      const json = await res.json();
-      const stats = pickStats(json);
-      if(stats) applyStats(card, stats);
-    }catch(e){
-      // network error, CORS block, etc. — fallback numbers already in the HTML stay put
-    }
-  }
-
-  // Stagger requests to be a polite, well-behaved API consumer
-  cards.forEach(function(card, i){
-    setTimeout(function(){ updateCard(card); }, i*1200);
-  });
+  fetch("data/latest.json",{cache:"no-store"})
+    .then(function(res){return res.ok?res.json():null;})
+    .then(function(snapshot){
+      if(!snapshot||!snapshot.players)return;
+      const byUsername=new Map(Object.values(snapshot.players).map(function(player){
+        return [player.username,player];
+      }));
+      cards.forEach(function(card){
+        const stats=byUsername.get(card.getAttribute("data-fn-user"));
+        if(stats)applyStats(card,stats);
+      });
+    })
+    .catch(function(){
+      // Keep the manually entered fallback numbers if the daily snapshot is unavailable.
+    });
 })();
 
 
