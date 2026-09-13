@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-13T08:12:56.214Z",
+  "fetchedAt": "2026-09-13T10:32:57.748Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.342,
-      "winrate": 22.333,
-      "wins": 4812,
-      "kills": 55930,
-      "matches": 21547
+      "winrate": 22.33,
+      "wins": 4813,
+      "kills": 55944,
+      "matches": 21554
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
@@ -22,11 +22,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.091,
-      "winrate": 11.49,
-      "wins": 647,
-      "kills": 15406,
-      "matches": 5631
+      "kd": 3.093,
+      "winrate": 11.493,
+      "wins": 648,
+      "kills": 15434,
+      "matches": 5638
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -40,11 +40,11 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.154,
-      "winrate": 21.768,
+      "kd": 7.15,
+      "winrate": 21.746,
       "wins": 665,
-      "kills": 17099,
-      "matches": 3055
+      "kills": 17109,
+      "matches": 3058
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
@@ -139,11 +139,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
-      "kd": 4.839,
-      "winrate": 16.426,
-      "wins": 5199,
-      "kills": 128019,
-      "matches": 31652
+      "kd": 4.84,
+      "winrate": 16.429,
+      "wins": 5202,
+      "kills": 128069,
+      "matches": 31663
     },
     "rina": {
       "displayName": "WsB_Rina",
