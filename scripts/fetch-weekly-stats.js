@@ -1,6 +1,6 @@
-// Runs weekly via GitHub Actions (.github/workflows/weekly-stats.yml).
+// Runs daily via GitHub Actions (.github/workflows/weekly-stats.yml).
 // Fetches current lifetime stats for every player in data/roster.json,
-// then rotates the snapshot files so the site can show week-over-week deltas:
+// then rotates the snapshot files so the site can show daily changes:
 //   data/latest.json   -> becomes data/previous.json
 //   fresh fetch         -> becomes the new data/latest.json
 //
@@ -85,7 +85,7 @@ async function main() {
       };
       console.log("  -> OK");
     } else {
-      console.log("  -> skipped (fetch failed, will not appear this week)");
+      console.log("  -> skipped (fetch failed, will not appear today)");
     }
     // Stay well under the rate limit between requests.
     await sleep(1300);

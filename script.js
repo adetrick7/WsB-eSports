@@ -358,11 +358,10 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Leaderboards page — reads the JSON snapshots written weekly by GitHub Actions
+// Leaderboards page — reads the daily JSON snapshots written by GitHub Actions
 (function(){
   const weeklyGrid = document.getElementById("lbWeeklyGrid");
   const lifetimeGrid = document.getElementById("lbLifetimeGrid");
-  const updatedNote = document.getElementById("lbUpdatedNote");
   if(!weeklyGrid || !lifetimeGrid) return;
 
   function fmtInt(n){
@@ -408,11 +407,6 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       return;
     }
 
-    if(latest.fetchedAt && updatedNote){
-      const d = new Date(latest.fetchedAt);
-      updatedNote.textContent = "Last updated " + d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) + " — pulled automatically, nobody has to type these in.";
-    }
-
     // ---- Lifetime leaders (current totals from the latest snapshot) ----
     const lifetimeEntries = Object.values(latest.players);
     let lifetimeHtml = "";
@@ -421,9 +415,9 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     lifetimeHtml += buildCategory("Most Wins (Lifetime)", topBy(lifetimeEntries, "wins"), fmtInt);
     lifetimeGrid.innerHTML = lifetimeHtml || lifetimeGrid.innerHTML;
 
-    // ---- This week's leaders (delta between latest and previous snapshot) ----
+    // ---- Past 24 hours (delta between the latest two daily snapshots) ----
     if(!previous || !previous.players || !Object.keys(previous.players).length){
-      weeklyGrid.innerHTML = '<p class="lb-empty">This is the first snapshot on record, so there\'s nothing to compare it to yet. Weekly deltas will show up starting next Monday.</p>';
+      weeklyGrid.innerHTML = '<p class="lb-empty">This is the first snapshot on record, so there\'s nothing to compare it to yet. Daily totals will show up after the next refresh.</p>';
       return;
     }
 
@@ -446,11 +440,11 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     });
 
     let weeklyHtml = "";
-    weeklyHtml += buildCategory("Most Kills This Week", topBy(deltaEntries, "deltaKills"), fmtInt);
-    weeklyHtml += buildCategory("Most Wins This Week", topBy(deltaEntries, "deltaWins"), fmtInt);
-    weeklyHtml += buildCategory("Most Matches Played This Week", topBy(deltaEntries, "deltaMatches"), fmtInt);
+    weeklyHtml += buildCategory("Most Kills Today", topBy(deltaEntries, "deltaKills"), fmtInt);
+    weeklyHtml += buildCategory("Most Wins Today", topBy(deltaEntries, "deltaWins"), fmtInt);
+    weeklyHtml += buildCategory("Most Matches Today", topBy(deltaEntries, "deltaMatches"), fmtInt);
 
-    weeklyGrid.innerHTML = weeklyHtml || '<p class="lb-empty">No week-over-week change detected yet.</p>';
+    weeklyGrid.innerHTML = weeklyHtml || '<p class="lb-empty">No daily change detected yet.</p>';
   });
 })();
 
