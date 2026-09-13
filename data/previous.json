@@ -1,23 +1,23 @@
 {
-  "fetchedAt": "2026-09-11T23:45:23.658Z",
+  "fetchedAt": "2026-09-13T03:47:41.811Z",
   "players": {
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.11,
-      "winrate": 15.544,
-      "wins": 2323,
-      "kills": 51875,
-      "matches": 14945
+      "winrate": 15.536,
+      "wins": 2324,
+      "kills": 51933,
+      "matches": 14959
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.089,
-      "winrate": 11.469,
-      "wins": 645,
-      "kills": 15380,
-      "matches": 5624
+      "kd": 3.091,
+      "winrate": 11.484,
+      "wins": 646,
+      "kills": 15388,
+      "matches": 5625
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -31,20 +31,20 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.159,
-      "winrate": 21.728,
-      "wins": 659,
-      "kills": 16995,
-      "matches": 3033
+      "kd": 7.15,
+      "winrate": 21.745,
+      "wins": 663,
+      "kills": 17059,
+      "matches": 3049
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
       "username": "RAC Andrew",
-      "kd": 1.981,
-      "winrate": 8.933,
+      "kd": 1.977,
+      "winrate": 8.908,
       "wins": 580,
-      "kills": 11713,
-      "matches": 6493
+      "kills": 11726,
+      "matches": 6511
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -58,47 +58,47 @@
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
       "username": "Shloozyyy ᵀᵀ",
-      "kd": 4.246,
-      "winrate": 21.991,
+      "kd": 4.245,
+      "winrate": 21.987,
       "wins": 2512,
       "kills": 37838,
-      "matches": 11423
+      "matches": 11425
     },
     "ghost": {
       "displayName": "Ǥнσsτ 艾",
       "username": "Ǥнσsτ 艾",
-      "kd": 3.986,
-      "winrate": 12.951,
-      "wins": 4323,
-      "kills": 115820,
-      "matches": 33380
+      "kd": 3.991,
+      "winrate": 12.967,
+      "wins": 4332,
+      "kills": 116035,
+      "matches": 33408
     },
     "marky": {
       "displayName": "WsB_Marky!",
       "username": "NOT Markyǃ",
-      "kd": 5.223,
-      "winrate": 17.677,
-      "wins": 4773,
-      "kills": 116095,
-      "matches": 27001
+      "kd": 5.225,
+      "winrate": 17.693,
+      "wins": 4782,
+      "kills": 116226,
+      "matches": 27028
     },
     "allieontt": {
       "displayName": "ALLIEONTT",
       "username": "ALLIEONTT",
-      "kd": 1.762,
-      "winrate": 13.604,
-      "wins": 3100,
-      "kills": 34686,
-      "matches": 22788
+      "kd": 1.761,
+      "winrate": 13.599,
+      "wins": 3104,
+      "kills": 34735,
+      "matches": 22825
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.05,
-      "winrate": 24.77,
-      "wins": 6705,
-      "kills": 143574,
-      "matches": 27069
+      "kd": 7.049,
+      "winrate": 24.765,
+      "wins": 6707,
+      "kills": 143629,
+      "matches": 27083
     }
   }
 }
