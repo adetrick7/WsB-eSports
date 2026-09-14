@@ -1,15 +1,6 @@
 {
-  "fetchedAt": "2026-09-14T10:06:16.793Z",
+  "fetchedAt": "2026-09-14T11:05:43.894Z",
   "players": {
-    "lizzie": {
-      "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
-      "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
-      "kd": 3.341,
-      "winrate": 22.327,
-      "wins": 4814,
-      "kills": 55958,
-      "matches": 21561
-    },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
@@ -22,11 +13,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.094,
-      "winrate": 11.524,
+      "kd": 3.093,
+      "winrate": 11.515,
       "wins": 652,
-      "kills": 15487,
-      "matches": 5658
+      "kills": 15495,
+      "matches": 5662
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -69,9 +60,9 @@
       "username": "Shloozyyy ᵀᵀ",
       "kd": 4.246,
       "winrate": 22.008,
-      "wins": 2516,
-      "kills": 37855,
-      "matches": 11432
+      "wins": 2517,
+      "kills": 37870,
+      "matches": 11437
     },
     "allieontt": {
       "displayName": "WsB_Allie",
@@ -85,11 +76,11 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.048,
-      "winrate": 24.76,
+      "kd": 7.047,
+      "winrate": 24.756,
       "wins": 6708,
-      "kills": 143667,
-      "matches": 27092
+      "kills": 143676,
+      "matches": 27096
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -113,10 +104,10 @@
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.287,
-      "winrate": 12.729,
+      "winrate": 12.726,
       "wins": 2271,
-      "kills": 66752,
-      "matches": 17841
+      "kills": 66759,
+      "matches": 17845
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -141,9 +132,9 @@
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.84,
       "winrate": 16.438,
-      "wins": 5208,
-      "kills": 128144,
-      "matches": 31683
+      "wins": 5209,
+      "kills": 128166,
+      "matches": 31688
     },
     "rina": {
       "displayName": "WsB_Rina",
