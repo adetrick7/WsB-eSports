@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-14T02:06:18.873Z",
+  "fetchedAt": "2026-09-14T03:06:15.338Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.341,
-      "winrate": 22.327,
+      "winrate": 22.326,
       "wins": 4813,
-      "kills": 55948,
-      "matches": 21557
+      "kills": 55950,
+      "matches": 21558
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
@@ -31,11 +31,11 @@
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
       "username": "ʷˢᵇ-Bᴀʀʀᴇʟʀᴏʟʟ77",
-      "kd": 5.615,
-      "winrate": 18.118,
+      "kd": 5.62,
+      "winrate": 18.105,
       "wins": 539,
-      "kills": 13678,
-      "matches": 2975
+      "kills": 13701,
+      "matches": 2977
     },
     "buck": {
       "displayName": "WsB Buck",
@@ -49,11 +49,11 @@
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
       "username": "RAC Andrew",
-      "kd": 1.975,
-      "winrate": 8.873,
+      "kd": 1.974,
+      "winrate": 8.87,
       "wins": 580,
-      "kills": 11763,
-      "matches": 6537
+      "kills": 11765,
+      "matches": 6539
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -95,10 +95,10 @@
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
       "kd": 3.474,
-      "winrate": 3.613,
+      "winrate": 3.612,
       "wins": 824,
-      "kills": 76371,
-      "matches": 22809
+      "kills": 76393,
+      "matches": 22812
     },
     "kenny": {
       "displayName": "WsB_Kenny",
@@ -113,10 +113,10 @@
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.288,
-      "winrate": 12.724,
+      "winrate": 12.722,
       "wins": 2268,
-      "kills": 66707,
-      "matches": 17825
+      "kills": 66724,
+      "matches": 17827
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -130,11 +130,11 @@
     "rxg": {
       "displayName": "TIKTOK RXG",
       "username": "TIKTOK RXG",
-      "kd": 2.615,
-      "winrate": 7.903,
+      "kd": 2.616,
+      "winrate": 7.9,
       "wins": 1262,
-      "kills": 38457,
-      "matches": 15969
+      "kills": 38484,
+      "matches": 15975
     },
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
