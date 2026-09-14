@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T01:06:22.886Z",
+  "fetchedAt": "2026-09-14T02:06:18.873Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -31,11 +31,11 @@
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
       "username": "ʷˢᵇ-Bᴀʀʀᴇʟʀᴏʟʟ77",
-      "kd": 5.612,
-      "winrate": 18.09,
-      "wins": 538,
-      "kills": 13670,
-      "matches": 2974
+      "kd": 5.615,
+      "winrate": 18.118,
+      "wins": 539,
+      "kills": 13678,
+      "matches": 2975
     },
     "buck": {
       "displayName": "WsB Buck",
@@ -50,10 +50,10 @@
       "displayName": "WsB_TTBOBBYfn",
       "username": "RAC Andrew",
       "kd": 1.975,
-      "winrate": 8.877,
+      "winrate": 8.873,
       "wins": 580,
-      "kills": 11762,
-      "matches": 6534
+      "kills": 11763,
+      "matches": 6537
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -77,10 +77,10 @@
       "displayName": "WsB_Allie",
       "username": "ALLIEONTT",
       "kd": 1.761,
-      "winrate": 13.593,
+      "winrate": 13.591,
       "wins": 3104,
       "kills": 34754,
-      "matches": 22835
+      "matches": 22838
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
@@ -112,11 +112,11 @@
     "mysterious": {
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
-      "kd": 4.287,
-      "winrate": 12.715,
-      "wins": 2266,
-      "kills": 66691,
-      "matches": 17821
+      "kd": 4.288,
+      "winrate": 12.724,
+      "wins": 2268,
+      "kills": 66707,
+      "matches": 17825
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -131,10 +131,10 @@
       "displayName": "TIKTOK RXG",
       "username": "TIKTOK RXG",
       "kd": 2.615,
-      "winrate": 7.904,
+      "winrate": 7.903,
       "wins": 1262,
-      "kills": 38453,
-      "matches": 15966
+      "kills": 38457,
+      "matches": 15969
     },
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
