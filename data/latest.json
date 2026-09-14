@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T20:06:14.501Z",
+  "fetchedAt": "2026-09-14T21:05:52.375Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -85,11 +85,11 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.046,
-      "winrate": 24.75,
+      "kd": 7.045,
+      "winrate": 24.744,
       "wins": 6708,
-      "kills": 143708,
-      "matches": 27103
+      "kills": 143735,
+      "matches": 27110
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
