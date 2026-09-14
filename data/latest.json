@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T14:06:31.865Z",
+  "fetchedAt": "2026-09-14T15:08:03.321Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -77,10 +77,10 @@
       "displayName": "WsB_Allie",
       "username": "ALLIEONTT",
       "kd": 1.761,
-      "winrate": 13.596,
-      "wins": 3107,
-      "kills": 34765,
-      "matches": 22852
+      "winrate": 13.599,
+      "wins": 3108,
+      "kills": 34770,
+      "matches": 22854
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
@@ -122,10 +122,10 @@
       "displayName": "WsB_ohitskatie",
       "username": "ᵗᵗohitskatie ʚїɞ",
       "kd": 3.416,
-      "winrate": 16.457,
+      "winrate": 16.454,
       "wins": 1906,
-      "kills": 33049,
-      "matches": 11582
+      "kills": 33056,
+      "matches": 11584
     },
     "rxg": {
       "displayName": "TIKTOK RXG",
@@ -139,20 +139,20 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
-      "kd": 4.84,
-      "winrate": 16.437,
-      "wins": 5211,
-      "kills": 128212,
-      "matches": 31703
+      "kd": 4.841,
+      "winrate": 16.439,
+      "wins": 5212,
+      "kills": 128245,
+      "matches": 31705
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
-      "kd": 2.239,
-      "winrate": 20.849,
-      "wins": 4027,
-      "kills": 34237,
-      "matches": 19315
+      "kd": 2.24,
+      "winrate": 20.852,
+      "wins": 4028,
+      "kills": 34250,
+      "matches": 19317
     }
   }
 }
