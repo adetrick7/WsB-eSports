@@ -1,6 +1,15 @@
 {
-  "fetchedAt": "2026-09-14T11:05:43.894Z",
+  "fetchedAt": "2026-09-14T12:07:53.697Z",
   "players": {
+    "lizzie": {
+      "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
+      "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
+      "kd": 3.341,
+      "winrate": 22.327,
+      "wins": 4814,
+      "kills": 55958,
+      "matches": 21561
+    },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
@@ -14,10 +23,10 @@
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
       "kd": 3.093,
-      "winrate": 11.515,
+      "winrate": 11.513,
       "wins": 652,
-      "kills": 15495,
-      "matches": 5662
+      "kills": 15498,
+      "matches": 5663
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -68,10 +77,10 @@
       "displayName": "WsB_Allie",
       "username": "ALLIEONTT",
       "kd": 1.761,
-      "winrate": 13.591,
-      "wins": 3104,
-      "kills": 34754,
-      "matches": 22838
+      "winrate": 13.598,
+      "wins": 3106,
+      "kills": 34757,
+      "matches": 22841
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
@@ -79,8 +88,8 @@
       "kd": 7.047,
       "winrate": 24.756,
       "wins": 6708,
-      "kills": 143676,
-      "matches": 27096
+      "kills": 143682,
+      "matches": 27097
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -131,10 +140,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.84,
-      "winrate": 16.438,
-      "wins": 5209,
-      "kills": 128166,
-      "matches": 31688
+      "winrate": 16.439,
+      "wins": 5210,
+      "kills": 128179,
+      "matches": 31693
     },
     "rina": {
       "displayName": "WsB_Rina",
