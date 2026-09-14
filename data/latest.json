@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T00:08:19.798Z",
+  "fetchedAt": "2026-09-14T01:06:22.886Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -40,20 +40,20 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.154,
-      "winrate": 21.75,
+      "kd": 7.148,
+      "winrate": 21.736,
       "wins": 666,
       "kills": 17140,
-      "matches": 3062
+      "matches": 3064
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
       "username": "RAC Andrew",
-      "kd": 1.976,
-      "winrate": 8.879,
+      "kd": 1.975,
+      "winrate": 8.877,
       "wins": 580,
-      "kills": 11759,
-      "matches": 6532
+      "kills": 11762,
+      "matches": 6534
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
