@@ -6649,6 +6649,155 @@
           "matches": 19321
         }
       }
+    },
+    {
+      "fetchedAt": "2026-09-15T15:06:17.929Z",
+      "players": {
+        "lizzie": {
+          "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
+          "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
+          "kd": 3.341,
+          "winrate": 22.32,
+          "wins": 4815,
+          "kills": 55987,
+          "matches": 21573
+        },
+        "zumiez": {
+          "displayName": "Wsb-ZumiezTT",
+          "username": "headshotluxTT",
+          "kd": 4.112,
+          "winrate": 15.544,
+          "wins": 2327,
+          "kills": 51982,
+          "matches": 14970
+        },
+        "jen": {
+          "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
+          "username": "ᵂˢᴮJenClipsMenᵀᵀ",
+          "kd": 3.096,
+          "winrate": 11.568,
+          "wins": 658,
+          "kills": 15571,
+          "matches": 5688
+        },
+        "barrelroll": {
+          "displayName": "WsB Barrelroll77",
+          "username": "ʷˢᵇ-Bᴀʀʀᴇʟʀᴏʟʟ77",
+          "kd": 5.62,
+          "winrate": 18.105,
+          "wins": 539,
+          "kills": 13701,
+          "matches": 2977
+        },
+        "buck": {
+          "displayName": "WsB Buck",
+          "username": "ᵂˢᴮ_Buckey",
+          "kd": 7.155,
+          "winrate": 21.8,
+          "wins": 671,
+          "kills": 17221,
+          "matches": 3078
+        },
+        "ttbobbyfn": {
+          "displayName": "WsB_TTBOBBYfn",
+          "username": "RAC Andrew",
+          "kd": 1.974,
+          "winrate": 8.867,
+          "wins": 580,
+          "kills": 11767,
+          "matches": 6541
+        },
+        "btajordan": {
+          "displayName": "TT BTAJORDAN",
+          "username": "ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ",
+          "kd": 3.654,
+          "winrate": 12.469,
+          "wins": 2283,
+          "kills": 58555,
+          "matches": 18309
+        },
+        "shloozyyy": {
+          "displayName": "Shloozyyy ᵀᵀ",
+          "username": "Shloozyyy ᵀᵀ",
+          "kd": 4.245,
+          "winrate": 22.01,
+          "wins": 2518,
+          "kills": 37872,
+          "matches": 11440
+        },
+        "lazy": {
+          "displayName": "ʷˢᵇLazy",
+          "username": "ʷˢᵇLazy",
+          "kd": 7.043,
+          "winrate": 24.736,
+          "wins": 6710,
+          "kills": 143789,
+          "matches": 27127
+        },
+        "elusion": {
+          "displayName": "ᵂˢᴮ Elusion keys",
+          "username": "ᵂˢᴮ Elusion keys",
+          "kd": 3.475,
+          "winrate": 3.612,
+          "wins": 824,
+          "kills": 76408,
+          "matches": 22814
+        },
+        "kenny": {
+          "displayName": "WsB_Kenny",
+          "username": "ᵖᵃᵖⁱ ᵏᵉⁿⁿʸ",
+          "kd": 8.707,
+          "winrate": 27.125,
+          "wins": 1171,
+          "kills": 27393,
+          "matches": 4317
+        },
+        "mysterious": {
+          "displayName": "WsB Mysterious",
+          "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
+          "kd": 4.29,
+          "winrate": 12.748,
+          "wins": 2277,
+          "kills": 66852,
+          "matches": 17862
+        },
+        "ohitskatie": {
+          "displayName": "WsB_ohitskatie",
+          "username": "ᵗᵗohitskatie ʚїɞ",
+          "kd": 3.415,
+          "winrate": 16.441,
+          "wins": 1907,
+          "kills": 33098,
+          "matches": 11599
+        },
+        "rxg": {
+          "displayName": "TIKTOK RXG",
+          "username": "TIKTOK RXG",
+          "kd": 2.616,
+          "winrate": 7.906,
+          "wins": 1264,
+          "kills": 38511,
+          "matches": 15988
+        },
+        "iinsanity": {
+          "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
+          "username": "ᵂˢᴮ iinsanity ᵗᵗ",
+          "kd": 4.842,
+          "winrate": 16.443,
+          "wins": 5218,
+          "kills": 128374,
+          "matches": 31733
+        },
+        "rina": {
+          "displayName": "WsB_Rina",
+          "username": "TTBadGirlRina",
+          "kd": 2.24,
+          "winrate": 20.853,
+          "wins": 4029,
+          "kills": 34252,
+          "matches": 19321
+        }
+      }
     }
   ]
 }
