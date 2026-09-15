@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T23:05:16.157Z",
+  "fetchedAt": "2026-09-15T00:07:43.221Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -73,23 +73,14 @@
       "kills": 37870,
       "matches": 11437
     },
-    "allieontt": {
-      "displayName": "WsB_Allie",
-      "username": "ALLIEONTT",
-      "kd": 1.761,
-      "winrate": 13.599,
-      "wins": 3108,
-      "kills": 34770,
-      "matches": 22854
-    },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
       "kd": 7.045,
-      "winrate": 24.743,
-      "wins": 6708,
-      "kills": 143737,
-      "matches": 27111
+      "winrate": 24.742,
+      "wins": 6709,
+      "kills": 143761,
+      "matches": 27116
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -131,10 +122,10 @@
       "displayName": "TIKTOK RXG",
       "username": "TIKTOK RXG",
       "kd": 2.616,
-      "winrate": 7.898,
-      "wins": 1262,
-      "kills": 38498,
-      "matches": 15978
+      "winrate": 7.903,
+      "wins": 1263,
+      "kills": 38505,
+      "matches": 15982
     },
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
