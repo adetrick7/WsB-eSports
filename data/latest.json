@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T10:07:02.651Z",
+  "fetchedAt": "2026-09-15T11:06:12.092Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -41,10 +41,10 @@
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
       "kd": 7.149,
-      "winrate": 21.748,
+      "winrate": 21.726,
       "wins": 667,
-      "kills": 17157,
-      "matches": 3067
+      "kills": 17178,
+      "matches": 3070
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
@@ -131,10 +131,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.841,
-      "winrate": 16.439,
+      "winrate": 16.437,
       "wins": 5213,
-      "kills": 128288,
-      "matches": 31711
+      "kills": 128298,
+      "matches": 31715
     },
     "rina": {
       "displayName": "WsB_Rina",
