@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T12:07:24.424Z",
+  "fetchedAt": "2026-09-15T13:06:30.941Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -14,10 +14,10 @@
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.11,
-      "winrate": 15.535,
+      "winrate": 15.533,
       "wins": 2325,
-      "kills": 51958,
-      "matches": 14966
+      "kills": 51961,
+      "matches": 14968
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
@@ -40,11 +40,11 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.152,
-      "winrate": 21.745,
-      "wins": 668,
-      "kills": 17194,
-      "matches": 3072
+      "kd": 7.153,
+      "winrate": 21.756,
+      "wins": 669,
+      "kills": 17209,
+      "matches": 3075
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
@@ -78,9 +78,9 @@
       "username": "ʷˢᵇLazy",
       "kd": 7.043,
       "winrate": 24.736,
-      "wins": 6709,
-      "kills": 143770,
-      "matches": 27122
+      "wins": 6710,
+      "kills": 143789,
+      "matches": 27126
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -112,11 +112,11 @@
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
       "username": "ᵗᵗohitskatie ʚїɞ",
-      "kd": 3.414,
-      "winrate": 16.44,
-      "wins": 1906,
-      "kills": 33079,
-      "matches": 11594
+      "kd": 3.415,
+      "winrate": 16.442,
+      "wins": 1907,
+      "kills": 33097,
+      "matches": 11598
     },
     "rxg": {
       "displayName": "TIKTOK RXG",
@@ -132,9 +132,9 @@
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.841,
       "winrate": 16.441,
-      "wins": 5215,
-      "kills": 128320,
-      "matches": 31720
+      "wins": 5216,
+      "kills": 128341,
+      "matches": 31726
     },
     "rina": {
       "displayName": "WsB_Rina",
