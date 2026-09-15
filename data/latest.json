@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T20:06:17.765Z",
+  "fetchedAt": "2026-09-15T21:05:56.018Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -40,11 +40,11 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.152,
-      "winrate": 21.779,
+      "kd": 7.151,
+      "winrate": 21.765,
       "wins": 671,
-      "kills": 17237,
-      "matches": 3081
+      "kills": 17248,
+      "matches": 3083
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
@@ -77,10 +77,10 @@
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
       "kd": 7.043,
-      "winrate": 24.74,
-      "wins": 6712,
-      "kills": 143810,
-      "matches": 27130
+      "winrate": 24.741,
+      "wins": 6713,
+      "kills": 143821,
+      "matches": 27133
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
