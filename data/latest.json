@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T01:06:45.000Z",
+  "fetchedAt": "2026-09-15T02:07:33.837Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -22,11 +22,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.093,
-      "winrate": 11.525,
+      "kd": 3.094,
+      "winrate": 11.523,
       "wins": 653,
-      "kills": 15506,
-      "matches": 5666
+      "kills": 15513,
+      "matches": 5667
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -40,11 +40,11 @@
     "buck": {
       "displayName": "WsB Buck",
       "username": "ᵂˢᴮ_Buckey",
-      "kd": 7.152,
-      "winrate": 21.762,
+      "kd": 7.15,
+      "winrate": 21.755,
       "wins": 667,
-      "kills": 17150,
-      "matches": 3065
+      "kills": 17152,
+      "matches": 3066
     },
     "ttbobbyfn": {
       "displayName": "WsB_TTBOBBYfn",
@@ -67,11 +67,11 @@
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
       "username": "Shloozyyy ᵀᵀ",
-      "kd": 4.246,
-      "winrate": 22.008,
+      "kd": 4.245,
+      "winrate": 22.006,
       "wins": 2517,
-      "kills": 37870,
-      "matches": 11437
+      "kills": 37871,
+      "matches": 11438
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
@@ -85,11 +85,11 @@
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
-      "kd": 3.474,
+      "kd": 3.475,
       "winrate": 3.612,
       "wins": 824,
-      "kills": 76393,
-      "matches": 22812
+      "kills": 76408,
+      "matches": 22814
     },
     "kenny": {
       "displayName": "WsB_Kenny",
@@ -104,10 +104,10 @@
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.288,
-      "winrate": 12.73,
-      "wins": 2272,
-      "kills": 66783,
-      "matches": 17848
+      "winrate": 12.735,
+      "wins": 2273,
+      "kills": 66791,
+      "matches": 17849
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -122,10 +122,10 @@
       "displayName": "TIKTOK RXG",
       "username": "TIKTOK RXG",
       "kd": 2.616,
-      "winrate": 7.907,
+      "winrate": 7.906,
       "wins": 1264,
       "kills": 38511,
-      "matches": 15985
+      "matches": 15988
     },
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
