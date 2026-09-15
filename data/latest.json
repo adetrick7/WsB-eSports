@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-15T07:08:30.350Z",
+  "fetchedAt": "2026-09-15T08:06:54.658Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.341,
-      "winrate": 22.325,
+      "winrate": 22.32,
       "wins": 4814,
-      "kills": 55962,
-      "matches": 21563
+      "kills": 55969,
+      "matches": 21568
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
@@ -23,10 +23,10 @@
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
       "kd": 3.096,
-      "winrate": 11.564,
+      "winrate": 11.557,
       "wins": 656,
-      "kills": 15531,
-      "matches": 5673
+      "kills": 15543,
+      "matches": 5676
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -104,10 +104,10 @@
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.289,
-      "winrate": 12.747,
+      "winrate": 12.744,
       "wins": 2276,
-      "kills": 66822,
-      "matches": 17855
+      "kills": 66835,
+      "matches": 17860
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
