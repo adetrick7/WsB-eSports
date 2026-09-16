@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T12:07:22.035Z",
+  "fetchedAt": "2026-09-16T13:07:26.823Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -22,11 +22,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.102,
-      "winrate": 11.699,
+      "kd": 3.103,
+      "winrate": 11.693,
       "wins": 668,
-      "kills": 15641,
-      "matches": 5710
+      "kills": 15657,
+      "matches": 5713
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -49,11 +49,11 @@
     "btajordan": {
       "displayName": "TT BTAJORDAN",
       "username": "ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ",
-      "kd": 3.651,
-      "winrate": 12.459,
+      "kd": 3.65,
+      "winrate": 12.454,
       "wins": 2284,
-      "kills": 58588,
-      "matches": 18332
+      "kills": 58595,
+      "matches": 18339
     },
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
@@ -122,28 +122,28 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.843,
-      "winrate": 16.461,
+      "winrate": 16.459,
       "wins": 5229,
-      "kills": 128515,
-      "matches": 31766
+      "kills": 128528,
+      "matches": 31769
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
       "kd": 2.239,
-      "winrate": 20.844,
+      "winrate": 20.842,
       "wins": 4030,
-      "kills": 34261,
-      "matches": 19334
+      "kills": 34264,
+      "matches": 19336
     },
     "bee": {
       "displayName": "WsB_Bee",
       "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
-      "kd": 1.792,
-      "winrate": 5.88,
+      "kd": 1.795,
+      "winrate": 5.877,
       "wins": 245,
-      "kills": 7029,
-      "matches": 4167
+      "kills": 7042,
+      "matches": 4169
     },
     "natii": {
       "displayName": "WsB_Natii",
