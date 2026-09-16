@@ -293,6 +293,20 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     card.appendChild(indicator);
   }
 
+  function setProfileLink(card,member){
+    if(!member||card.dataset.profileLinkReady)return;
+    card.dataset.profileLinkReady="true";
+    card.classList.add("member-card-link");
+    card.setAttribute("role","link");
+    card.setAttribute("tabindex","0");
+    card.setAttribute("aria-label","Open "+member.displayName+" detailed stats");
+    function openProfile(){window.location.href="stats/"+encodeURIComponent(member.id)+"/";}
+    card.addEventListener("click",openProfile);
+    card.addEventListener("keydown",function(event){
+      if(event.key==="Enter"||event.key===" "){event.preventDefault();openProfile();}
+    });
+  }
+
   function applyStats(card,stats){
     const map={
       kd:v=>v.toFixed(2),
@@ -308,25 +322,29 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     });
   }
 
-  fetch("data/latest.json",{cache:"no-store"})
-    .then(function(res){return res.ok?res.json():null;})
-    .then(function(snapshot){
-      if(!snapshot||!snapshot.players)return;
-      if(refreshNote&&snapshot.fetchedAt){
-        refreshNote.textContent="Last updated "+formatPacific(snapshot.fetchedAt)+". Refreshes hourly on the hour.";
-      }
-      const byUsername=new Map(Object.values(snapshot.players).map(function(player){
-        return [player.username,player];
-      }));
-      cards.forEach(function(card){
-        const stats=byUsername.get(card.getAttribute("data-fn-user"));
-        setSyncIssue(card,!stats);
-        if(stats)applyStats(card,stats);
-      });
-    })
-    .catch(function(){
-      // Keep the manually entered fallback numbers if the daily snapshot is unavailable.
+  Promise.all([
+    fetch("data/latest.json",{cache:"no-store"}).then(function(res){return res.ok?res.json():null;}),
+    fetch("data/roster.json",{cache:"no-store"}).then(function(res){return res.ok?res.json():[];})
+  ]).then(function(results){
+    const snapshot=results[0];
+    const roster=Array.isArray(results[1])?results[1]:[];
+    const rosterByUsername=new Map(roster.map(function(member){return [member.username,member];}));
+    cards.forEach(function(card){
+      setProfileLink(card,rosterByUsername.get(card.getAttribute("data-fn-user")));
     });
+    if(!snapshot||!snapshot.players)return;
+    if(refreshNote&&snapshot.fetchedAt){
+      refreshNote.textContent="Last updated "+formatPacific(snapshot.fetchedAt)+". Refreshes hourly on the hour.";
+    }
+    const byUsername=new Map(Object.values(snapshot.players).map(function(player){return [player.username,player];}));
+    cards.forEach(function(card){
+      const stats=byUsername.get(card.getAttribute("data-fn-user"));
+      setSyncIssue(card,!stats);
+      if(stats)applyStats(card,stats);
+    });
+  }).catch(function(){
+    // Keep the simple roster view if saved data is unavailable.
+  });
 })();
 
 
@@ -430,11 +448,17 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 
   Promise.all([
     fetch("data/latest.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
-    fetch("data/history.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+    fetch("data/history.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+    fetch("data/roster.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
   ]).then(function(results){
     const latest=results[0];
     const history=results[1];
+    const roster=Array.isArray(results[2])?results[2]:[];
     if(!latest||!latest.players||!Object.keys(latest.players).length)return;
+    const activeIds=new Set(roster.map(function(member){return member.id;}));
+    const activePlayers=Object.fromEntries(Object.entries(latest.players).filter(function(entry){return activeIds.has(entry[0]);}));
+    const activeLatest=Object.assign({},latest,{players:activePlayers});
+    if(!Object.keys(activeLatest.players).length)return;
     const latestTime=Date.parse(latest.fetchedAt);
     const snapshots=history&&Array.isArray(history.snapshots)?history.snapshots:[];
 
@@ -442,15 +466,15 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       lifetimeRefreshNote.textContent="Last updated "+formatPacific(latest.fetchedAt)+". Refreshes hourly on the hour.";
     }
 
-    const lifetimeEntries=Object.values(latest.players);
+    const lifetimeEntries=Object.values(activeLatest.players);
     let lifetimeHtml="";
     lifetimeHtml+=buildCategory("Best K/D",topBy(lifetimeEntries,"kd"),function(v){return v.toFixed(2);});
     lifetimeHtml+=buildCategory("Most Kills (Lifetime)",topBy(lifetimeEntries,"kills"),fmtInt);
     lifetimeHtml+=buildCategory("Most Wins (Lifetime)",topBy(lifetimeEntries,"wins"),fmtInt);
     lifetimeGrid.innerHTML=lifetimeHtml||lifetimeGrid.innerHTML;
 
-    renderPeriod(pastDayGrid,latest,findBaseline(snapshots,latestTime-DAY_MS),"24-hour stats will be ready tomorrow.","24 Hours");
-    renderPeriod(pastWeekGrid,latest,findBaseline(snapshots,latestTime-WEEK_MS),"Weekly stats will be ready next week.","7 Days");
+    renderPeriod(pastDayGrid,activeLatest,findBaseline(snapshots,latestTime-DAY_MS),"24-hour stats will be ready tomorrow.","24 Hours");
+    renderPeriod(pastWeekGrid,activeLatest,findBaseline(snapshots,latestTime-WEEK_MS),"Weekly stats will be ready next week.","7 Days");
   });
 })();
 
@@ -514,5 +538,284 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       item.classList.toggle("open", !isOpen);
       answer.style.maxHeight = isOpen ? "0" : answer.scrollHeight + "px";
     });
+  });
+})();
+
+
+// Stats page — detailed member profile view
+(function(){
+  const overview=document.getElementById("statsOverview");
+  const highlights=document.getElementById("statsHighlights");
+  const directory=document.getElementById("statsDirectory");
+  const refreshNote=document.getElementById("statsRefreshNote");
+  const directoryNote=document.getElementById("statsDirectoryNote");
+  if(!overview||!highlights||!directory)return;
+
+  const avatarAssets={
+    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg"
+  };
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[character];});
+  }
+  function fmtInt(value){return Math.round(value||0).toLocaleString("en-US");}
+  function fmtDecimal(value){return Number(value||0).toFixed(2);}
+  function fmtPercent(value){return Number(value||0).toFixed(1)+"%";}
+  function formatPacific(value){
+    return new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(value));
+  }
+  function leader(entries,key){
+    return entries.reduce(function(best,entry){return !best||entry.stats[key]>best.stats[key]?entry:best;},null);
+  }
+  function highlight(label,entry,value){
+    if(!entry)return "";
+    return '<div class="stats-highlight"><span>'+label+'</span><strong>'+escapeHtml(entry.member.displayName)+'</strong><b>'+value+'</b></div>';
+  }
+  function initials(name){
+    return name.replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"W";
+  }
+
+  Promise.all([
+    fetch("data/roster.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():[];}).catch(function(){return [];}),
+    fetch("data/latest.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():null;}).catch(function(){return null;})
+  ]).then(function(results){
+    const roster=Array.isArray(results[0])?results[0]:[];
+    const snapshot=results[1];
+    const players=snapshot&&snapshot.players?snapshot.players:{};
+    const entries=roster.map(function(member){return {member:member,stats:players[member.id]||null};});
+    const synced=entries.filter(function(entry){return entry.stats;});
+
+    if(refreshNote&&snapshot&&snapshot.fetchedAt){
+      refreshNote.textContent="Last updated "+formatPacific(snapshot.fetchedAt)+". Refreshes hourly on the hour.";
+    }
+    if(directoryNote){
+      directoryNote.textContent=synced.length+" of "+roster.length+" linked profiles synced.";
+    }
+
+    const total=function(key){return synced.reduce(function(sum,entry){return sum+(Number(entry.stats[key])||0);},0);};
+    const summary=[
+      ["LINKED PROFILES",synced.length+" / "+roster.length],
+      ["TOTAL WINS",fmtInt(total("wins"))],
+      ["TOTAL KILLS",fmtInt(total("kills"))],
+      ["TOTAL MATCHES",fmtInt(total("matches"))]
+    ];
+    overview.innerHTML=summary.map(function(item){return '<div class="stats-summary-card"><span>'+item[0]+'</span><strong>'+item[1]+'</strong></div>';}).join("");
+
+    const topKd=leader(synced,"kd");
+    const topWinRate=leader(synced,"winrate");
+    const topKills=leader(synced,"kills");
+    const topWins=leader(synced,"wins");
+    highlights.innerHTML=
+      highlight("BEST K/D",topKd,topKd?fmtDecimal(topKd.stats.kd):"—")+
+      highlight("BEST WIN RATE",topWinRate,topWinRate?fmtPercent(topWinRate.stats.winrate):"—")+
+      highlight("MOST KILLS",topKills,topKills?fmtInt(topKills.stats.kills):"—")+
+      highlight("MOST WINS",topWins,topWins?fmtInt(topWins.stats.wins):"—");
+
+    const leaderIds=new Map([[topKd,"Top K/D"],[topWinRate,"Best Win Rate"],[topKills,"Most Kills"],[topWins,"Most Wins"]].filter(function(pair){return pair[0];}).map(function(pair){return [pair[0].member.id,pair[1]];}));
+    const searchInput=document.getElementById("statsSearch");
+    const sortInput=document.getElementById("statsSort");
+
+    function metricValue(entry,key){
+      if(!entry.stats)return null;
+      if(key==="killsPerMatch")return entry.stats.matches?entry.stats.kills/entry.stats.matches:0;
+      return Number(entry.stats[key])||0;
+    }
+
+    function playerCard(entry){
+      const member=entry.member;
+      const stats=entry.stats;
+      const asset=avatarAssets[member.id];
+      const avatar=asset
+        ? '<div class="stats-avatar" style="background-image:url('+asset+')"></div>'
+        : '<div class="stats-avatar stats-avatar-initial">'+initials(member.displayName)+'</div>';
+      const badge=leaderIds.get(member.id)?'<span class="stats-badge">'+leaderIds.get(member.id)+'</span>':"";
+      if(!stats){
+        return '<a class="stats-player stats-player-issue" href="stats/'+encodeURIComponent(member.id)+'/" aria-label="Open '+escapeHtml(member.displayName)+' stats">'+avatar+'<div class="stats-player-head"><div><h3>'+escapeHtml(member.displayName)+'</h3><p>'+escapeHtml(member.username)+'</p></div><span class="stats-sync-state"><i></i>Needs attention</span></div><p class="stats-issue-copy">This linked profile did not return data in the latest refresh. Check the Fortnite name and profile privacy.</p></a>';
+      }
+      const killsPerMatch=stats.matches?stats.kills/stats.matches:0;
+      return '<a class="stats-player" href="stats/'+encodeURIComponent(member.id)+'/" aria-label="Open '+escapeHtml(member.displayName)+' stats">'+avatar+'<div class="stats-player-head"><div><h3>'+escapeHtml(member.displayName)+'</h3><p>'+escapeHtml(stats.username||member.username)+'</p></div><span class="stats-sync-state stats-sync-ok"><i></i>Synced</span></div>'+badge+'<div class="stats-metrics">'
+        +'<div><span>K/D</span><b>'+fmtDecimal(stats.kd)+'</b></div>'
+        +'<div><span>WIN RATE</span><b>'+fmtPercent(stats.winrate)+'</b></div>'
+        +'<div><span>WINS</span><b>'+fmtInt(stats.wins)+'</b></div>'
+        +'<div><span>KILLS</span><b>'+fmtInt(stats.kills)+'</b></div>'
+        +'<div><span>MATCHES</span><b>'+fmtInt(stats.matches)+'</b></div>'
+        +'<div><span>KILLS / MATCH</span><b>'+fmtDecimal(killsPerMatch)+'</b></div>'
+        +'</div></a>';
+    }
+
+    function renderDirectory(){
+      const search=(searchInput&&searchInput.value||"").trim().toLocaleLowerCase();
+      const sort=sortInput?sortInput.value:"roster";
+      const filtered=entries.filter(function(entry){
+        const searchable=(entry.member.displayName+" "+entry.member.username).toLocaleLowerCase();
+        return !search||searchable.includes(search);
+      });
+      if(sort==="name"){
+        filtered.sort(function(a,b){return a.member.displayName.localeCompare(b.member.displayName);});
+      }else if(sort==="issue"){
+        filtered.sort(function(a,b){return Number(Boolean(a.stats))-Number(Boolean(b.stats));});
+      }else if(sort!=="roster"){
+        filtered.sort(function(a,b){
+          const aValue=metricValue(a,sort);
+          const bValue=metricValue(b,sort);
+          if(aValue===null)return 1;
+          if(bValue===null)return -1;
+          return bValue-aValue||a.member.displayName.localeCompare(b.member.displayName);
+        });
+      }
+      if(directoryNote)directoryNote.textContent=filtered.length+" of "+roster.length+" profiles shown.";
+      directory.innerHTML=filtered.map(playerCard).join("")||'<p class="lb-empty">No players match your search.</p>';
+    }
+
+    if(searchInput)searchInput.addEventListener("input",renderDirectory);
+    if(sortInput)sortInput.addEventListener("change",renderDirectory);
+    renderDirectory();
+  });
+})();
+
+
+// Player Stats detail pages
+(function(){
+  const detail=document.getElementById("playerDetail");
+  const memberId=document.body.dataset.memberId;
+  const root=document.body.dataset.siteRoot||"";
+  if(!detail||!memberId)return;
+
+  const avatarAssets={
+    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg"
+  };
+  const DAY_MS=24*60*60*1000;
+  const WEEK_MS=7*DAY_MS;
+  const BASELINE_TOLERANCE_MS=6*60*60*1000;
+  function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[character];});}
+  function fmtInt(value){return Math.round(value||0).toLocaleString("en-US");}
+  function fmtDecimal(value){return Number(value||0).toFixed(2);}
+  function fmtPercent(value){return Number(value||0).toFixed(1)+"%";}
+  function formatPacific(value){return new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(value));}
+  function fitProfileName(){
+    const name=detail.querySelector(".profile-hero-card h1");
+    if(!name)return;
+    name.style.fontSize="";
+    name.style.whiteSpace="nowrap";
+    const minimum=window.innerWidth<=650?24:30;
+    let size=parseFloat(window.getComputedStyle(name).fontSize);
+    while(name.scrollWidth>name.clientWidth&&size>minimum){
+      size-=1;
+      name.style.fontSize=size+"px";
+    }
+  }
+  window.addEventListener("resize",fitProfileName);
+
+  function setupComparison(synced,currentMember,currentStats){
+    const toggle=document.getElementById("profileCompareToggle");
+    const controls=document.getElementById("profileCompareControls");
+    const select=document.getElementById("profileCompareSelect");
+    const result=document.getElementById("profileCompareResult");
+    if(!toggle||!controls||!select||!result)return;
+    const candidates=synced.filter(function(entry){return entry.id!==currentMember.id;}).sort(function(a,b){return a.member.displayName.localeCompare(b.member.displayName);});
+    select.innerHTML='<option value="">Choose a member</option>'+candidates.map(function(entry){return '<option value="'+escapeHtml(entry.id)+'">'+escapeHtml(entry.member.displayName)+'</option>';}).join("");
+    toggle.addEventListener("click",function(){
+      const opening=controls.hidden;
+      controls.hidden=!opening;
+      toggle.setAttribute("aria-expanded",opening?"true":"false");
+    });
+    function valueClass(current,other){
+      if(current===other)return "";
+      return current>other?"profile-compare-winner":"profile-compare-lower";
+    }
+    function row(label,current,other,formatter){
+      return '<div class="profile-compare-row"><b class="'+valueClass(current,other)+'">'+formatter(current)+'</b><span>'+label+'</span><b class="'+valueClass(other,current)+'">'+formatter(other)+'</b></div>';
+    }
+    function render(otherEntry){
+      const other=otherEntry.stats;
+      const currentKpm=currentStats.matches?currentStats.kills/currentStats.matches:0;
+      const otherKpm=other.matches?other.kills/other.matches:0;
+      result.innerHTML='<div class="profile-compare-matchup"><div><span>VIEWING</span><strong>'+escapeHtml(currentMember.displayName)+'</strong></div><i>VS</i><div><span>COMPARING</span><strong>'+escapeHtml(otherEntry.member.displayName)+'</strong></div></div><div class="profile-compare-rows">'
+        +row("K/D",currentStats.kd,other.kd,fmtDecimal)
+        +row("WIN RATE",currentStats.winrate,other.winrate,fmtPercent)
+        +row("WINS",currentStats.wins,other.wins,fmtInt)
+        +row("KILLS",currentStats.kills,other.kills,fmtInt)
+        +row("MATCHES",currentStats.matches,other.matches,fmtInt)
+        +row("KILLS / MATCH",currentKpm,otherKpm,fmtDecimal)
+        +'</div><p class="profile-compare-key"><b>Brighter number</b> has the higher value for that stat.</p>';
+    }
+    select.addEventListener("change",function(){
+      const selected=candidates.find(function(entry){return entry.id===select.value;});
+      result.innerHTML=selected?"":'<p class="profile-empty">Choose a synced member to compare their stats.</p>';
+      if(selected)render(selected);
+    });
+    result.innerHTML='<p class="profile-empty">Choose a synced member to compare their stats.</p>';
+  }
+
+  function findBaseline(snapshots,targetTime){
+    return snapshots.filter(function(snapshot){return snapshot&&snapshot.players&&Number.isFinite(Date.parse(snapshot.fetchedAt));})
+      .sort(function(a,b){return Math.abs(Date.parse(a.fetchedAt)-targetTime)-Math.abs(Date.parse(b.fetchedAt)-targetTime);})
+      .find(function(snapshot){return Math.abs(Date.parse(snapshot.fetchedAt)-targetTime)<=BASELINE_TOLERANCE_MS;});
+  }
+  function activity(latest,baseline,id,label,emptyText){
+    const previous=baseline&&baseline.players?baseline.players[id]:null;
+    const current=latest.players[id];
+    if(!previous||!current)return '<section class="profile-panel"><p class="label">'+label+'</p><p class="profile-empty">'+emptyText+"</p></section>";
+    const kills=current.kills-previous.kills;
+    const wins=current.wins-previous.wins;
+    const matches=current.matches-previous.matches;
+    if(kills<0||wins<0||matches<0)return '<section class="profile-panel"><p class="label">'+label+'</p><p class="profile-empty">New activity data will appear after the next refresh.</p></section>';
+    return '<section class="profile-panel"><p class="label">'+label+'</p><div class="profile-activity-stats"><div><span>KILLS</span><b>'+fmtInt(kills)+'</b></div><div><span>WINS</span><b>'+fmtInt(wins)+'</b></div><div><span>MATCHES</span><b>'+fmtInt(matches)+'</b></div></div></section>';
+  }
+
+  Promise.all([
+    fetch(root+"data/roster.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():[];}).catch(function(){return [];}),
+    fetch(root+"data/latest.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():null;}).catch(function(){return null;}),
+    fetch(root+"data/history.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():null;}).catch(function(){return null;})
+  ]).then(function(results){
+    const roster=Array.isArray(results[0])?results[0]:[];
+    const latest=results[1];
+    const history=results[2];
+    const member=roster.find(function(item){return item.id===memberId;});
+    if(!member){detail.innerHTML='<p class="lb-empty">This player profile could not be found.</p>';return;}
+    const stats=latest&&latest.players?latest.players[member.id]:null;
+    const asset=avatarAssets[member.id];
+    const avatar=asset?'<div class="profile-avatar" style="background-image:url('+escapeHtml(root+asset)+')"></div>':'<div class="profile-avatar profile-avatar-initial">'+escapeHtml(member.displayName.replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"W")+'</div>';
+    const status=stats?'<span class="stats-sync-state stats-sync-ok"><i></i>Synced</span>':'<span class="stats-sync-state"><i></i>Needs attention</span>';
+    let html='<a class="profile-back" href="'+root+'stats.html">← BACK TO ALL STATS</a><section class="profile-hero-card">'+avatar+'<div><p class="label">FORTNITE MEMBER PROFILE</p><h1>'+escapeHtml(member.displayName)+'</h1><p class="profile-username">'+escapeHtml((stats&&stats.username)||member.username)+'</p>'+status+'</div></section>';
+    if(!stats){
+      detail.innerHTML=html+'<section class="profile-panel profile-panel-wide"><p class="label">PROFILE STATUS</p><h2>STATS NEED ATTENTION</h2><p class="profile-empty">This linked Fortnite profile did not return data in the latest refresh. Check the player name and make sure Public Game Stats are enabled.</p></section>';
+      requestAnimationFrame(fitProfileName);
+      return;
+    }
+    const rosterById=new Map(roster.map(function(entry){return [entry.id,entry];}));
+    const synced=Object.keys(latest.players).map(function(id){
+      const syncedMember=rosterById.get(id)||{id:id,displayName:latest.players[id].displayName||id};
+      return {id:id,member:syncedMember,stats:latest.players[id]};
+    });
+    function rank(key){return synced.slice().sort(function(a,b){return b.stats[key]-a.stats[key];}).findIndex(function(entry){return entry.id===member.id;})+1;}
+    const killsPerMatch=stats.matches?stats.kills/stats.matches:0;
+    html+='<div class="profile-performance">'
+      +'<div class="profile-stat-card"><span>K/D</span><b>'+fmtDecimal(stats.kd)+'</b></div>'
+      +'<div class="profile-stat-card"><span>WIN RATE</span><b>'+fmtPercent(stats.winrate)+'</b></div>'
+      +'<div class="profile-stat-card"><span>WINS</span><b>'+fmtInt(stats.wins)+'</b></div>'
+      +'<div class="profile-stat-card"><span>KILLS</span><b>'+fmtInt(stats.kills)+'</b></div>'
+      +'<div class="profile-stat-card"><span>MATCHES</span><b>'+fmtInt(stats.matches)+'</b></div>'
+      +'<div class="profile-stat-card"><span>KILLS / MATCH</span><b>'+fmtDecimal(killsPerMatch)+'</b></div>'
+      +'</div>';
+    html+='<section class="profile-panel profile-compare-panel"><button type="button" class="profile-compare-toggle" id="profileCompareToggle" aria-expanded="false"><span>COMPARE WITH ANOTHER MEMBER</span><b>↔</b></button><div class="profile-compare-controls" id="profileCompareControls" hidden><label>SELECT A SYNCED MEMBER<select id="profileCompareSelect"></select></label><div id="profileCompareResult"></div></div></section>';
+    html+='<section class="profile-panel"><p class="label">TEAM STANDING</p><div class="profile-ranks">'
+      +'<div><span>K/D RANK</span><b>#'+rank("kd")+'</b></div>'
+      +'<div><span>WIN RATE RANK</span><b>#'+rank("winrate")+'</b></div>'
+      +'<div><span>WINS RANK</span><b>#'+rank("wins")+'</b></div>'
+      +'<div><span>KILLS RANK</span><b>#'+rank("kills")+'</b></div>'
+      +'<div><span>MATCHES RANK</span><b>#'+rank("matches")+'</b></div>'
+      +'</div></section>';
+    const snapshots=history&&Array.isArray(history.snapshots)?history.snapshots:[];
+    const latestTime=Date.parse(latest.fetchedAt);
+    html+='<div class="profile-activity-grid">'
+      +activity(latest,findBaseline(snapshots,latestTime-DAY_MS),member.id,"PAST 24 HOURS","24-hour stats will be ready tomorrow.")
+      +activity(latest,findBaseline(snapshots,latestTime-WEEK_MS),member.id,"PAST 7 DAYS","Weekly stats will be ready next week.")
+      +'</div><p class="profile-data-note">Last updated '+formatPacific(latest.fetchedAt)+'. Refreshes hourly on the hour.</p>';
+    detail.innerHTML=html;
+    setupComparison(synced,member,stats);
+    requestAnimationFrame(fitProfileName);
   });
 })();
