@@ -553,7 +553,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 
   const avatarAssets={
     lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg"
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",ohitskatie:"ohitskatie.png"
   };
 
   function escapeHtml(value){
@@ -684,7 +684,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 
   const avatarAssets={
     lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg"
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",ohitskatie:"ohitskatie.png"
   };
   const DAY_MS=24*60*60*1000;
   const WEEK_MS=7*DAY_MS;
