@@ -554,7 +554,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 
   const avatarAssets={
     lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",ohitskatie:"ohitskatie.png"
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
   };
 
   function escapeHtml(value){
@@ -685,7 +685,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 
   const avatarAssets={
     lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",ohitskatie:"ohitskatie.png"
+    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
   };
   const streamProfiles={
     lizzie:{platform:"TikTok",url:"https://www.tiktok.com/@ok.lizzlee"},
