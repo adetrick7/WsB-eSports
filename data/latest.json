@@ -1,32 +1,32 @@
 {
-  "fetchedAt": "2026-09-16T04:05:42.830Z",
+  "fetchedAt": "2026-09-16T05:05:28.571Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.341,
-      "winrate": 22.319,
-      "wins": 4815,
-      "kills": 55988,
-      "matches": 21574
+      "winrate": 22.322,
+      "wins": 4816,
+      "kills": 55992,
+      "matches": 21575
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.112,
-      "winrate": 15.546,
-      "wins": 2329,
-      "kills": 52019,
-      "matches": 14981
+      "winrate": 15.552,
+      "wins": 2330,
+      "kills": 52022,
+      "matches": 14982
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.097,
-      "winrate": 11.584,
+      "kd": 3.096,
+      "winrate": 11.576,
       "wins": 659,
-      "kills": 15578,
-      "matches": 5689
+      "kills": 15586,
+      "matches": 5693
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -40,11 +40,11 @@
     "botlupitaa": {
       "displayName": "Wsb BotLupitaa",
       "username": "botlupitaツ",
-      "kd": 4.339,
-      "winrate": 17.404,
-      "wins": 2080,
-      "kills": 42834,
-      "matches": 11951
+      "kd": 4.34,
+      "winrate": 17.408,
+      "wins": 2081,
+      "kills": 42848,
+      "matches": 11954
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -59,19 +59,19 @@
       "displayName": "Shloozyyy ᵀᵀ",
       "username": "Shloozyyy ᵀᵀ",
       "kd": 4.241,
-      "winrate": 21.988,
-      "wins": 2519,
-      "kills": 37898,
-      "matches": 11456
+      "winrate": 21.995,
+      "wins": 2520,
+      "kills": 37899,
+      "matches": 11457
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.044,
-      "winrate": 24.738,
-      "wins": 6716,
-      "kills": 143925,
-      "matches": 27149
+      "kd": 7.045,
+      "winrate": 24.74,
+      "wins": 6717,
+      "kills": 143946,
+      "matches": 27150
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -94,20 +94,20 @@
     "mysterious": {
       "displayName": "WsB Mysterious",
       "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
-      "kd": 4.29,
-      "winrate": 12.748,
+      "kd": 4.289,
+      "winrate": 12.746,
       "wins": 2277,
-      "kills": 66852,
-      "matches": 17862
+      "kills": 66854,
+      "matches": 17865
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.57,
-      "winrate": 17.243,
+      "winrate": 17.241,
       "wins": 6024,
-      "kills": 103212,
-      "matches": 34936
+      "kills": 103236,
+      "matches": 34940
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -125,7 +125,7 @@
       "winrate": 16.441,
       "wins": 5220,
       "kills": 128429,
-      "matches": 31749
+      "matches": 31750
     },
     "rina": {
       "displayName": "WsB_Rina",
@@ -139,20 +139,20 @@
     "bee": {
       "displayName": "WsB_Bee",
       "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
-      "kd": 1.784,
-      "winrate": 5.843,
+      "kd": 1.786,
+      "winrate": 5.839,
       "wins": 243,
-      "kills": 6988,
-      "matches": 4159
+      "kills": 7000,
+      "matches": 4162
     },
     "natii": {
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
-      "kd": 4.572,
-      "winrate": 19.6,
+      "kd": 4.571,
+      "winrate": 19.598,
       "wins": 1961,
-      "kills": 36775,
-      "matches": 10005
+      "kills": 36776,
+      "matches": 10006
     },
     "choom": {
       "displayName": "WsB_Choom",
