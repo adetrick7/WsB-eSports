@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T22:05:36.945Z",
+  "fetchedAt": "2026-09-16T23:06:03.686Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -104,10 +104,10 @@
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.572,
-      "winrate": 17.254,
-      "wins": 6031,
-      "kills": 103314,
-      "matches": 34955
+      "winrate": 17.258,
+      "wins": 6033,
+      "kills": 103327,
+      "matches": 34957
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -130,11 +130,11 @@
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
-      "kd": 2.239,
-      "winrate": 20.862,
+      "kd": 2.238,
+      "winrate": 20.86,
       "wins": 4038,
-      "kills": 34291,
-      "matches": 19356
+      "kills": 34292,
+      "matches": 19358
     },
     "bee": {
       "displayName": "WsB_Bee",
@@ -149,10 +149,10 @@
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
       "kd": 4.574,
-      "winrate": 19.616,
+      "winrate": 19.613,
       "wins": 1964,
-      "kills": 36812,
-      "matches": 10012
+      "kills": 36819,
+      "matches": 10014
     },
     "choom": {
       "displayName": "WsB_Choom",
@@ -161,7 +161,7 @@
       "winrate": 4.974,
       "wins": 1335,
       "kills": 89792,
-      "matches": 26841
+      "matches": 26842
     }
   }
 }
