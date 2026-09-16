@@ -26,7 +26,7 @@
   {
     "id": "botlupitaa",
     "displayName": "Wsb BotLupitaa",
-    "username": "botlupitaa",
+    "username": "botlupitaツ",
     "platform": "epic"
   },
   {
@@ -79,8 +79,8 @@
   },
   {
     "id": "dmo",
-    "displayName": "WsB_Dmo",
-    "username": "Dmo ぎ",
+    "displayName": "ᵂˢᴮ Dmo",
+    "username": "ᵂˢᴮ Dmo",
     "platform": "epic"
   },
   {
@@ -99,6 +99,24 @@
     "id": "rina",
     "displayName": "WsB_Rina",
     "username": "TTBadGirlRina",
+    "platform": "epic"
+  },
+  {
+    "id": "bee",
+    "displayName": "WsB_Bee",
+    "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
+    "platform": "epic"
+  },
+  {
+    "id": "natii",
+    "displayName": "WsB_Natii",
+    "username": "ᵀᵀxnatii13x",
+    "platform": "epic"
+  },
+  {
+    "id": "choom",
+    "displayName": "WsB_Choom",
+    "username": "OuchAkuma",
     "platform": "epic"
   }
 ]
