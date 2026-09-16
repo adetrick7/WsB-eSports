@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T13:07:26.823Z",
+  "fetchedAt": "2026-09-16T14:06:40.440Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -50,10 +50,10 @@
       "displayName": "TT BTAJORDAN",
       "username": "ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ",
       "kd": 3.65,
-      "winrate": 12.454,
-      "wins": 2284,
-      "kills": 58595,
-      "matches": 18339
+      "winrate": 12.458,
+      "wins": 2285,
+      "kills": 58607,
+      "matches": 18342
     },
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
@@ -122,19 +122,19 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.843,
-      "winrate": 16.459,
-      "wins": 5229,
-      "kills": 128528,
-      "matches": 31769
+      "winrate": 16.466,
+      "wins": 5232,
+      "kills": 128547,
+      "matches": 31775
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
       "kd": 2.239,
-      "winrate": 20.842,
-      "wins": 4030,
-      "kills": 34264,
-      "matches": 19336
+      "winrate": 20.848,
+      "wins": 4032,
+      "kills": 34268,
+      "matches": 19340
     },
     "bee": {
       "displayName": "WsB_Bee",
