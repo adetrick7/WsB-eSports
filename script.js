@@ -386,6 +386,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   const BASELINE_TOLERANCE_MS=6*60*60*1000;
 
   function fmtInt(n){return Math.round(n).toLocaleString("en-US");}
+  function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[character];});}
   function medalRank(i){return i+1;}
 
   function buildCategory(title,rows,valueFmt){
@@ -393,7 +394,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     let html='<div class="lb-category"><h3>'+title+"</h3>";
     rows.slice(0,5).forEach(function(row,i){
       html+='<div class="lb-row"><div class="lb-rank">'+medalRank(i)+"</div>"
-        +'<div class="lb-name">'+row.name+"</div>"
+        +(row.id?'<a class="lb-name" href="stats/'+encodeURIComponent(row.id)+'/" aria-label="Open '+escapeHtml(row.name)+' stats">'+escapeHtml(row.name)+'</a>':'<div class="lb-name">'+escapeHtml(row.name)+'</div>')
         +'<div class="lb-value">'+valueFmt(row.value)+"</div></div>";
     });
     return html+="</div>";
@@ -403,7 +404,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     return entries.filter(function(e){return typeof e[key]==="number"&&!isNaN(e[key]);})
       .sort(function(a,b){return b[key]-a[key];})
       .slice(0,n||5)
-      .map(function(e){return {name:e.displayName,value:e[key]};});
+      .map(function(e){return {id:e.id,name:e.displayName,value:e[key]};});
   }
 
   function formatPacific(value){
@@ -428,7 +429,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       const deltaWins=cur.wins-prev.wins;
       const deltaMatches=cur.matches-prev.matches;
       if(deltaKills<0||deltaWins<0||deltaMatches<0)return;
-      entries.push({displayName:cur.displayName,deltaKills:deltaKills,deltaWins:deltaWins,deltaMatches:deltaMatches});
+      entries.push({id:id,displayName:cur.displayName,deltaKills:deltaKills,deltaWins:deltaWins,deltaMatches:deltaMatches});
     });
     return entries;
   }
@@ -466,7 +467,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       lifetimeRefreshNote.textContent="Last updated "+formatPacific(latest.fetchedAt)+". Refreshes hourly on the hour.";
     }
 
-    const lifetimeEntries=Object.values(activeLatest.players);
+    const lifetimeEntries=Object.entries(activeLatest.players).map(function(entry){return Object.assign({id:entry[0]},entry[1]);});
     let lifetimeHtml="";
     lifetimeHtml+=buildCategory("Best K/D",topBy(lifetimeEntries,"kd"),function(v){return v.toFixed(2);});
     lifetimeHtml+=buildCategory("Most Kills (Lifetime)",topBy(lifetimeEntries,"kills"),fmtInt);
@@ -686,6 +687,10 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
     barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",ohitskatie:"ohitskatie.png"
   };
+  const streamProfiles={
+    lizzie:{platform:"TikTok",url:"https://www.tiktok.com/@ok.lizzlee"},
+    jen:{platform:"TikTok",url:"https://www.tiktok.com/@jenclipsmen"}
+  };
   const DAY_MS=24*60*60*1000;
   const WEEK_MS=7*DAY_MS;
   const BASELINE_TOLERANCE_MS=6*60*60*1000;
@@ -779,7 +784,9 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     const asset=avatarAssets[member.id];
     const avatar=asset?'<div class="profile-avatar" style="background-image:url('+escapeHtml(root+asset)+')"></div>':'<div class="profile-avatar profile-avatar-initial">'+escapeHtml(member.displayName.replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"W")+'</div>';
     const status=stats?'<span class="stats-sync-state stats-sync-ok"><i></i>Synced</span>':'<span class="stats-sync-state"><i></i>Needs attention</span>';
-    let html='<a class="profile-back" href="'+root+'stats.html">← BACK TO ALL STATS</a><section class="profile-hero-card">'+avatar+'<div><p class="label">FORTNITE MEMBER PROFILE</p><h1>'+escapeHtml(member.displayName)+'</h1><p class="profile-username">'+escapeHtml((stats&&stats.username)||member.username)+'</p>'+status+'</div></section>';
+    const stream=streamProfiles[member.id];
+    const streamLink=stream?'<a class="profile-stream-link" href="'+escapeHtml(stream.url)+'" target="_blank" rel="noopener"><i></i>'+escapeHtml(stream.platform).toUpperCase()+' STREAMER<span>VIEW PROFILE ↗</span></a>':'';
+    let html='<a class="profile-back" href="'+root+'stats.html">← BACK TO ALL STATS</a><section class="profile-hero-card">'+avatar+'<div><p class="label">FORTNITE MEMBER PROFILE</p><h1>'+escapeHtml(member.displayName)+'</h1><p class="profile-username">'+escapeHtml((stats&&stats.username)||member.username)+'</p>'+status+streamLink+'</div></section>';
     if(!stats){
       detail.innerHTML=html+'<section class="profile-panel profile-panel-wide"><p class="label">PROFILE STATUS</p><h2>STATS NEED ATTENTION</h2><p class="profile-empty">This linked Fortnite profile did not return data in the latest refresh. Check the player name and make sure Public Game Stats are enabled.</p></section>';
       requestAnimationFrame(fitProfileName);

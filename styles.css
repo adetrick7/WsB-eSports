@@ -88,7 +88,7 @@ footer{padding:38px 7vw 22px;border-top:1px solid var(--line);display:grid;grid-
 .member-emblem{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;background-size:cover;background-position:center;background-color:#1a0c28;border:1px solid #bc62ff55;box-shadow:0 0 20px #7911c644;display:grid;place-items:center;font:800 26px "Barlow Condensed";color:#c36cff;flex-shrink:0}
 .member-name{font:700 17px Rajdhani,sans-serif;margin-bottom:8px;word-break:break-word;color:var(--text)}
 .member-meta{font-size:10px;letter-spacing:1.4px;color:#a99ab8;line-height:1.8}
-.member-meta b{color:#c36cff;font-weight:700;display:block;font-size:11px;letter-spacing:1.8px}
+.member-meta b{color:#c36cff;font-weight:700;display:block;font-size:11px;letter-spacing:1.8px}.member-stream-link,.profile-stream-link{display:inline-flex;align-items:center;gap:7px;margin-top:8px;color:#d9b6ff;font:800 9px Rajdhani,sans-serif;letter-spacing:1.2px;text-decoration:none}.member-stream-link i,.profile-stream-link i{width:7px;height:7px;border-radius:50%;background:#b257ff;box-shadow:0 0 8px #b257ff}.member-stream-link span,.profile-stream-link span{color:#e8c7ff;margin-left:3px}.member-stream-link:hover,.profile-stream-link:hover{color:#fff}.profile-stream-link{display:flex;border:1px solid #b257ff66;background:#8d3cff12;padding:10px 12px;margin-top:18px;width:max-content}
 .member-card.has-stats .member-info{width:100%;margin-top:auto}
 .member-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);text-align:center}
 .member-stat span{display:block;font-size:8px;letter-spacing:1px;color:#8f759f;margin-bottom:2px}
@@ -218,7 +218,7 @@ body.halloween-theme .members-hero{background-image:linear-gradient(180deg,#0a05
 .lb-row:first-child{border-top:none}
 .lb-rank{flex-shrink:0;width:22px;font:800 15px "Barlow Condensed",sans-serif;color:#8f759f;text-align:center}
 .lb-row:nth-child(1) .lb-rank{color:#ffd76a}
-.lb-name{flex:1;min-width:0;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-name{flex:1;min-width:0;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lb-row a.lb-name{text-decoration:none}.lb-row a.lb-name:hover{color:#d6a7ff;text-decoration:underline;text-decoration-color:#9c43ff;text-underline-offset:3px}.lb-row a.lb-name:focus-visible{outline:1px solid #c36cff;outline-offset:3px;border-radius:2px}
 .lb-value{flex-shrink:0;font:800 15px "Barlow Condensed",sans-serif;color:#f7f4ff}
 .lb-delta{flex-shrink:0;font-size:10px;color:#7be08a;margin-left:4px}
 
