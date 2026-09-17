@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T19:05:26.278Z",
+  "fetchedAt": "2026-09-17T20:06:15.996Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -22,11 +22,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.101,
-      "winrate": 11.696,
-      "wins": 669,
-      "kills": 15665,
-      "matches": 5720
+      "kd": 3.104,
+      "winrate": 11.74,
+      "wins": 672,
+      "kills": 15680,
+      "matches": 5724
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -112,11 +112,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
-      "kd": 4.846,
-      "winrate": 16.505,
-      "wins": 5255,
-      "kills": 128825,
-      "matches": 31839
+      "kd": 4.845,
+      "winrate": 16.504,
+      "wins": 5256,
+      "kills": 128841,
+      "matches": 31846
     },
     "rina": {
       "displayName": "WsB_Rina",
@@ -139,11 +139,11 @@
     "natii": {
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
-      "kd": 4.572,
-      "winrate": 19.615,
+      "kd": 4.571,
+      "winrate": 19.611,
       "wins": 1966,
-      "kills": 36834,
-      "matches": 10023
+      "kills": 36841,
+      "matches": 10025
     },
     "choom": {
       "displayName": "WsB_Choom",
@@ -151,8 +151,8 @@
       "kd": 3.524,
       "winrate": 4.982,
       "wins": 1338,
-      "kills": 89927,
-      "matches": 26855
+      "kills": 89936,
+      "matches": 26856
     }
   }
 }
