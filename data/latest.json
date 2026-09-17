@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T07:07:39.103Z",
+  "fetchedAt": "2026-09-17T08:06:27.487Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -50,10 +50,10 @@
       "displayName": "TT BTAJORDAN",
       "username": "ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ",
       "kd": 3.65,
-      "winrate": 12.455,
+      "winrate": 12.454,
       "wins": 2285,
-      "kills": 58619,
-      "matches": 18346
+      "kills": 58620,
+      "matches": 18347
     },
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
@@ -113,10 +113,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.845,
-      "winrate": 16.491,
+      "winrate": 16.49,
       "wins": 5247,
-      "kills": 128742,
-      "matches": 31817
+      "kills": 128747,
+      "matches": 31819
     },
     "rina": {
       "displayName": "WsB_Rina",
@@ -140,19 +140,19 @@
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
       "kd": 4.573,
-      "winrate": 19.621,
+      "winrate": 19.619,
       "wins": 1966,
-      "kills": 36830,
-      "matches": 10020
+      "kills": 36834,
+      "matches": 10021
     },
     "choom": {
       "displayName": "WsB_Choom",
       "username": "OuchAkuma",
-      "kd": 3.523,
-      "winrate": 4.983,
+      "kd": 3.524,
+      "winrate": 4.982,
       "wins": 1338,
-      "kills": 89901,
-      "matches": 26853
+      "kills": 89927,
+      "matches": 26855
     }
   }
 }
