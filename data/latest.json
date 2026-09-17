@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T14:06:25.523Z",
+  "fetchedAt": "2026-09-17T15:06:17.517Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -67,11 +67,11 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.045,
-      "winrate": 24.742,
+      "kd": 7.043,
+      "winrate": 24.739,
       "wins": 6719,
-      "kills": 143971,
-      "matches": 27156
+      "kills": 143975,
+      "matches": 27160
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -103,29 +103,29 @@
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
       "username": "ᵗᵗohitskatie ʚїɞ",
-      "kd": 3.418,
-      "winrate": 16.459,
+      "kd": 3.417,
+      "winrate": 16.451,
       "wins": 1911,
-      "kills": 33153,
-      "matches": 11611
+      "kills": 33161,
+      "matches": 11616
     },
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.845,
-      "winrate": 16.49,
-      "wins": 5247,
-      "kills": 128747,
-      "matches": 31819
+      "winrate": 16.492,
+      "wins": 5249,
+      "kills": 128770,
+      "matches": 31827
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
       "kd": 2.238,
-      "winrate": 20.856,
+      "winrate": 20.85,
       "wins": 4038,
-      "kills": 34296,
-      "matches": 19361
+      "kills": 34300,
+      "matches": 19367
     },
     "bee": {
       "displayName": "WsB_Bee",
