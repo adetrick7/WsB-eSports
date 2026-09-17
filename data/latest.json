@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T21:05:49.820Z",
+  "fetchedAt": "2026-09-17T22:06:00.796Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -14,10 +14,10 @@
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.112,
-      "winrate": 15.55,
+      "winrate": 15.548,
       "wins": 2332,
-      "kills": 52082,
-      "matches": 14997
+      "kills": 52088,
+      "matches": 14999
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
@@ -68,19 +68,19 @@
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
       "kd": 7.044,
-      "winrate": 24.74,
+      "winrate": 24.739,
       "wins": 6721,
-      "kills": 144012,
-      "matches": 27166
+      "kills": 144019,
+      "matches": 27168
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
       "kd": 3.476,
-      "winrate": 3.623,
+      "winrate": 3.622,
       "wins": 827,
-      "kills": 76472,
-      "matches": 22826
+      "kills": 76487,
+      "matches": 22830
     },
     "kenny": {
       "displayName": "WsB_Kenny",
@@ -113,19 +113,19 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.846,
-      "winrate": 16.508,
-      "wins": 5258,
-      "kills": 128864,
-      "matches": 31851
+      "winrate": 16.509,
+      "wins": 5259,
+      "kills": 128901,
+      "matches": 31856
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
       "kd": 2.237,
-      "winrate": 20.845,
-      "wins": 4038,
-      "kills": 34304,
-      "matches": 19372
+      "winrate": 20.844,
+      "wins": 4039,
+      "kills": 34312,
+      "matches": 19377
     },
     "bee": {
       "displayName": "WsB_Bee",
@@ -148,11 +148,11 @@
     "choom": {
       "displayName": "WsB_Choom",
       "username": "OuchAkuma",
-      "kd": 3.525,
-      "winrate": 4.984,
-      "wins": 1339,
-      "kills": 89984,
-      "matches": 26865
+      "kd": 3.527,
+      "winrate": 4.991,
+      "wins": 1341,
+      "kills": 90047,
+      "matches": 26870
     }
   }
 }
