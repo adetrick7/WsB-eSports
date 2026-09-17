@@ -1,32 +1,32 @@
 {
-  "fetchedAt": "2026-09-17T02:06:08.637Z",
+  "fetchedAt": "2026-09-17T03:05:47.033Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.342,
-      "winrate": 22.319,
+      "winrate": 22.316,
       "wins": 4818,
-      "kills": 56049,
-      "matches": 21587
+      "kills": 56056,
+      "matches": 21590
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.112,
-      "winrate": 15.547,
+      "winrate": 15.544,
       "wins": 2330,
-      "kills": 52040,
-      "matches": 14987
+      "kills": 52057,
+      "matches": 14990
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
       "kd": 3.103,
-      "winrate": 11.693,
+      "winrate": 11.689,
       "wins": 668,
-      "kills": 15657,
-      "matches": 5713
+      "kills": 15659,
+      "matches": 5715
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -77,10 +77,10 @@
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
       "kd": 3.476,
-      "winrate": 3.62,
+      "winrate": 3.619,
       "wins": 826,
-      "kills": 76441,
-      "matches": 22820
+      "kills": 76458,
+      "matches": 22822
     },
     "kenny": {
       "displayName": "WsB_Kenny",
@@ -95,10 +95,10 @@
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.573,
-      "winrate": 17.256,
+      "winrate": 17.252,
       "wins": 6033,
-      "kills": 103361,
-      "matches": 34962
+      "kills": 103380,
+      "matches": 34969
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -148,11 +148,11 @@
     "choom": {
       "displayName": "WsB_Choom",
       "username": "OuchAkuma",
-      "kd": 3.52,
-      "winrate": 4.974,
-      "wins": 1335,
-      "kills": 89792,
-      "matches": 26842
+      "kd": 3.522,
+      "winrate": 4.984,
+      "wins": 1338,
+      "kills": 89837,
+      "matches": 26847
     }
   }
 }
