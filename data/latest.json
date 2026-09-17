@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-17T01:06:18.916Z",
+  "fetchedAt": "2026-09-17T02:06:08.637Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.342,
-      "winrate": 22.32,
+      "winrate": 22.319,
       "wins": 4818,
-      "kills": 56045,
-      "matches": 21586
+      "kills": 56049,
+      "matches": 21587
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
@@ -41,10 +41,10 @@
       "displayName": "Wsb BotLupitaa",
       "username": "botlupitaツ",
       "kd": 4.35,
-      "winrate": 17.443,
+      "winrate": 17.441,
       "wins": 2087,
-      "kills": 42965,
-      "matches": 11965
+      "kills": 42971,
+      "matches": 11966
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -76,11 +76,11 @@
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
-      "kd": 3.475,
-      "winrate": 3.616,
-      "wins": 825,
-      "kills": 76428,
-      "matches": 22818
+      "kd": 3.476,
+      "winrate": 3.62,
+      "wins": 826,
+      "kills": 76441,
+      "matches": 22820
     },
     "kenny": {
       "displayName": "WsB_Kenny",
@@ -91,23 +91,14 @@
       "kills": 27425,
       "matches": 4329
     },
-    "mysterious": {
-      "displayName": "WsB Mysterious",
-      "username": "ᴵˢᴵ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
-      "kd": 4.291,
-      "winrate": 12.774,
-      "wins": 2284,
-      "kills": 66918,
-      "matches": 17880
-    },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.573,
       "winrate": 17.256,
       "wins": 6033,
-      "kills": 103347,
-      "matches": 34961
+      "kills": 103361,
+      "matches": 34962
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
