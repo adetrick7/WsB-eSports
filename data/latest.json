@@ -1,23 +1,23 @@
 {
-  "fetchedAt": "2026-09-17T06:07:28.309Z",
+  "fetchedAt": "2026-09-17T07:07:39.103Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
-      "kd": 3.343,
-      "winrate": 22.321,
+      "kd": 3.342,
+      "winrate": 22.319,
       "wins": 4820,
-      "kills": 56071,
-      "matches": 21594
+      "kills": 56073,
+      "matches": 21596
     },
     "zumiez": {
       "displayName": "Wsb-ZumiezTT",
       "username": "headshotluxTT",
       "kd": 4.112,
-      "winrate": 15.554,
+      "winrate": 15.552,
       "wins": 2332,
-      "kills": 52064,
-      "matches": 14993
+      "kills": 52075,
+      "matches": 14995
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
@@ -40,11 +40,11 @@
     "botlupitaa": {
       "displayName": "Wsb BotLupitaa",
       "username": "botlupitaツ",
-      "kd": 4.351,
-      "winrate": 17.437,
+      "kd": 4.35,
+      "winrate": 17.428,
       "wins": 2087,
-      "kills": 42995,
-      "matches": 11969
+      "kills": 43011,
+      "matches": 11975
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -68,10 +68,10 @@
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
       "kd": 7.045,
-      "winrate": 24.744,
+      "winrate": 24.742,
       "wins": 6719,
-      "kills": 143961,
-      "matches": 27154
+      "kills": 143971,
+      "matches": 27156
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -113,10 +113,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.845,
-      "winrate": 16.489,
-      "wins": 5246,
-      "kills": 128730,
-      "matches": 31815
+      "winrate": 16.491,
+      "wins": 5247,
+      "kills": 128742,
+      "matches": 31817
     },
     "rina": {
       "displayName": "WsB_Rina",
@@ -140,10 +140,10 @@
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
       "kd": 4.573,
-      "winrate": 19.617,
-      "wins": 1965,
-      "kills": 36825,
-      "matches": 10017
+      "winrate": 19.621,
+      "wins": 1966,
+      "kills": 36830,
+      "matches": 10020
     },
     "choom": {
       "displayName": "WsB_Choom",
@@ -151,8 +151,8 @@
       "kd": 3.523,
       "winrate": 4.983,
       "wins": 1338,
-      "kills": 89889,
-      "matches": 26851
+      "kills": 89901,
+      "matches": 26853
     }
   }
 }
