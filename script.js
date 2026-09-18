@@ -553,7 +553,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   if(!overview||!highlights||!directory)return;
 
   const avatarAssets={
-    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
+    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",jen:"jen.jpg",
     barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
   };
 
@@ -684,7 +684,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   if(!detail||!memberId)return;
 
   const avatarAssets={
-    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",zumiez:"zumiez.jpg",jen:"jen.jpg",
+    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",jen:"jen.jpg",
     barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
   };
   const streamProfiles={
