@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-18T01:05:43.776Z",
+  "fetchedAt": "2026-09-18T02:05:41.374Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -10,23 +10,14 @@
       "kills": 56073,
       "matches": 21596
     },
-    "zumiez": {
-      "displayName": "Wsb-ZumiezTT",
-      "username": "headshotluxTT",
-      "kd": 4.112,
-      "winrate": 15.547,
-      "wins": 2332,
-      "kills": 52091,
-      "matches": 15000
-    },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
       "kd": 3.105,
-      "winrate": 11.73,
-      "wins": 672,
-      "kills": 15700,
-      "matches": 5729
+      "winrate": 11.743,
+      "wins": 673,
+      "kills": 15707,
+      "matches": 5731
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -76,29 +67,20 @@
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
-      "kd": 3.477,
-      "winrate": 3.625,
+      "kd": 3.476,
+      "winrate": 3.624,
       "wins": 828,
       "kills": 76541,
-      "matches": 22844
-    },
-    "kenny": {
-      "displayName": "WsB_Kenny",
-      "username": "ᵖᵃᵖⁱ ᵏᵉⁿⁿʸ",
-      "kd": 8.69,
-      "winrate": 27.096,
-      "wins": 1173,
-      "kills": 27425,
-      "matches": 4329
+      "matches": 22845
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.573,
-      "winrate": 17.251,
-      "wins": 6033,
-      "kills": 103390,
-      "matches": 34971
+      "winrate": 17.253,
+      "wins": 6034,
+      "kills": 103397,
+      "matches": 34973
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -112,11 +94,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
-      "kd": 4.847,
-      "winrate": 16.513,
-      "wins": 5262,
-      "kills": 128954,
-      "matches": 31866
+      "kd": 4.848,
+      "winrate": 16.516,
+      "wins": 5264,
+      "kills": 128986,
+      "matches": 31872
     },
     "rina": {
       "displayName": "WsB_Rina",
