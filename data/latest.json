@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-18T03:05:51.442Z",
+  "fetchedAt": "2026-09-18T04:05:46.759Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -95,10 +95,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.848,
-      "winrate": 16.52,
-      "wins": 5266,
-      "kills": 129003,
-      "matches": 31876
+      "winrate": 16.521,
+      "wins": 5267,
+      "kills": 129017,
+      "matches": 31880
     },
     "rina": {
       "displayName": "WsB_Rina",
@@ -130,11 +130,11 @@
     "choom": {
       "displayName": "WsB_Choom",
       "username": "OuchAkuma",
-      "kd": 3.529,
+      "kd": 3.53,
       "winrate": 4.997,
       "wins": 1343,
-      "kills": 90112,
-      "matches": 26876
+      "kills": 90126,
+      "matches": 26877
     }
   }
 }
