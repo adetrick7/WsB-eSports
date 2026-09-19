@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-19T03:05:29.288Z",
+  "fetchedAt": "2026-09-19T04:05:58.148Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
-      "kd": 3.343,
-      "winrate": 22.316,
+      "kd": 3.342,
+      "winrate": 22.313,
       "wins": 4820,
       "kills": 56084,
-      "matches": 21599
+      "matches": 21602
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
@@ -32,10 +32,10 @@
       "displayName": "Wsb BotLupitaa",
       "username": "botlupitaツ",
       "kd": 4.345,
-      "winrate": 17.399,
+      "winrate": 17.395,
       "wins": 2087,
-      "kills": 43053,
-      "matches": 11995
+      "kills": 43064,
+      "matches": 11998
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -68,10 +68,10 @@
       "displayName": "ᵂˢᴮ Elusion keys",
       "username": "ᵂˢᴮ Elusion keys",
       "kd": 3.477,
-      "winrate": 3.633,
+      "winrate": 3.632,
       "wins": 830,
-      "kills": 76558,
-      "matches": 22848
+      "kills": 76559,
+      "matches": 22850
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
@@ -95,19 +95,19 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.85,
-      "winrate": 16.547,
+      "winrate": 16.545,
       "wins": 5279,
-      "kills": 129134,
-      "matches": 31904
+      "kills": 129144,
+      "matches": 31906
     },
     "rina": {
       "displayName": "WsB_Rina",
       "username": "TTBadGirlRina",
       "kd": 2.237,
-      "winrate": 20.848,
+      "winrate": 20.844,
       "wins": 4042,
-      "kills": 34330,
-      "matches": 19388
+      "kills": 34332,
+      "matches": 19392
     },
     "bee": {
       "displayName": "WsB_Bee",
@@ -121,11 +121,11 @@
     "natii": {
       "displayName": "WsB_Natii",
       "username": "ᵀᵀxnatii13x",
-      "kd": 4.57,
-      "winrate": 19.609,
+      "kd": 4.571,
+      "winrate": 19.607,
       "wins": 1967,
-      "kills": 36854,
-      "matches": 10031
+      "kills": 36863,
+      "matches": 10032
     },
     "choom": {
       "displayName": "WsB_Choom",
