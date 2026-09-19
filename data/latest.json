@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-19T00:07:32.378Z",
+  "fetchedAt": "2026-09-19T01:05:05.555Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -31,11 +31,11 @@
     "botlupitaa": {
       "displayName": "Wsb BotLupitaa",
       "username": "botlupitaツ",
-      "kd": 4.346,
-      "winrate": 17.405,
+      "kd": 4.345,
+      "winrate": 17.399,
       "wins": 2087,
-      "kills": 43043,
-      "matches": 11991
+      "kills": 43053,
+      "matches": 11995
     },
     "btajordan": {
       "displayName": "TT BTAJORDAN",
@@ -77,10 +77,10 @@
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.574,
-      "winrate": 17.262,
+      "winrate": 17.261,
       "wins": 6039,
-      "kills": 103447,
-      "matches": 34984
+      "kills": 103449,
+      "matches": 34986
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
