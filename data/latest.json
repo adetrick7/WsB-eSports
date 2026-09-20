@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-20T16:05:30.608Z",
+  "fetchedAt": "2026-09-20T17:05:10.760Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -60,9 +60,9 @@
       "username": "ʷˢᵇLazy",
       "kd": 7.044,
       "winrate": 24.753,
-      "wins": 6739,
-      "kills": 144295,
-      "matches": 27225
+      "wins": 6740,
+      "kills": 144316,
+      "matches": 27229
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
@@ -121,11 +121,11 @@
     "bee": {
       "displayName": "WsB_Bee",
       "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
-      "kd": 1.818,
-      "winrate": 6.025,
-      "wins": 253,
-      "kills": 7175,
-      "matches": 4199
+      "kd": 1.824,
+      "winrate": 6.091,
+      "wins": 256,
+      "kills": 7200,
+      "matches": 4203
     }
   }
 }
