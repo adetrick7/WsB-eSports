@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WsB | Mini Games</title>
+  <meta name="description" content="WsB — for-fun Blackjack and Roulette using virtual chips. No real money, ever.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site-glow"></div>
+
+<header class="nav">
+  <span class="spooky-web left" aria-hidden="true">🕸️</span>
+  <span class="spooky-web right" aria-hidden="true">🕸️</span>
+  <a class="mini-brand" href="index.html#home">
+    <img src="wsb-logo.png" alt="WsB logo">
+    <span>WsB</span>
+  </a>
+  <nav id="navlinks">
+    <a href="index.html#team">ROSTER</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="members.html">MEMBERS</a>
+    <a href="stats.html">STATS</a>
+    <a href="leaderboards.html">LEADERBOARDS</a>
+    <a href="announcements.html">ANNOUNCEMENTS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="questions.html">QUESTIONS</a>
+    <a href="games.html">MINI GAMES</a>
+  </nav>
+  <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
+  <button class="menu" aria-label="Toggle navigation">☰</button>
+</header>
+
+<main>
+  <section class="section games-hero">
+    <div class="heading-row">
+      <div>
+        <p class="label">FOR FUN ONLY</p>
+        <h2>MINI<br><span>GAMES.</span></h2>
+      </div>
+      <p class="intro">Blackjack and Roulette with virtual chips — no real money involved, ever. Just bragging rights.</p>
+    </div>
+
+    <div class="chip-bar">
+      <div class="chip-balance">
+        <span class="label">YOUR CHIPS</span>
+        <span id="chipBalance">1,000</span>
+      </div>
+      <button type="button" class="outline-btn" id="resetChips">RESET TO 1,000</button>
+    </div>
+
+    <div class="game-tabs">
+      <button type="button" class="game-tab active" data-game="blackjack">BLACKJACK</button>
+      <button type="button" class="game-tab" data-game="roulette">ROULETTE</button>
+    </div>
+
+    <!-- BLACKJACK -->
+    <div class="game-panel" id="panel-blackjack">
+      <div class="table-felt">
+        <div class="hand-row">
+          <p class="label">DEALER<span id="dealerScore"></span></p>
+          <div class="card-row" id="dealerCards"></div>
+        </div>
+        <div class="hand-row">
+          <p class="label">YOU<span id="playerScore"></span></p>
+          <div class="card-row" id="playerCards"></div>
+        </div>
+        <p class="game-message" id="bjMessage">Place a bet to start.</p>
+      </div>
+      <div class="bet-controls">
+        <label for="bjBet">BET</label>
+        <input type="number" id="bjBet" min="10" step="10" value="50">
+        <button type="button" class="chrome-btn" id="bjDeal">DEAL <b>→</b></button>
+        <button type="button" class="outline-btn" id="bjHit" disabled>HIT</button>
+        <button type="button" class="outline-btn" id="bjStand" disabled>STAND</button>
+      </div>
+    </div>
+
+    <!-- ROULETTE -->
+    <div class="game-panel" id="panel-roulette" hidden>
+      <div class="table-felt roulette-felt">
+        <div class="wheel-wrap">
+          <div class="wheel-ball-track" id="wheelBallTrack">
+            <div class="wheel-ball" id="wheelBall"></div>
+          </div>
+          <div class="wheel" id="rouletteWheel"></div>
+          <div class="wheel-hub"></div>
+        </div>
+        <div class="roulette-result" id="rouletteResult">—</div>
+        <p class="game-message" id="rlMessage">Click a number or outside bet on the table, set your amount, then spin.</p>
+      </div>
+
+      <div class="bet-table" id="betTable">
+        <div class="bt-numbers" id="btNumbers"></div>
+        <div class="bt-dozens" id="btDozens"></div>
+        <div class="bt-outside" id="btOutside"></div>
+      </div>
+
+      <div class="chip-select" id="chipSelect"></div>
+
+      <div class="bet-controls">
+        <span class="rl-selected" id="rlSelected">No bet selected</span>
+        <span class="rl-current-bet">Current chip: <b id="rlCurrentChip">50</b></span>
+        <button type="button" class="chrome-btn" id="rlSpin">SPIN <b>→</b></button>
+      </div>
+
+    </div>
+
+    <p class="games-disclaimer">These games use virtual chips only. Nothing here has real-world value, can be purchased, cashed out, or transferred. Purely for fun.</p>
+  </section>
+</main>
+
+<footer>
+  <span class="spooky-spider" aria-hidden="true">🕷️</span>
+  <div class="footer-brand"><img src="wsb-logo.png" alt="WsB"><span>WE SHOOT BODIES</span></div>
+  <div class="socials">
+    <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
+  </div>
+  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

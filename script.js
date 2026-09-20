@@ -826,3 +826,428 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     requestAnimationFrame(fitProfileName);
   });
 })();
+
+
+// Games page — Blackjack & Roulette (virtual chips only, no real money)
+(function(){
+  const chipDisplay = document.getElementById("chipBalance");
+  if(!chipDisplay) return;
+
+  const CHIPS_KEY = "wsbGameChips";
+  const STARTING_CHIPS = 1000;
+
+  function getChips(){
+    try{
+      const v = parseInt(localStorage.getItem(CHIPS_KEY), 10);
+      return isNaN(v) ? STARTING_CHIPS : v;
+    }catch(e){ return STARTING_CHIPS; }
+  }
+  function setChips(n){
+    try{ localStorage.setItem(CHIPS_KEY, String(n)); }catch(e){}
+    chipDisplay.textContent = n.toLocaleString("en-US");
+  }
+  setChips(getChips());
+
+  const resetBtn = document.getElementById("resetChips");
+  if(resetBtn){
+    resetBtn.addEventListener("click", function(){
+      setChips(STARTING_CHIPS);
+    });
+  }
+
+  // ---- Tab switching ----
+  const tabs = document.querySelectorAll(".game-tab");
+  const panels = {
+    blackjack: document.getElementById("panel-blackjack"),
+    roulette: document.getElementById("panel-roulette")
+  };
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t){ t.classList.remove("active"); });
+      tab.classList.add("active");
+      Object.keys(panels).forEach(function(key){
+        if(panels[key]) panels[key].hidden = (key !== tab.dataset.game);
+      });
+    });
+  });
+
+  // ================= BLACKJACK =================
+  (function(){
+    const dealBtn = document.getElementById("bjDeal");
+    const hitBtn = document.getElementById("bjHit");
+    const standBtn = document.getElementById("bjStand");
+    const betInput = document.getElementById("bjBet");
+    const dealerCardsEl = document.getElementById("dealerCards");
+    const playerCardsEl = document.getElementById("playerCards");
+    const dealerScoreEl = document.getElementById("dealerScore");
+    const playerScoreEl = document.getElementById("playerScore");
+    const messageEl = document.getElementById("bjMessage");
+    if(!dealBtn) return;
+
+    const SUITS = ["♠","♥","♦","♣"];
+    const RANKS = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+    let deck = [];
+    let dealerHand = [];
+    let playerHand = [];
+    let currentBet = 0;
+    let roundActive = false;
+
+    function freshDeck(){
+      const d = [];
+      SUITS.forEach(function(suit){
+        RANKS.forEach(function(rank){
+          d.push({ rank: rank, suit: suit });
+        });
+      });
+      for(let i = d.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = d[i]; d[i] = d[j]; d[j] = tmp;
+      }
+      return d;
+    }
+
+    function handValue(hand){
+      let total = 0;
+      let aces = 0;
+      hand.forEach(function(card){
+        if(card.rank === "A"){ total += 11; aces++; }
+        else if(["J","Q","K"].indexOf(card.rank) !== -1){ total += 10; }
+        else { total += parseInt(card.rank, 10); }
+      });
+      while(total > 21 && aces > 0){ total -= 10; aces--; }
+      return total;
+    }
+
+    function renderCard(card, hidden){
+      const isRed = card.suit === "♥" || card.suit === "♦";
+      if(hidden) return '<div class="playing-card back"></div>';
+      return '<div class="playing-card' + (isRed ? " red" : "") + '">' + card.rank + card.suit + "</div>";
+    }
+
+    function render(revealDealer){
+      dealerCardsEl.innerHTML = dealerHand.map(function(c, i){
+        return renderCard(c, !revealDealer && i === 1);
+      }).join("");
+      playerCardsEl.innerHTML = playerHand.map(function(c){ return renderCard(c, false); }).join("");
+      playerScoreEl.textContent = "(" + handValue(playerHand) + ")";
+      dealerScoreEl.textContent = revealDealer ? "(" + handValue(dealerHand) + ")" : "";
+    }
+
+    function endRound(outcome, payoutMultiplier){
+      roundActive = false;
+      hitBtn.disabled = true;
+      standBtn.disabled = true;
+      dealBtn.disabled = false;
+      betInput.disabled = false;
+      render(true);
+
+      let chips = getChips();
+      if(outcome === "win"){
+        const winnings = Math.round(currentBet * payoutMultiplier);
+        chips += winnings;
+        messageEl.textContent = "You win " + winnings.toLocaleString("en-US") + " chips!";
+      }else if(outcome === "push"){
+        messageEl.textContent = "Push — bet returned.";
+      }else{
+        chips -= currentBet;
+        messageEl.textContent = "Dealer wins. -" + currentBet.toLocaleString("en-US") + " chips.";
+      }
+      setChips(Math.max(chips, 0));
+    }
+
+    function dealerPlay(){
+      while(handValue(dealerHand) < 17){
+        dealerHand.push(deck.pop());
+      }
+      const playerTotal = handValue(playerHand);
+      const dealerTotal = handValue(dealerHand);
+      if(dealerTotal > 21 || playerTotal > dealerTotal) endRound("win", 1);
+      else if(dealerTotal === playerTotal) endRound("push", 0);
+      else endRound("lose", 0);
+    }
+
+    dealBtn.addEventListener("click", function(){
+      const bet = parseInt(betInput.value, 10);
+      const chips = getChips();
+      if(!bet || bet < 10){ messageEl.textContent = "Minimum bet is 10 chips."; return; }
+      if(bet > chips){ messageEl.textContent = "You don't have enough chips for that bet."; return; }
+
+      currentBet = bet;
+      deck = freshDeck();
+      playerHand = [deck.pop(), deck.pop()];
+      dealerHand = [deck.pop(), deck.pop()];
+      roundActive = true;
+      dealBtn.disabled = true;
+      betInput.disabled = true;
+      hitBtn.disabled = false;
+      standBtn.disabled = false;
+      messageEl.textContent = "Your move.";
+      render(false);
+
+      const playerBJ = handValue(playerHand) === 21;
+      const dealerBJ = handValue(dealerHand) === 21;
+      if(playerBJ || dealerBJ){
+        hitBtn.disabled = true;
+        standBtn.disabled = true;
+        if(playerBJ && dealerBJ) endRound("push", 0);
+        else if(playerBJ) endRound("win", 1.5);
+        else endRound("lose", 0);
+      }
+    });
+
+    hitBtn.addEventListener("click", function(){
+      if(!roundActive) return;
+      playerHand.push(deck.pop());
+      const total = handValue(playerHand);
+      render(false);
+      if(total > 21){
+        hitBtn.disabled = true;
+        standBtn.disabled = true;
+        endRound("lose", 0);
+      }
+    });
+
+    standBtn.addEventListener("click", function(){
+      if(!roundActive) return;
+      hitBtn.disabled = true;
+      standBtn.disabled = true;
+      dealerPlay();
+    });
+  })();
+
+  // ================= ROULETTE =================
+  (function(){
+    const spinBtn = document.getElementById("rlSpin");
+    const resultEl = document.getElementById("rouletteResult");
+    const messageEl = document.getElementById("rlMessage");
+    const selectedLabel = document.getElementById("rlSelected");
+    const wheelEl = document.getElementById("rouletteWheel");
+    const ballTrackEl = document.getElementById("wheelBallTrack");
+    const numbersEl = document.getElementById("btNumbers");
+    const outsideEl = document.getElementById("btOutside");
+    if(!spinBtn || !wheelEl) return;
+
+    // Standard European wheel order (clockwise)
+    const WHEEL_ORDER = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26];
+    const RED_NUMBERS = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
+    const SEG_ANGLE = 360 / WHEEL_ORDER.length;
+
+    function colorOf(n){
+      if(n === 0) return "green";
+      return RED_NUMBERS.indexOf(n) !== -1 ? "red" : "black";
+    }
+
+    // Build the wheel segments
+    WHEEL_ORDER.forEach(function(num, i){
+      const el = document.createElement("div");
+      el.className = "wheel-number " + colorOf(num);
+      el.style.transform = "rotate(" + (i * SEG_ANGLE) + "deg)";
+      el.textContent = num;
+      wheelEl.appendChild(el);
+    });
+
+    // Build the number grid: classic layout, 3 rows x 12 numbers, plus a 2:1
+    // column-bet cell at the end of each row, and 0 spanning all 3 rows on the left.
+    const dozensEl = document.getElementById("btDozens");
+    const chipSelectEl = document.getElementById("chipSelect");
+    const currentChipLabel = document.getElementById("rlCurrentChip");
+
+    const TABLE_ROWS = [
+      [3,6,9,12,15,18,21,24,27,30,33,36],
+      [2,5,8,11,14,17,20,23,26,29,32,35],
+      [1,4,7,10,13,16,19,22,25,28,31,34]
+    ];
+
+    const zeroCell = document.createElement("div");
+    zeroCell.className = "bt-cell green zero-cell";
+    zeroCell.textContent = "0";
+    zeroCell.dataset.bet = "number:0";
+    numbersEl.appendChild(zeroCell);
+
+    TABLE_ROWS.forEach(function(row, rowIndex){
+      row.forEach(function(n){
+        const cell = document.createElement("div");
+        cell.className = "bt-cell " + colorOf(n);
+        cell.textContent = n;
+        cell.dataset.bet = "number:" + n;
+        cell.style.gridRow = rowIndex + 1;
+        numbersEl.appendChild(cell);
+      });
+      const colCell = document.createElement("div");
+      colCell.className = "bt-cell col2to1";
+      colCell.textContent = "2:1";
+      colCell.dataset.bet = "col" + (rowIndex + 1);
+      colCell.style.gridRow = rowIndex + 1;
+      colCell.style.gridColumn = 14;
+      numbersEl.appendChild(colCell);
+    });
+
+    // Dozens (1st12 / 2nd12 / 3rd12) — each pays 2:1
+    const DOZENS = [
+      { key: "dozen1", label: "1st 12" },
+      { key: "dozen2", label: "2nd 12" },
+      { key: "dozen3", label: "3rd 12" }
+    ];
+    DOZENS.forEach(function(d){
+      const cell = document.createElement("div");
+      cell.className = "bt-outside-cell dozen-cell";
+      cell.textContent = d.label;
+      cell.dataset.bet = d.key;
+      dozensEl.appendChild(cell);
+    });
+
+    // Outside bets
+    const OUTSIDE_BETS = [
+      { key: "low", label: "1-18", cls: "" },
+      { key: "even", label: "EVEN", cls: "" },
+      { key: "red", label: "PURPLE", cls: "red" },
+      { key: "black", label: "BLACK", cls: "black" },
+      { key: "odd", label: "ODD", cls: "" },
+      { key: "high", label: "19-36", cls: "" }
+    ];
+    OUTSIDE_BETS.forEach(function(bet){
+      const cell = document.createElement("div");
+      cell.className = "bt-outside-cell" + (bet.cls ? " " + bet.cls : "");
+      cell.textContent = bet.label;
+      cell.dataset.bet = bet.key;
+      outsideEl.appendChild(cell);
+    });
+
+    // Chip selector — different denominations, each a different color, like a real tray
+    const CHIP_VALUES = [
+      { value: 10,   cls: "chip-10"   },
+      { value: 25,   cls: "chip-25"   },
+      { value: 50,   cls: "chip-50"   },
+      { value: 100,  cls: "chip-100"  },
+      { value: 200,  cls: "chip-200"  },
+      { value: 500,  cls: "chip-500"  },
+      { value: 1000, cls: "chip-1000" }
+    ];
+    let currentBetValue = 50;
+    const chipButtons = [];
+    CHIP_VALUES.forEach(function(chip){
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip-btn " + chip.cls + (chip.value === currentBetValue ? " active" : "");
+      btn.textContent = chip.value >= 1000 ? (chip.value / 1000) + "k" : chip.value;
+      btn.addEventListener("click", function(){
+        currentBetValue = chip.value;
+        currentChipLabel.textContent = currentBetValue.toLocaleString("en-US");
+        chipButtons.forEach(function(b){ b.classList.remove("active"); });
+        btn.classList.add("active");
+        const selectedCell = allCells.find(function(c){ return c.classList.contains("selected"); });
+        if(selectedCell) placeChip(selectedCell);
+      });
+      chipSelectEl.appendChild(btn);
+      chipButtons.push(btn);
+    });
+
+    let selectedBet = null; // e.g. "red" or "number:17"
+    const allCells = Array.from(numbersEl.querySelectorAll(".bt-cell")).concat(Array.from(outsideEl.querySelectorAll(".bt-outside-cell"))).concat(Array.from(dozensEl.querySelectorAll(".bt-outside-cell")));
+
+    function clearChips(){
+      allCells.forEach(function(c){
+        const chip = c.querySelector(".bet-chip");
+        if(chip) chip.remove();
+      });
+    }
+    function placeChip(cell){
+      clearChips();
+      const amount = currentBetValue;
+      const chip = document.createElement("div");
+      chip.className = "bet-chip";
+      chip.textContent = amount >= 1000 ? Math.round(amount / 1000) + "k" : amount;
+      cell.appendChild(chip);
+    }
+
+    function payoutLabelFor(betKey){
+      if(betKey.indexOf("number:") === 0) return " (35:1)";
+      if(betKey.indexOf("col") === 0 || betKey.indexOf("dozen") === 0) return " (2:1)";
+      return " (1:1)";
+    }
+
+    function selectBet(cell){
+      allCells.forEach(function(c){ c.classList.remove("selected"); });
+      cell.classList.add("selected");
+      selectedBet = cell.dataset.bet;
+      selectedLabel.textContent = "Betting on: " + cell.textContent.trim() + payoutLabelFor(selectedBet);
+      placeChip(cell);
+    }
+    allCells.forEach(function(cell){
+      cell.addEventListener("click", function(){
+        if(spinBtn.disabled) return;
+        selectBet(cell);
+      });
+    });
+
+    let currentRotation = 0;
+    let currentBallRotation = 0;
+
+    spinBtn.addEventListener("click", function(){
+      const bet = currentBetValue;
+      const chips = getChips();
+      if(!selectedBet){ messageEl.textContent = "Pick a number or outside bet on the table first."; return; }
+      if(bet > chips){ messageEl.textContent = "You don't have enough chips for that bet."; return; }
+
+      spinBtn.disabled = true;
+      resultEl.className = "roulette-result";
+      resultEl.textContent = "...";
+      messageEl.textContent = "Spinning...";
+
+      const outcome = Math.floor(Math.random() * 37); // 0-36
+      const color = colorOf(outcome);
+      const wheelIndex = WHEEL_ORDER.indexOf(outcome);
+      const segCenter = wheelIndex * SEG_ANGLE + SEG_ANGLE / 2;
+
+      // Spin several extra full turns, landing the winning segment at the top
+      const extraSpins = 6 + Math.floor(Math.random() * 3);
+      const targetWithinTurn = (360 - segCenter) % 360;
+      currentRotation += extraSpins * 360 + ((targetWithinTurn - (currentRotation % 360)) + 360) % 360;
+
+      // Ball spins the opposite direction, but always settles back at the top —
+      // the same spot the wheel just placed the winning number, so the ball
+      // visually lands right on it.
+      const ballExtraSpins = 8 + Math.floor(Math.random() * 3);
+      currentBallRotation -= ballExtraSpins * 360;
+
+      wheelEl.style.transform = "rotate(" + currentRotation + "deg)";
+      ballTrackEl.style.transition = "transform 4s cubic-bezier(.12,.7,.1,1)";
+      ballTrackEl.style.transform = "rotate(" + currentBallRotation + "deg)";
+
+      setTimeout(function(){
+        resultEl.textContent = outcome;
+        resultEl.classList.add(color);
+
+        let won = false;
+        let multiplier = 1;
+        if(selectedBet.indexOf("number:") === 0){
+          const target = parseInt(selectedBet.split(":")[1], 10);
+          if(target === outcome){ won = true; multiplier = 35; }
+        }else if(selectedBet === "red" && color === "red") won = true;
+        else if(selectedBet === "black" && color === "black") won = true;
+        else if(selectedBet === "odd" && outcome !== 0 && outcome % 2 === 1) won = true;
+        else if(selectedBet === "even" && outcome !== 0 && outcome % 2 === 0) won = true;
+        else if(selectedBet === "low" && outcome >= 1 && outcome <= 18) won = true;
+        else if(selectedBet === "high" && outcome >= 19 && outcome <= 36) won = true;
+        else if(selectedBet === "dozen1" && outcome >= 1 && outcome <= 12){ won = true; multiplier = 2; }
+        else if(selectedBet === "dozen2" && outcome >= 13 && outcome <= 24){ won = true; multiplier = 2; }
+        else if(selectedBet === "dozen3" && outcome >= 25 && outcome <= 36){ won = true; multiplier = 2; }
+        else if(selectedBet === "col1" && outcome !== 0 && outcome % 3 === 0){ won = true; multiplier = 2; }
+        else if(selectedBet === "col2" && outcome !== 0 && outcome % 3 === 2){ won = true; multiplier = 2; }
+        else if(selectedBet === "col3" && outcome !== 0 && outcome % 3 === 1){ won = true; multiplier = 2; }
+
+        let newChips = chips;
+        if(won){
+          const winnings = bet * multiplier;
+          newChips += winnings;
+          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") — you win " + winnings.toLocaleString("en-US") + " chips!";
+        }else{
+          newChips -= bet;
+          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") — no match. -" + bet.toLocaleString("en-US") + " chips.";
+        }
+        setChips(Math.max(newChips, 0));
+        spinBtn.disabled = false;
+      }, 4100);
+    });
+  })();
+})();
