@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-20T17:05:10.760Z",
+  "fetchedAt": "2026-09-20T18:06:10.179Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -121,11 +121,11 @@
     "bee": {
       "displayName": "WsB_Bee",
       "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
-      "kd": 1.824,
-      "winrate": 6.091,
-      "wins": 256,
-      "kills": 7200,
-      "matches": 4203
+      "kd": 1.827,
+      "winrate": 6.158,
+      "wins": 259,
+      "kills": 7212,
+      "matches": 4206
     }
   }
 }
