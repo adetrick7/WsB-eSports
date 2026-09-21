@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T08:06:01.949Z",
+  "fetchedAt": "2026-09-21T09:05:50.366Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -14,10 +14,10 @@
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
       "kd": 3.11,
-      "winrate": 11.797,
+      "winrate": 11.795,
       "wins": 678,
-      "kills": 15763,
-      "matches": 5747
+      "kills": 15767,
+      "matches": 5748
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -67,20 +67,20 @@
     "mysterious": {
       "displayName": "WsB Mysterious",
       "username": "ᵂˢᴮ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
-      "kd": 4.296,
-      "winrate": 12.831,
+      "kd": 4.295,
+      "winrate": 12.827,
       "wins": 2301,
-      "kills": 67153,
-      "matches": 17933
+      "kills": 67162,
+      "matches": 17939
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
-      "kd": 3.577,
-      "winrate": 17.278,
-      "wins": 6051,
-      "kills": 103625,
-      "matches": 35021
+      "kd": 3.578,
+      "winrate": 17.281,
+      "wins": 6053,
+      "kills": 103651,
+      "matches": 35026
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -95,10 +95,10 @@
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
       "kd": 4.85,
-      "winrate": 16.567,
-      "wins": 5296,
-      "kills": 129353,
-      "matches": 31967
+      "winrate": 16.568,
+      "wins": 5297,
+      "kills": 129370,
+      "matches": 31972
     },
     "rina": {
       "displayName": "WsB_Rina",
