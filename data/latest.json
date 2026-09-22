@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T22:05:13.551Z",
+  "fetchedAt": "2026-09-22T23:05:07.035Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -13,11 +13,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.111,
-      "winrate": 11.812,
-      "wins": 682,
-      "kills": 15843,
-      "matches": 5774
+      "kd": 3.109,
+      "winrate": 11.817,
+      "wins": 683,
+      "kills": 15849,
+      "matches": 5780
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -40,20 +40,20 @@
     "shloozyyy": {
       "displayName": "Shloozyyy ᵀᵀ",
       "username": "Shloozyyy ᵀᵀ",
-      "kd": 4.242,
-      "winrate": 22.057,
-      "wins": 2537,
-      "kills": 38032,
-      "matches": 11502
+      "kd": 4.244,
+      "winrate": 22.062,
+      "wins": 2538,
+      "kills": 38051,
+      "matches": 11504
     },
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.047,
-      "winrate": 24.779,
+      "kd": 7.046,
+      "winrate": 24.778,
       "wins": 6758,
       "kills": 144559,
-      "matches": 27273
+      "matches": 27274
     },
     "elusion": {
       "displayName": "ᵂˢᴮ Elusion keys",
