@@ -1,14 +1,14 @@
 {
-  "fetchedAt": "2026-09-23T07:06:20.954Z",
+  "fetchedAt": "2026-09-23T08:05:38.977Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
       "username": "ᵂˢᴮℒizzíeᵀᵀʚїɞ",
       "kd": 3.345,
-      "winrate": 22.325,
+      "winrate": 22.322,
       "wins": 4837,
-      "kills": 56285,
-      "matches": 21666
+      "kills": 56296,
+      "matches": 21669
     },
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
@@ -68,10 +68,10 @@
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.579,
-      "winrate": 17.287,
+      "winrate": 17.285,
       "wins": 6057,
-      "kills": 103717,
-      "matches": 35038
+      "kills": 103734,
+      "matches": 35041
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -96,9 +96,9 @@
       "username": "TTBadGirlRina",
       "kd": 2.237,
       "winrate": 20.829,
-      "wins": 4049,
-      "kills": 34435,
-      "matches": 19439
+      "wins": 4050,
+      "kills": 34442,
+      "matches": 19444
     }
   }
 }
