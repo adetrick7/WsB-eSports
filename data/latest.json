@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T22:05:44.713Z",
+  "fetchedAt": "2026-09-24T23:05:25.120Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -13,11 +13,11 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.105,
-      "winrate": 11.839,
-      "wins": 687,
-      "kills": 15886,
-      "matches": 5803
+      "kd": 3.11,
+      "winrate": 11.882,
+      "wins": 690,
+      "kills": 15914,
+      "matches": 5807
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
@@ -49,11 +49,11 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.046,
-      "winrate": 24.771,
-      "wins": 6761,
-      "kills": 144673,
-      "matches": 27294
+      "kd": 7.047,
+      "winrate": 24.778,
+      "wins": 6764,
+      "kills": 144699,
+      "matches": 27298
     },
     "mysterious": {
       "displayName": "WsB Mysterious",
@@ -85,11 +85,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵗᵗ",
-      "kd": 4.853,
-      "winrate": 16.601,
-      "wins": 5319,
-      "kills": 129668,
-      "matches": 32040
+      "kd": 4.854,
+      "winrate": 16.608,
+      "wins": 5322,
+      "kills": 129705,
+      "matches": 32044
     }
   }
 }
