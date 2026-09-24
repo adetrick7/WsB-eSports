@@ -44,23 +44,36 @@ function pickStats(json) {
   }
 }
 
-async function fetchPlayerStats(username, platform) {
-  const url =
-    "https://fortnite-api.com/v2/stats/br/v2?name=" +
-    encodeURIComponent(username) +
-    "&accountType=" +
-    encodeURIComponent(platform);
+function accountDetails(json) {
+  const account = json && json.data && json.data.account ? json.data.account : {};
+  return {
+    accountId: typeof account.id === "string" && account.id ? account.id : null,
+    username: typeof account.name === "string" && account.name ? account.name : null
+  };
+}
+
+async function fetchPlayerStats(player) {
+  const usesAccountId = Boolean(player.accountId);
+  const url = usesAccountId
+    ? "https://fortnite-api.com/v2/stats/br/v2/" + encodeURIComponent(player.accountId)
+    : "https://fortnite-api.com/v2/stats/br/v2?name=" +
+      encodeURIComponent(player.username) +
+      "&accountType=" +
+      encodeURIComponent(player.platform);
+  const lookup = usesAccountId ? "account ID" : 'name "' + player.username + '"';
 
   try {
     const res = await fetch(url, { headers: { Authorization: API_KEY } });
     if (!res.ok) {
-      console.warn(`  -> HTTP ${res.status} for "${username}"`);
+      console.warn(`  -> HTTP ${res.status} for ${lookup}`);
       return null;
     }
     const json = await res.json();
-    return pickStats(json);
+    const stats = pickStats(json);
+    if (!stats) return null;
+    return { stats, ...accountDetails(json) };
   } catch (e) {
-    console.warn(`  -> fetch failed for "${username}": ${e.message}`);
+    console.warn(`  -> fetch failed for ${lookup}: ${e.message}`);
     return null;
   }
 }
@@ -69,14 +82,21 @@ async function main() {
   const roster = JSON.parse(fs.readFileSync(ROSTER_PATH, "utf8"));
 
   const results = {};
+  let rosterChanged = false;
   for (const player of roster) {
-    console.log(`Fetching ${player.displayName} ("${player.username}")...`);
-    const stats = await fetchPlayerStats(player.username, player.platform);
-    if (stats) {
+    const lookup = player.accountId ? "saved account ID" : 'name "' + player.username + '"';
+    console.log(`Fetching ${player.displayName} by ${lookup}...`);
+    const fetched = await fetchPlayerStats(player);
+    if (fetched) {
+      if (!player.accountId && fetched.accountId) {
+        player.accountId = fetched.accountId;
+        rosterChanged = true;
+        console.log("  -> saved stable Epic account ID");
+      }
       results[player.id] = {
         displayName: player.displayName,
-        username: player.username,
-        ...stats
+        username: fetched.username || player.username,
+        ...fetched.stats
       };
       console.log("  -> OK");
     } else {
@@ -86,6 +106,10 @@ async function main() {
     await sleep(1300);
   }
 
+  if (rosterChanged) {
+    fs.writeFileSync(ROSTER_PATH, JSON.stringify(roster, null, 2) + "\n");
+    console.log("Saved newly discovered Epic account IDs to data/roster.json.");
+  }
   const snapshot = {
     fetchedAt: new Date().toISOString(),
     players: results

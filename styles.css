@@ -1,9 +1,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#06030c;--bg2:#10051f;--purple:#a62cff;--purple2:#5c0bb8;--line:rgba(206,159,255,.18);--text:#f7f4ff;--muted:#a99ab8}
-html{scroll-behavior:smooth} body{background:var(--bg);color:var(--text);font-family:Rajdhani,Arial,sans-serif;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:96px} body{background:var(--bg);color:var(--text);font-family:Rajdhani,Arial,sans-serif;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;background-image:repeating-linear-gradient(0deg,transparent 0 2px,#fff 3px 4px)}
 .site-glow{position:fixed;width:70vw;height:70vw;left:50%;top:-40vw;transform:translateX(-50%);border-radius:50%;background:#6d10cc22;filter:blur(90px);pointer-events:none}
-a{text-decoration:none;color:inherit}.nav{height:82px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:absolute;width:100%;z-index:10;background:linear-gradient(#08030fdd,transparent)}
+a{text-decoration:none;color:inherit}.nav{height:82px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:fixed;top:0;left:0;width:100%;z-index:100;background:#08030ff2;backdrop-filter:blur(12px);box-shadow:0 8px 24px #05030a55}
 .mini-brand{display:flex;align-items:center;gap:9px;font:900 italic 24px "Barlow Condensed"}.mini-brand img{width:35px;height:35px;object-fit:contain;filter:drop-shadow(0 0 8px #9d24ff)}.nav nav{display:flex;gap:36px}.nav nav a,.socials a{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#c9bdd4}.nav nav a:hover,.socials a:hover{color:#c16cff}.menu{display:none;background:none;color:white;border:0;font-size:24px}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:110px 10vw;overflow:hidden;background:radial-gradient(circle at 65% 40%,#4a087f44 0,transparent 28%),linear-gradient(120deg,#05030a 25%,#13051e 100%)}
 .hero-lines{position:absolute;inset:0;background:linear-gradient(110deg,transparent 47%,#a42cff18 49%,transparent 50%),linear-gradient(70deg,transparent 52%,#7622c820 53%,transparent 54%);opacity:.7}
