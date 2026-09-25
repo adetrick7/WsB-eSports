@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-25T22:05:43.082Z",
+  "fetchedAt": "2026-09-25T23:05:10.316Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -85,11 +85,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵀᵀ",
-      "kd": 4.855,
-      "winrate": 16.612,
+      "kd": 4.856,
+      "winrate": 16.611,
       "wins": 5326,
-      "kills": 129808,
-      "matches": 32062
+      "kills": 129824,
+      "matches": 32063
     }
   }
 }
