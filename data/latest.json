@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-25T06:06:38.447Z",
+  "fetchedAt": "2026-09-25T07:06:24.096Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -49,20 +49,20 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.048,
-      "winrate": 24.78,
-      "wins": 6768,
-      "kills": 144800,
-      "matches": 27312
+      "kd": 7.049,
+      "winrate": 24.779,
+      "wins": 6769,
+      "kills": 144836,
+      "matches": 27317
     },
     "mysterious": {
       "displayName": "WsB Mysterious",
       "username": "ᵂˢᴮ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.295,
-      "winrate": 12.844,
+      "winrate": 12.84,
       "wins": 2311,
-      "kills": 67361,
-      "matches": 17993
+      "kills": 67378,
+      "matches": 17998
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
