@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-25T02:05:25.275Z",
+  "fetchedAt": "2026-09-25T03:05:44.019Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -13,20 +13,20 @@
     "jen": {
       "displayName": "ᵂˢᴮJenClipsMenᵀᵀ",
       "username": "ᵂˢᴮJenClipsMenᵀᵀ",
-      "kd": 3.109,
-      "winrate": 11.872,
+      "kd": 3.108,
+      "winrate": 11.866,
       "wins": 690,
-      "kills": 15922,
-      "matches": 5812
+      "kills": 15926,
+      "matches": 5815
     },
     "barrelroll": {
       "displayName": "WsB Barrelroll77",
       "username": "ʷˢᵇ-Bᴀʀʀᴇʟʀᴏʟʟ77",
-      "kd": 5.609,
-      "winrate": 18.025,
+      "kd": 5.607,
+      "winrate": 18.019,
       "wins": 542,
-      "kills": 13826,
-      "matches": 3007
+      "kills": 13827,
+      "matches": 3008
     },
     "botlupitaa": {
       "displayName": "Wsb BotLupitaa",
@@ -49,29 +49,29 @@
     "lazy": {
       "displayName": "ʷˢᵇLazy",
       "username": "ʷˢᵇLazy",
-      "kd": 7.048,
-      "winrate": 24.78,
-      "wins": 6767,
-      "kills": 144783,
-      "matches": 27308
+      "kd": 7.049,
+      "winrate": 24.781,
+      "wins": 6768,
+      "kills": 144799,
+      "matches": 27311
     },
     "mysterious": {
       "displayName": "WsB Mysterious",
       "username": "ᵂˢᴮ ᴍʏꜱᴛᴇʀɪᴏᴜꜱǃ",
       "kd": 4.294,
-      "winrate": 12.83,
+      "winrate": 12.828,
       "wins": 2307,
-      "kills": 67304,
-      "matches": 17981
+      "kills": 67313,
+      "matches": 17984
     },
     "dmo": {
       "displayName": "ᵂˢᴮ Dmo",
       "username": "ᵂˢᴮ Dmo",
       "kd": 3.579,
-      "winrate": 17.283,
+      "winrate": 17.282,
       "wins": 6062,
-      "kills": 103842,
-      "matches": 35075
+      "kills": 103844,
+      "matches": 35076
     },
     "ohitskatie": {
       "displayName": "WsB_ohitskatie",
@@ -85,11 +85,11 @@
     "iinsanity": {
       "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
       "username": "ᵂˢᴮ iinsanity ᵀᵀ",
-      "kd": 4.855,
-      "winrate": 16.612,
-      "wins": 5325,
-      "kills": 129775,
-      "matches": 32055
+      "kd": 4.856,
+      "winrate": 16.614,
+      "wins": 5326,
+      "kills": 129798,
+      "matches": 32058
     }
   }
 }
