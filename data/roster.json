@@ -31,7 +31,8 @@
     "id": "dubs",
     "displayName": "WsB_WickedDUBS",
     "username": "ᵂˢᴮ ＤＵＢＳ",
-    "platform": "epic"
+    "platform": "epic",
+    "accountId": "60011a2add484a839ddcd73fec9d4f74"
   },
   {
     "id": "btajordan",
@@ -83,7 +84,8 @@
     "id": "iinsanity",
     "displayName": "ᵂˢᴮ iinsanity ᵀᵀ",
     "username": "ᵂˢᴮ iinsanity ᵀᵀ",
-    "platform": "epic"
+    "platform": "epic",
+    "accountId": "a113f048db954d5e84c390af99288e60"
   },
   {
     "id": "rina",
@@ -101,18 +103,21 @@
     "id": "envious",
     "displayName": "ᵂˢᴮᴇɴᴠɪᴏᴜꜱǃ",
     "username": "ᵂˢᴮᴇɴᴠɪᴏᴜꜱǃ",
-    "platform": "epic"
+    "platform": "epic",
+    "accountId": "c74fb0cbe4ab47eea183c9508320a309"
   },
   {
     "id": "mello",
     "displayName": "ᵀᵀMelloᵂˢᴮ",
     "username": "ᵀᵀMelloᵂˢᴮ",
-    "platform": "epic"
+    "platform": "epic",
+    "accountId": "c0461b926e024c29a8a2c178ca96e6f0"
   },
   {
     "id": "glosznfv",
     "displayName": "ᵂˢᴮGloSznFvᵀᵀ",
     "username": "ᵂˢᴮGloSznFvᵀᵀ",
-    "platform": "epic"
+    "platform": "epic",
+    "accountId": "715de562a1374bfeb9520297d486f38c"
   }
 ]
