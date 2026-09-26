@@ -939,3 +939,16 @@ body.halloween-theme .cd-unit { border-color: var(--wsb-line); background: rgba(
 body.halloween-theme .cd-num { color: var(--wsb-text); text-shadow: none; }
 
 @media (max-width: 480px) { .spooky-btn { font-size: .58rem; padding: .4rem .5rem; } }
+/* Seamless homepage ticker */
+.ticker .ticker-track { display: flex; width: max-content; animation: ticker 22s linear infinite; will-change: transform; }
+.ticker .ticker-track span { flex: 0 0 auto; }
+@media (prefers-reduced-motion: reduce) { .ticker .ticker-track { animation: none; } }
+/* Exact ticker cycle: one complete set moves out as its identical twin moves in. */
+@keyframes wsb-ticker-loop { to { transform: translate3d(-50%, 0, 0); } }
+.ticker .ticker-track { display: flex; width: max-content; animation: wsb-ticker-loop 24s linear infinite; will-change: transform; }
+.ticker .ticker-set { display: block; flex: 0 0 auto; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .ticker .ticker-track { animation: none; } }
+/* Read-forward ticker: enter from the left, exit right, then restart from the left. */
+@keyframes wsb-ticker-read-forward { from { transform: translate3d(-100%, 0, 0); } to { transform: translate3d(100vw, 0, 0); } }
+.ticker .ticker-track { display: block; width: max-content; white-space: nowrap; animation: wsb-ticker-read-forward 28s linear infinite; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .ticker .ticker-track { animation: none; transform: none; } }
