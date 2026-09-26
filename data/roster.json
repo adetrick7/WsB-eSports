@@ -30,15 +30,21 @@
   {
     "id": "dubs",
     "displayName": "WsB_WickedDUBS",
-    "username": "ᵂˢᴮ ＤＵＢＳ",
-    "platform": "epic",
-    "accountId": "60011a2add484a839ddcd73fec9d4f74"
+    "username": "WickedDubss",
+    "platform": "epic"
   },
   {
     "id": "btajordan",
     "displayName": "TT BTAJORDAN",
     "username": "ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ",
     "platform": "epic"
+  },
+  {
+    "id": "shloozyyy",
+    "displayName": "Shloozyyy ᵀᵀ",
+    "username": "Shloozyyy ᵀᵀ",
+    "platform": "epic",
+    "accountId": "cedbcf3dab7d47d59cc571823a69cc98"
   },
   {
     "id": "allieontt",
@@ -82,8 +88,8 @@
   },
   {
     "id": "iinsanity",
-    "displayName": "ᵂˢᴮ iinsanity ᵀᵀ",
-    "username": "ᵂˢᴮ iinsanity ᵀᵀ",
+    "displayName": "ᵂˢᴮ iinsanity ᵗᵗ",
+    "username": "ᵂˢᴮ iinsanity ᵗᵗ",
     "platform": "epic",
     "accountId": "a113f048db954d5e84c390af99288e60"
   },
@@ -98,26 +104,5 @@
     "displayName": "WsB_Bee",
     "username": "ᵀᵀ ᵇᵉᵉ ᵇᵒˣᵉᵈ ʸᵒᵘ",
     "platform": "epic"
-  },
-  {
-    "id": "envious",
-    "displayName": "ᵂˢᴮᴇɴᴠɪᴏᴜꜱǃ",
-    "username": "ᵂˢᴮᴇɴᴠɪᴏᴜꜱǃ",
-    "platform": "epic",
-    "accountId": "c74fb0cbe4ab47eea183c9508320a309"
-  },
-  {
-    "id": "mello",
-    "displayName": "ᵀᵀMelloᵂˢᴮ",
-    "username": "ᵀᵀMelloᵂˢᴮ",
-    "platform": "epic",
-    "accountId": "c0461b926e024c29a8a2c178ca96e6f0"
-  },
-  {
-    "id": "glosznfv",
-    "displayName": "ᵂˢᴮGloSznFvᵀᵀ",
-    "username": "ᵂˢᴮGloSznFvᵀᵀ",
-    "platform": "epic",
-    "accountId": "715de562a1374bfeb9520297d486f38c"
   }
 ]

@@ -1,4 +1,4 @@
-const navTrigger=document.querySelector(".nav-trigger");const nav=document.querySelector("#navlinks");const navScrim=document.querySelector(".nav-scrim");function toggleNav(){const isOpen=nav.classList.toggle("open");navTrigger.classList.toggle("open",isOpen);if(navScrim)navScrim.classList.toggle("open",isOpen);}if(navTrigger&&nav){navTrigger.addEventListener("click",toggleNav);if(navScrim)navScrim.addEventListener("click",toggleNav);document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");navTrigger.classList.remove("open");if(navScrim)navScrim.classList.remove("open");}));}
+const menu=document.querySelector(".menu");const nav=document.querySelector("#navlinks");menu.addEventListener("click",()=>nav.classList.toggle("open"));document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
 
 // Player bio modal
 (function(){
