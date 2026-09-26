@@ -7,8 +7,8 @@
   <meta name="description" content="WsB — We Shoot Bodies. Fortnite esports team.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=creators-centered-20260927">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -20,21 +20,26 @@
     <img src="wsb-logo.png" alt="WsB logo">
     <span>WsB</span>
   </a>
-  <nav id="navlinks">
-    <a href="#team">ROSTER</a>
-    <a href="#about">ABOUT</a>
-    <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="#join" id="navJoinLink">JOIN WsB</a>
-  </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
-  <button class="menu" aria-label="Toggle navigation">☰</button>
+  <button type="button" class="nav-trigger" id="navTrigger" aria-label="Toggle navigation">
+    <span class="bars"><span></span><span></span><span></span></span>
+    MENU
+  </button>
 </header>
+<div class="nav-scrim"></div>
+<nav id="navlinks">
+  <a href="#team">Creators</a>
+  <a href="#about">About</a>
+  <a href="members.html">Members</a>
+  <a href="stats.html">Stats</a>
+  <a href="leaderboards.html">Leaderboards</a>
+  <a href="announcements.html">Announcements</a>
+  <a href="events.html">Events</a>
+  <a href="questions.html">Questions</a>
+  <a href="games.html">Mini Games</a>
+  <a href="#join" id="navJoinLink">Join WsB</a>
+</nav>
+
 
 <main id="home">
   <section class="hero">
@@ -64,7 +69,7 @@
   <section class="section" id="team">
     <div class="heading-row">
       <div>
-        <p class="label">THE ROSTER</p>
+        <p class="label">THE CREATORS</p>
         <h2>MEET THE<br><span>CREATORS.</span></h2>
       </div>
       <p class="intro">Meet the people behind the idea of WsB — the founders, fraggers and creators who built this squad from the ground up. Click a card to read their story.</p>
@@ -108,14 +113,6 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
         <div class="player-photo-bg"></div>
         <div class="player-name"><small>Manager/Developer</small><h3>WsB Barrelroll77</h3></div>
       </article>
-      <article class="player-card"
-        data-role="Manager/Skirmisher"
-        data-bio="I'm here for the vibes and to have fun. I love making people laugh and brighten everyone's day. If you feel down, I'm here to lift you up. I may be nice and sweet but don't let that fool you. I still like to sweat in lobbies and shit on the op. Don't be toxic to me and I won't be toxic to you. Love my wsb family."
-        data-tiktok="https://www.tiktok.com/@ohitskatiee">
-        <div class="card-top"><span>06</span><span>MANAGER/SKIRMISHER</span></div>
-        <div class="player-photo-bg"></div>
-        <div class="player-name"><small>Manager/Skirmisher</small><h3>WsB_ohitskatie</h3></div>
-      </article>
       <article class="player-card has-photo" style="--player-photo:url('elusion.png');--player-photo-pos:center 5%;"
         data-role="Manager/Skirmisher"
         data-bio="Add a short bio for Elusion here — playstyle, achievements, how long he.s been with WsB."
@@ -147,6 +144,14 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
         <div class="card-top"><span>10</span><span>MANAGER</span></div>
         <div class="player-bg">WsB</div>
         <div class="player-name"><small>Manager</small><h3>WsB_Bee</h3></div>
+      </article>
+      <article class="player-card has-photo" style="--player-photo:url('ingraham.jpg');"
+        data-role="Developer"
+        data-bio="Add a short bio for Ingraham here — playstyle, achievements, how long he's been with WsB."
+        data-tiktok="https://www.tiktok.com/@yourhandle">
+        <div class="card-top"><span>11</span><span>DEVELOPER</span></div>
+        <div class="player-photo-bg"></div>
+        <div class="player-name"><small>Developer</small><h3>WSB_Ingraham</h3></div>
       </article>
     </div>
   </section>
@@ -272,6 +277,6 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
   <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script async src="https://www.tiktok.com/embed.js"></script>
-<script src="script.js?v=mini-games-20260920"></script>
+<script src="script.js?v=creators-centered-20260927"></script>
 </body>
 </html>
