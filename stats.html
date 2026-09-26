@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,15 +23,25 @@
   </a>
   <nav id="navlinks">
     <a href="index.html#team">CREATORS</a>
-    <a href="index.html#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="index.html#join">JOIN WsB</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="index.html#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
+    <a href="index.html#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
   <button class="menu" aria-label="Toggle navigation">☰</button>
@@ -38,21 +49,24 @@
 
 <main>
   <section class="section stats-hero">
-    <div class="heading-row">
-      <div>
-        <p class="label">THE NUMBERS</p>
+    <div class="stats-masthead">
+      <div class="stats-masthead-copy">
+        <p class="label">PERFORMANCE CENTER</p>
         <h2>MEMBER<br><span>STATS.</span></h2>
+        <p>A live look at the players, performances, and progress that shape WsB.</p>
       </div>
-      <p class="intro">A deeper look at every linked Fortnite profile in WsB.</p>
+      <div class="stats-masthead-mark" aria-hidden="true">
+        <img src="wsb-logo.png" alt="">
+        <span>LIVE<br>TEAM<br>INDEX</span>
+      </div>
     </div>
-
     <p class="stats-refresh-note" id="statsRefreshNote">Member stats refresh hourly on the hour.</p>
 
     <div class="stats-overview" id="statsOverview" aria-label="WsB team totals">
-      <div class="stats-summary-card"><span>LINKED PROFILES</span><strong>—</strong></div>
-      <div class="stats-summary-card"><span>TOTAL WINS</span><strong>—</strong></div>
-      <div class="stats-summary-card"><span>TOTAL KILLS</span><strong>—</strong></div>
-      <div class="stats-summary-card"><span>TOTAL MATCHES</span><strong>—</strong></div>
+      <div class="stats-summary-card"><span>LINKED PROFILES</span><strong>-</strong></div>
+      <div class="stats-summary-card"><span>TOTAL WINS</span><strong>-</strong></div>
+      <div class="stats-summary-card"><span>TOTAL KILLS</span><strong>-</strong></div>
+      <div class="stats-summary-card"><span>TOTAL MATCHES</span><strong>-</strong></div>
     </div>
 
     <div class="stats-callout-wrap">
@@ -64,7 +78,7 @@
 
     <div class="stats-filter-bar" aria-label="Sort player stats">
       <label>SEARCH PLAYER<input type="search" id="statsSearch" placeholder="Name or Fortnite username"></label>
-      <label>SORT BY<select id="statsSort"><option value="roster">Roster order</option><option value="kd">Highest K/D</option><option value="winrate">Highest win rate</option><option value="wins">Most wins</option><option value="kills">Most kills</option><option value="matches">Most matches</option><option value="killsPerMatch">Most kills per match</option><option value="issue">Needs attention first</option><option value="name">Name A–Z</option></select></label>
+      <label>SORT BY<select id="statsSort"><option value="roster">Roster order</option><option value="kd">Highest K/D</option><option value="winrate">Highest win rate</option><option value="wins">Most wins</option><option value="kills">Most kills</option><option value="matches">Most matches</option><option value="killsPerMatch">Most kills per match</option><option value="issue">Needs attention first</option><option value="name">Name A-Z</option></select></label>
     </div>
 
     <div class="stats-directory-heading">
@@ -86,7 +100,7 @@
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script src="script.js?v=mini-games-20260920"></script>
 </body>

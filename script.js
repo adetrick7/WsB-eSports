@@ -1,5 +1,19 @@
-const menu=document.querySelector(".menu");const nav=document.querySelector("#navlinks");menu.addEventListener("click",()=>nav.classList.toggle("open"));document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+const menu=document.querySelector(".menu");const nav=document.querySelector("#navlinks");if(menu&&nav){menu.addEventListener("click",()=>nav.classList.toggle("open"));nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");nav.querySelectorAll(".nav-group[open]").forEach(group=>group.removeAttribute("open"));}));nav.querySelectorAll(".nav-group").forEach(group=>group.addEventListener("toggle",()=>{if(group.open)nav.querySelectorAll(".nav-group").forEach(other=>{if(other!==group)other.removeAttribute("open");});}));document.addEventListener("click",event=>{if(!nav.contains(event.target))nav.querySelectorAll(".nav-group[open]").forEach(group=>group.removeAttribute("open"));});}
 
+// Keep roster-backed creator photos in sync with the central profileImage field.
+(function(){
+  const creatorCards=document.querySelectorAll(".player-card[data-roster-id]");
+  if(!creatorCards.length)return;
+  fetch("data/roster.json",{cache:"no-store"}).then(function(response){return response.ok?response.json():[];}).then(function(roster){
+    const rosterById=new Map((Array.isArray(roster)?roster:[]).map(function(member){return [member.id,member];}));
+    creatorCards.forEach(function(card){
+      const member=rosterById.get(card.dataset.rosterId);
+      if(member&&member.profileImage)card.style.setProperty("--player-photo",'url("'+encodeURI(member.profileImage)+'")');
+    });
+  }).catch(function(){
+    // Existing image paths remain as a safe fallback if roster data is unavailable.
+  });
+})();
 // Player bio modal
 (function(){
   const modal=document.getElementById("bioModal");
@@ -137,7 +151,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     try{sessionStorage.setItem(ACHIEVEMENT_KEY,"1");}catch(e){}
   }
 
-  // Tiny synthesized 8-bit-style blip — no external audio file needed.
+  // Tiny synthesized 8-bit-style blip - no external audio file needed.
   // Only ever called from within the click handler below, so it's always
   // tied to a real user gesture and never autoplays.
   function playBlip(){
@@ -293,6 +307,11 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     card.appendChild(indicator);
   }
 
+  function setProfileImage(card,member){
+    if(!member||!member.profileImage)return;
+    const emblem=card.querySelector(".member-emblem");
+    if(emblem)emblem.style.backgroundImage='url("'+encodeURI(member.profileImage)+'")';
+  }
   function setProfileLink(card,member){
     if(!member||card.dataset.profileLinkReady)return;
     card.dataset.profileLinkReady="true";
@@ -330,7 +349,9 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     const roster=Array.isArray(results[1])?results[1]:[];
     const rosterByUsername=new Map(roster.map(function(member){return [member.username,member];}));
     cards.forEach(function(card){
-      setProfileLink(card,rosterByUsername.get(card.getAttribute("data-fn-user")));
+      const member=rosterByUsername.get(card.getAttribute("data-fn-user"));
+      setProfileImage(card,member);
+      setProfileLink(card,member);
     });
     if(!snapshot||!snapshot.players)return;
     if(refreshNote&&snapshot.fetchedAt){
@@ -348,7 +369,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Spooky Surprise theme toggle — persists across pages via localStorage
+// Spooky Surprise theme toggle - persists across pages via localStorage
 (function(){
   const btn=document.getElementById("spookyToggle");
   if(!btn)return;
@@ -373,7 +394,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Leaderboards page — reads saved hourly JSON snapshots written by GitHub Actions
+// Leaderboards page - reads saved hourly JSON snapshots written by GitHub Actions
 (function(){
   const pastDayGrid=document.getElementById("lbPastDayGrid");
   const pastWeekGrid=document.getElementById("lbPastWeekGrid");
@@ -543,7 +564,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Stats page — detailed member profile view
+// Stats page - detailed member profile view
 (function(){
   const overview=document.getElementById("statsOverview");
   const highlights=document.getElementById("statsHighlights");
@@ -552,10 +573,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   const directoryNote=document.getElementById("statsDirectoryNote");
   if(!overview||!highlights||!directory)return;
 
-  const avatarAssets={
-    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
-  };
+
 
   function escapeHtml(value){
     return String(value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[character];});
@@ -608,10 +626,10 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     const topKills=leader(synced,"kills");
     const topWins=leader(synced,"wins");
     highlights.innerHTML=
-      highlight("BEST K/D",topKd,topKd?fmtDecimal(topKd.stats.kd):"—")+
-      highlight("BEST WIN RATE",topWinRate,topWinRate?fmtPercent(topWinRate.stats.winrate):"—")+
-      highlight("MOST KILLS",topKills,topKills?fmtInt(topKills.stats.kills):"—")+
-      highlight("MOST WINS",topWins,topWins?fmtInt(topWins.stats.wins):"—");
+      highlight("BEST K/D",topKd,topKd?fmtDecimal(topKd.stats.kd):"-")+
+      highlight("BEST WIN RATE",topWinRate,topWinRate?fmtPercent(topWinRate.stats.winrate):"-")+
+      highlight("MOST KILLS",topKills,topKills?fmtInt(topKills.stats.kills):"-")+
+      highlight("MOST WINS",topWins,topWins?fmtInt(topWins.stats.wins):"-");
 
     const leaderIds=new Map([[topKd,"Top K/D"],[topWinRate,"Best Win Rate"],[topKills,"Most Kills"],[topWins,"Most Wins"]].filter(function(pair){return pair[0];}).map(function(pair){return [pair[0].member.id,pair[1]];}));
     const searchInput=document.getElementById("statsSearch");
@@ -626,7 +644,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     function playerCard(entry){
       const member=entry.member;
       const stats=entry.stats;
-      const asset=avatarAssets[member.id];
+      const asset=member.profileImage;
       const avatar=asset
         ? '<div class="stats-avatar" style="background-image:url('+asset+')"></div>'
         : '<div class="stats-avatar stats-avatar-initial">'+initials(member.displayName)+'</div>';
@@ -683,10 +701,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
   const root=document.body.dataset.siteRoot||"";
   if(!detail||!memberId)return;
 
-  const avatarAssets={
-    lizzie:"lizzie.png",lazy:"lazyfinalboss.png",jen:"jen.jpg",
-    barrelroll:"barrelroll.jpg",botlupitaa:"lupitaa.jpg",buck:"buck.jpg",dubs:"dubs.jpg",ttbobbyfn:"ttbobby.jpg",elusion:"elusion.png",natii:"natii.png"
-  };
+
   const streamProfiles={
     lizzie:{platform:"TikTok",url:"https://www.tiktok.com/@ok.lizzlee"},
     jen:{platform:"TikTok",url:"https://www.tiktok.com/@jenclipsmen"}
@@ -781,7 +796,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
     const member=roster.find(function(item){return item.id===memberId;});
     if(!member){detail.innerHTML='<p class="lb-empty">This player profile could not be found.</p>';return;}
     const stats=latest&&latest.players?latest.players[member.id]:null;
-    const asset=avatarAssets[member.id];
+    const asset=member.profileImage;
     const avatar=asset?'<div class="profile-avatar" style="background-image:url('+escapeHtml(root+asset)+')"></div>':'<div class="profile-avatar profile-avatar-initial">'+escapeHtml(member.displayName.replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"W")+'</div>';
     const status=stats?'<span class="stats-sync-state stats-sync-ok"><i></i>Synced</span>':'<span class="stats-sync-state"><i></i>Needs attention</span>';
     const stream=streamProfiles[member.id];
@@ -828,7 +843,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
 })();
 
 
-// Games page — Blackjack & Roulette (virtual chips only, no real money)
+// Games page - Blackjack & Roulette (virtual chips only, no real money)
 (function(){
   const chipDisplay = document.getElementById("chipBalance");
   if(!chipDisplay) return;
@@ -947,7 +962,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
         chips += winnings;
         messageEl.textContent = "You win " + winnings.toLocaleString("en-US") + " chips!";
       }else if(outcome === "push"){
-        messageEl.textContent = "Push — bet returned.";
+        messageEl.textContent = "Push - bet returned.";
       }else{
         chips -= currentBet;
         messageEl.textContent = "Dealer wins. -" + currentBet.toLocaleString("en-US") + " chips.";
@@ -1082,7 +1097,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       numbersEl.appendChild(colCell);
     });
 
-    // Dozens (1st12 / 2nd12 / 3rd12) — each pays 2:1
+    // Dozens (1st12 / 2nd12 / 3rd12) - each pays 2:1
     const DOZENS = [
       { key: "dozen1", label: "1st 12" },
       { key: "dozen2", label: "2nd 12" },
@@ -1113,7 +1128,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       outsideEl.appendChild(cell);
     });
 
-    // Chip selector — different denominations, each a different color, like a real tray
+    // Chip selector - different denominations, each a different color, like a real tray
     const CHIP_VALUES = [
       { value: 10,   cls: "chip-10"   },
       { value: 25,   cls: "chip-25"   },
@@ -1204,7 +1219,7 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
       const targetWithinTurn = (360 - segCenter) % 360;
       currentRotation += extraSpins * 360 + ((targetWithinTurn - (currentRotation % 360)) + 360) % 360;
 
-      // Ball spins the opposite direction, but always settles back at the top —
+      // Ball spins the opposite direction, but always settles back at the top -
       // the same spot the wheel just placed the winning number, so the ball
       // visually lands right on it.
       const ballExtraSpins = 8 + Math.floor(Math.random() * 3);
@@ -1240,10 +1255,10 @@ const menu=document.querySelector(".menu");const nav=document.querySelector("#na
         if(won){
           const winnings = bet * multiplier;
           newChips += winnings;
-          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") — you win " + winnings.toLocaleString("en-US") + " chips!";
+          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") - you win " + winnings.toLocaleString("en-US") + " chips!";
         }else{
           newChips -= bet;
-          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") — no match. -" + bet.toLocaleString("en-US") + " chips.";
+          messageEl.textContent = outcome + " (" + color.toUpperCase() + ") - no match. -" + bet.toLocaleString("en-US") + " chips.";
         }
         setChips(Math.max(newChips, 0));
         spinBtn.disabled = false;

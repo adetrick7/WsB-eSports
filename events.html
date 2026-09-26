@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | Events</title>
-  <meta name="description" content="WsB — upcoming events and announcements.">
+  <meta name="description" content="WsB - upcoming events and announcements.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,30 +23,43 @@
   </a>
   <nav id="navlinks">
     <a href="index.html#team">CREATORS</a>
-    <a href="index.html#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="index.html#join">JOIN WsB</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="index.html#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
+    <a href="index.html#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
   <button class="menu" aria-label="Toggle navigation">☰</button>
 </header>
 
 <main>
-  <section class="section ann-hero">
-    <div class="heading-row">
-      <div>
-        <p class="label">WHAT'S COMING UP</p>
-        <h2>UPCOMING<br><span>EVENTS.</span></h2>
+  <section class="section events-hero">
+    <div class="events-masthead">
+      <div class="events-masthead-copy">
+        <p class="label">COMMUNITY CALENDAR</p>
+        <h2>EVENT<br><span>SCHEDULE.</span></h2>
+        <p>What WsB is playing, building, and celebrating next.</p>
       </div>
-      <p class="intro">Mark your calendar — here's what's on the schedule.</p>
+      <div class="events-masthead-mark" aria-hidden="true">
+        <img src="wsb-logo.png" alt="">
+        <span>PLAY<br>CONNECT<br>COMPETE</span>
+      </div>
     </div>
-
     <div class="event-list" id="eventList">
       <div class="event-card" data-event-date="2026-10-07T00:00:00">
         <div class="event-date-block">
@@ -55,7 +69,7 @@
         <div class="event-info">
           <p class="label">BIG ANNOUNCEMENT</p>
           <h3>Something's Coming.</h3>
-          <p>We've got a major announcement dropping on this date — details are still under wraps, but it's a big one. Keep an eye on the Announcements page for the full reveal.</p>
+          <p>We've got a major announcement dropping on this date - details are still under wraps, but it's a big one. Keep an eye on the Announcements page for the full reveal.</p>
           <div class="event-countdown" data-countdown-target="2026-10-07T00:00:00">
             <div class="cd-unit"><span class="cd-num" data-cd="days">--</span><span class="cd-label">Days</span></div>
             <div class="cd-unit"><span class="cd-num" data-cd="hours">--</span><span class="cd-label">Hours</span></div>
@@ -72,7 +86,7 @@
         <div class="event-info">
           <p class="label">FORTNITE CLAN SCRIMMAGE</p>
           <h3>WsB Esports vs XCX.</h3>
-          <p><strong>EVENT ENDED — XCX WON.</strong></p>
+          <p><strong>EVENT ENDED - XCX WON.</strong></p>
           <p>WsB fought hard in the two-day 4v4 Comp and Non-Comp scrimmage, but XCX took the win.</p>
         </div>
       </div>      <a class="event-card event-card-clickable" href="events/reload-custom-solo/" aria-label="View winner of WsB Reload Custom tournament">
@@ -81,7 +95,7 @@
           <span class="event-day">★</span>
         </div>
         <div class="event-info">
-          <p class="label">RELOAD CUSTOM — SOLO</p>
+          <p class="label">RELOAD CUSTOM - SOLO</p>
           <h3 class="event-winner-name">ᵂˢᴮ iinsanity ᵗᵗ WON.</h3>
           <p>Winner of the WsB Reload Custom Solo tournament.</p>
           <span class="event-details-link">VIEW EVENT RESULTS <b>→</b></span>
@@ -103,7 +117,7 @@
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script src="script.js?v=mini-games-20260920"></script>
 </body>

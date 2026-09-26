@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | Questions</title>
-  <meta name="description" content="WsB — frequently asked questions about the team, joining, and the site.">
+  <meta name="description" content="WsB - frequently asked questions about the team, joining, and the site.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,15 +23,25 @@
   </a>
   <nav id="navlinks">
     <a href="index.html#team">CREATORS</a>
-    <a href="index.html#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="index.html#join">JOIN WsB</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="index.html#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
+    <a href="index.html#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
   <button class="menu" aria-label="Toggle navigation">☰</button>
@@ -38,12 +49,15 @@
 
 <main>
   <section class="section faq-hero">
-    <div class="heading-row">
-      <div>
-        <p class="label">GOT SOMETHING TO ASK?</p>
+    <div class="faq-masthead">
+      <div class="faq-masthead-copy">
+        <p class="label">HELP CENTER</p>
         <h2>QUESTIONS.</h2>
+        <p>Quick answers about WsB, the site, joining the team, and keeping your profile updated.</p>
       </div>
-      <p class="intro">Answers to what people ask us most. Don't see yours? Reach out — someone will get back to you.</p>
+      <div class="faq-masthead-mark" aria-hidden="true">
+        <img src="wsb-logo.png" alt="">
+      </div>
     </div>
 
     <!-- Dev note: each .faq-item is one question. Copy a block to add more.
@@ -55,7 +69,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Hit the "JOIN WsB" button up top, or the tryout button at the bottom of the homepage — both link straight to our TikTok, where you can DM us directly. We're always scouting for players who bring pressure, chemistry, and clutch plays.</p>
+          <p>Hit the "JOIN WsB" button up top, or the tryout button at the bottom of the homepage - both link straight to our TikTok, where you can DM us directly. We're always scouting for players who bring pressure, chemistry, and clutch plays.</p>
         </div>
       </div>
 
@@ -65,7 +79,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Send a screenshot of your Fortnite Tracker overview page (or your Tracker profile link) to our TikTok — <a href="https://www.tiktok.com/@wsb.esports0" target="_blank" rel="noopener">@wsb.esports0</a> — and we'll get your stats added.</p>
+          <p>Send a screenshot of your Fortnite Tracker overview page (or your Tracker profile link) to our TikTok - <a href="https://www.tiktok.com/@wsb.esports0" target="_blank" rel="noopener">@wsb.esports0</a> - and we'll get your stats added.</p>
         </div>
       </div>
 
@@ -75,7 +89,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Any of us! Reach out to anyone on the Roster page — no question is too small, and someone will always get back to you. You can also message the team TikTok directly.</p>
+          <p>Any of us! Reach out to anyone on the Roster page - no question is too small, and someone will always get back to you. You can also message the team TikTok directly.</p>
         </div>
       </div>
 
@@ -85,7 +99,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>No — WsB is an independent, fan-run Fortnite esports team. We're not affiliated with or endorsed by Epic Games.</p>
+          <p>No - WsB is an independent, fan-run Fortnite esports team. We're not affiliated with or endorsed by Epic Games.</p>
         </div>
       </div>
 
@@ -115,7 +129,7 @@
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script src="script.js?v=mini-games-20260920"></script>
 </body>

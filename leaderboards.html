@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | Leaderboards</title>
-  <meta name="description" content="WsB — hourly and lifetime leaderboards, refreshed automatically every hour.">
+  <meta name="description" content="WsB - hourly and lifetime leaderboards, refreshed automatically every hour.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,15 +23,25 @@
   </a>
   <nav id="navlinks">
     <a href="index.html#team">CREATORS</a>
-    <a href="index.html#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="index.html#join">JOIN WsB</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="index.html#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
+    <a href="index.html#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
   <button class="menu" aria-label="Toggle navigation">☰</button>
@@ -38,10 +49,15 @@
 
 <main>
   <section class="section lb-hero">
-    <div class="heading-row">
-      <div>
-        <p class="label">LIVE STATS</p>
-        <h2>LEADER<br class="word-break-mobile"><span>BOARDS.</span></h2>
+    <div class="lb-masthead">
+      <div class="lb-masthead-copy">
+        <p class="label">PERFORMANCE CENTER</p>
+        <h2>LEADER<br><span>BOARDS.</span></h2>
+        <p>See who is leading WsB right now, across long-term records and recent activity.</p>
+      </div>
+      <div class="lb-masthead-mark" aria-hidden="true">
+        <img src="wsb-logo.png" alt="">
+        <span>RANKED<br>LIVE<br>TEAM</span>
       </div>
     </div>
     <div class="lb-board" id="lbLifetime">
@@ -76,7 +92,7 @@
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script src="script.js?v=mini-games-20260920"></script>
 </body>

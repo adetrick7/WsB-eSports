@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | We Shoot Bodies</title>
-  <meta name="description" content="WsB — We Shoot Bodies. Fortnite esports team.">
+  <meta name="description" content="WsB - We Shoot Bodies. Fortnite esports team.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,14 +23,24 @@
   </a>
   <nav id="navlinks">
     <a href="#team">CREATORS</a>
-    <a href="#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
     <a href="#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
@@ -56,7 +67,7 @@
       <div class="logo-orbit orbit-two"></div>
       <img src="wsb-logo.png" alt="WsB We Shoot Bodies Esports Team logo" class="hero-logo">
     </div>
-    <div class="hero-side">EST. 2026 — COMPETE. CLUTCH. CONQUER.</div>
+    <div class="hero-side">EST. 2026 - COMPETE. CLUTCH. CONQUER.</div>
   </section>
 
   <div class="ticker"><div>WsB &nbsp;•&nbsp; WE SHOOT BODIES &nbsp;•&nbsp; WsB &nbsp;•&nbsp; WE SHOOT BODIES &nbsp;•&nbsp; WsB &nbsp;•&nbsp; WE SHOOT BODIES &nbsp;•&nbsp; WsB &nbsp;•&nbsp; WE SHOOT BODIES &nbsp;•&nbsp;</div></div>
@@ -67,28 +78,28 @@
         <p class="label">THE CREATORS</p>
         <h2>MEET THE<br><span>CREATORS.</span></h2>
       </div>
-      <p class="intro">Meet the people behind the idea of WsB — the founders, fraggers and creators who built this squad from the ground up. Click a card to read their story.</p>
+      <p class="intro">Meet the people behind the idea of WsB - the founders, fraggers and creators who built this squad from the ground up. Click a card to read their story.</p>
       <!-- Dev note: each player-card has data-role, data-bio and data-tiktok attributes you can edit directly. -->
     </div>
     <div class="roster">
-      <article class="player-card has-photo" style="--player-photo:url('lizzie.png');--player-photo-pos:center 5%;"
-        data-role="Owner — IGL / Fragger"
-        data-bio="Blonde, pretty, and probably the reason you're mad at the end of the game. I'm friendly when I want to be, but once we're in the lobby, all bets are off. I talk my shit, steal your kills, chase the fight, and somehow make it look effortless. Don't let the blonde hair fool you—I'm not the one you want to land on."
+      <article class="player-card has-photo" data-roster-id="lizzie" style="--player-photo:url('lizzie.png');--player-photo-pos:center 5%;"
+        data-role="Owner - IGL / Fragger"
+        data-bio="Blonde, pretty, and probably the reason you're mad at the end of the game. I'm friendly when I want to be, but once we're in the lobby, all bets are off. I talk my shit, steal your kills, chase the fight, and somehow make it look effortless. Don't let the blonde hair fool you-I'm not the one you want to land on."
         data-tiktok="https://www.tiktok.com/@ok.lizzlee">
         <div class="card-top"><span>01</span><span>IGL / FRAGGER</span></div>
         <div class="player-photo-bg"></div>
         <div class="player-name"><small>Owner</small><h3>ᵂˢᴮ Łìzzíeᵀᵀ ʚїɞ </h3></div>
       </article>
-      <article class="player-card featured has-photo" style="--player-photo:url('lazyfinalboss.png');"
-        data-role="Co-Owner — 1v1"
-        data-bio="Just a guy who loves gaming, talking trash, and making the squad laugh. I'm usually the funny one in the group, whether we're winning or getting absolutely destroyed. I play to have fun, but don't get it twisted—I can lock in when it's time. Expect good vibes, questionable decisions, and a lot of laughs."
+      <article class="player-card featured has-photo" data-roster-id="lazy" style="--player-photo:url('lazyfinalboss.png');"
+        data-role="Co-Owner - 1v1"
+        data-bio="Just a guy who loves gaming, talking trash, and making the squad laugh. I'm usually the funny one in the group, whether we're winning or getting absolutely destroyed. I play to have fun, but don't get it twisted-I can lock in when it's time. Expect good vibes, questionable decisions, and a lot of laughs."
         data-tiktok="https://www.tiktok.com/@lazyfinalboss">
         <div class="card-top"><span>02</span><span>CO-OWNER/1V1</span></div>
         <div class="player-photo-bg"></div>
         <div class="player-name"><small>Co-Owner/1v1</small><h3>ʷˢᵇLazy</h3></div>
       </article>
- 	<article class="player-card has-photo" style="--player-photo:url('jen.jpg');"
-        data-role="Owner/Media — IGL / Fragger"
+      <article class="player-card has-photo" data-roster-id="jen" style="--player-photo:url('jen.jpg');"
+        data-role="Owner/Media - IGL / Fragger"
         data-bio="Pretty face, toxic gameplay
 Friendly, but I talk my shit
 Don't let this pretty face fool you
@@ -99,7 +110,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
         <div class="player-photo-bg"></div>
         <div class="player-name"><small>Owner/Media</small><h3>ᵂˢᴮJenClipsMenᵀᵀ</h3></div>
       </article>
-      <article class="player-card has-photo" style="--player-photo:url('barrelroll.jpg');"
+      <article class="player-card has-photo" data-roster-id="barrelroll" style="--player-photo:url('barrelroll.jpg');"
         data-role="Manager/Developer"
         data-bio=""
         data-bio-gif="tenor-jetpack-cat"
@@ -108,9 +119,9 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
         <div class="player-photo-bg"></div>
         <div class="player-name"><small>Manager/Developer</small><h3>WsB Barrelroll77</h3></div>
       </article>
-<article class="player-card has-photo" style="--player-photo:url('elusion.png');--player-photo-pos:center 5%;"
+<article class="player-card has-photo" data-roster-id="elusion" style="--player-photo:url('elusion.png');--player-photo-pos:center 5%;"
         data-role="Manager/Skirmisher"
-        data-bio="Add a short bio for Elusion here — playstyle, achievements, how long he.s been with WsB."
+        data-bio="Add a short bio for Elusion here - playstyle, achievements, how long he.s been with WsB."
         data-tiktok="https://www.tiktok.com/@yourhandle">
         <div class="card-top"><span>07</span><span>MANAGER/SKIRMISHER</span></div>
         <div class="player-photo-bg"></div>
@@ -118,7 +129,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
       </article>
       <article class="player-card manager-card"
         data-role="Manager"
-        data-bio="Add a short bio for Dmo here — playstyle, achievements, how long he's been with WsB."
+        data-bio="Add a short bio for Dmo here - playstyle, achievements, how long he's been with WsB."
         data-tiktok="https://www.tiktok.com/@yourhandle">
         <div class="card-top"><span>08</span><span>MANAGER</span></div>
         <div class="player-bg">WsB</div>
@@ -126,7 +137,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
       </article>
       <article class="player-card manager-card"
         data-role="Manager"
-        data-bio="Add a short bio for Mysterious here — playstyle, achievements, how long he's been with WsB."
+        data-bio="Add a short bio for Mysterious here - playstyle, achievements, how long he's been with WsB."
         data-tiktok="https://www.tiktok.com/@yourhandle">
         <div class="card-top"><span>09</span><span>MANAGER</span></div>
         <div class="player-bg">WsB</div>
@@ -134,7 +145,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
       </article>
       <article class="player-card manager-card"
         data-role="Manager"
-        data-bio="Add a short bio for Bee here — playstyle, achievements, how long he's been with WsB."
+        data-bio="Add a short bio for Bee here - playstyle, achievements, how long he's been with WsB."
         data-tiktok="https://www.tiktok.com/@yourhandle">
         <div class="card-top"><span>10</span><span>MANAGER</span></div>
         <div class="player-bg">WsB</div>
@@ -189,8 +200,8 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
     <div class="about-copy">
       <p class="label">WHY WE STARTED WsB</p>
       <h2>COMPETE HARD.<br><span>BELONG HERE.</span></h2>
-      <p>We started WsB because we wanted more than just wins — we wanted a squad where everyone actually gets a lobby to play in, room to grow, and people who've got their back. Whether you're grinding scrims or just here to vibe and get better, there's a spot for you here.</p>
-      <p>From in-house tournaments to casual playtime, WsB is built on late-night lobbies, clutch plays, and memories that stick. We push each other to compete and improve at a real level — but we never lose the fun that got us all here in the first place.</p>
+      <p>We started WsB because we wanted more than just wins - we wanted a squad where everyone actually gets a lobby to play in, room to grow, and people who've got their back. Whether you're grinding scrims or just here to vibe and get better, there's a spot for you here.</p>
+      <p>From in-house tournaments to casual playtime, WsB is built on late-night lobbies, clutch plays, and memories that stick. We push each other to compete and improve at a real level - but we never lose the fun that got us all here in the first place.</p>
       <div class="values">
         <div><strong>01</strong><span>RESPECT</span></div>
         <div><strong>02</strong><span>SHOW UP</span></div>
@@ -198,19 +209,29 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
       </div>
       <div class="about-sign">
         <p>Hope to see you online!</p>
-        <p class="about-sign-name">— ᵂˢᴮ Łìzzíeᵀᵀ ʚїɞ <span>OWNER OF WsB</span></p>
+        <p class="about-sign-name">- ᵂˢᴮ Łìzzíeᵀᵀ ʚїɞ <span>OWNER OF WsB</span></p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="members-teaser">
-    <div class="heading-row">
-      <div><p class="label">OUR COMMUNITY</p><h2>MEET OUR<br><span>MEMBERS.</span></h2></div>
-      <a class="arrow-link" href="members.html">VIEW ALL MEMBERS ↗</a>
+  <section class="section members-teaser" id="members-teaser">
+    <div class="members-teaser-heading">
+      <p class="label">OUR COMMUNITY</p>
+      <h2>MEET THE<br><span>MEMBERS.</span></h2>
+      <p>Creators, competitors, and friends who make WsB what it is.</p>
     </div>
-    <div class="media-grid single">
-      <a class="media-card big" href="members.html"><div class="scan"></div><span>OUR COMMUNITY</span><h3>BUILT BY<br>US.</h3></a>
-    </div>
+    <a class="members-teaser-card" href="members.html">
+      <div class="members-teaser-card-copy">
+        <p class="label">ONE COMMUNITY</p>
+        <h3>FIND YOUR<br><span>SQUAD.</span></h3>
+        <p>See the people behind the tag, their profiles, and their latest Fortnite stats.</p>
+        <span class="members-teaser-link">EXPLORE MEMBERS <b>→</b></span>
+      </div>
+      <div class="members-teaser-words" aria-hidden="true">
+        <span>PLAY</span><span>CONNECT</span><span>COMPETE</span>
+      </div>
+      <img src="wsb-logo.png" alt="" class="members-teaser-logo">
+    </a>
   </section>
 
   <section class="join" id="join">
@@ -250,7 +271,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
     <img src="wsb-logo.png" alt="WsB emblem" class="join-modal-logo">
     <p class="label">INTERESTED IN JOINING?</p>
     <h3 id="joinModalTitle">CONTACT US.</h3>
-    <p class="join-modal-copy">WsB isn't just a tag — it's a mentality. We're always scouting for players who bring pressure, chemistry, and clutch plays when it matters most. If you've got the aim, the game sense, and the drive to compete at a higher level, we want to hear from you. Slide into our TikTok and let's talk.</p>
+    <p class="join-modal-copy">WsB isn't just a tag - it's a mentality. We're always scouting for players who bring pressure, chemistry, and clutch plays when it matters most. If you've got the aim, the game sense, and the drive to compete at a higher level, we want to hear from you. Slide into our TikTok and let's talk.</p>
     <a href="https://www.tiktok.com/@wsb.esports0" target="_blank" rel="noopener" class="chrome-btn">DM US ON TIKTOK <b>→</b></a>
   </div>
 </div>
@@ -261,7 +282,7 @@ I play for the laughs, the clips. If you can handle the attitude and still have 
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script async src="https://www.tiktok.com/embed.js"></script>
 <script src="script.js?v=mini-games-20260920"></script>

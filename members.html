@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WsB | Members</title>
-  <meta name="description" content="WsB — meet our members and their ranks.">
+  <meta name="description" content="WsB - meet our members and their ranks.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=sticky-nav-20260923">
+  <link rel="stylesheet" href="redesign.css?v=20260926">
 </head>
 <body>
 <div class="site-glow"></div>
@@ -22,15 +23,25 @@
   </a>
   <nav id="navlinks">
     <a href="index.html#team">CREATORS</a>
-    <a href="index.html#about">ABOUT</a>
     <a href="members.html">MEMBERS</a>
-    <a href="stats.html">STATS</a>
-    <a href="leaderboards.html">LEADERBOARDS</a>
-    <a href="announcements.html">ANNOUNCEMENTS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="questions.html">QUESTIONS</a>
-    <a href="games.html">MINI GAMES</a>
-    <a href="index.html#join">JOIN WsB</a>
+    <details class="nav-group">
+      <summary>PERFORMANCE <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="stats.html">STATS</a>
+        <a href="leaderboards.html">LEADERBOARDS</a>
+      </div>
+    </details>
+    <details class="nav-group">
+      <summary>COMMUNITY <span class="nav-group-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="nav-menu">
+        <a href="index.html#about">ABOUT</a>
+        <a href="events.html">EVENTS</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+        <a href="questions.html">QUESTIONS</a>
+        <a href="games.html">MINI GAMES</a>
+      </div>
+    </details>
+    <a href="index.html#join" id="navJoinLink">JOIN WsB</a>
   </nav>
   <button type="button" class="spooky-btn" id="spookyToggle" aria-pressed="false">🎃 Spooky Surprise</button>
   <button class="menu" aria-label="Toggle navigation">☰</button>
@@ -79,11 +90,11 @@
           <div class="member-name">ʷˢᵇLazy</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -95,11 +106,11 @@
           <div class="member-meta"><b>Unreal</b></div>
           <a class="member-stream-link" href="https://www.tiktok.com/@jenclipsmen" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i></i>TIKTOK STREAMER <span>VIEW PROFILE ↗</span></a>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -125,11 +136,11 @@
           <div class="member-name">Wsb BotLupitaa</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -168,10 +179,10 @@
           </div>
         </div>
       </div>
-      <div class="member-card has-stats" data-fn-user="WickedDubss" data-fn-platform="pc">
+      <div class="member-card has-stats" data-fn-user="ᵂˢᴮ ＤＵＢＳ" data-fn-platform="pc">
         <div class="member-emblem" style="background-image:url('dubs.jpg');"></div>
         <div class="member-info">
-          <div class="member-name">WsB_ᵂᶦᶜᵏᵉᵈＤＵＢＳ</div>
+          <div class="member-name">ᵂˢᴮ ＤＵＢＳ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
             <div class="member-stat"><span>K/D</span><b data-stat="kd">3.14</b></div>
@@ -183,17 +194,17 @@
           </div>
         </div>
       </div>
-      <div class="member-card has-stats" data-fn-user="ˢᵗᵃʸꀭꂦꋪꀸꍏꈤ" data-fn-platform="pc">
+      <div class="member-card has-stats" data-fn-user="ᵂˢᴮJordan TT" data-fn-platform="pc">
         <div class="member-emblem">B</div>
         <div class="member-info">
-          <div class="member-name">TT BTAJORDAN</div>
+          <div class="member-name">ᵂˢᴮJordan TT</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -204,26 +215,26 @@
           <div class="member-name">Shloozyyy ᵀᵀ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
       </div>
-      <div class="member-card has-stats" data-fn-user="ALLIEONTT" data-fn-platform="pc">
+      <div class="member-card has-stats" data-fn-user="ᵂˢᴮ alliecat" data-fn-platform="pc">
         <div class="member-emblem">A</div>
         <div class="member-info">
-          <div class="member-name">WsB_Allie</div>
+          <div class="member-name">ᵂˢᴮ alliecat</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -234,11 +245,11 @@
           <div class="member-name">WSB ELUSION</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -249,11 +260,11 @@
           <div class="member-name">WsB Mysterious</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -264,11 +275,11 @@
           <div class="member-name">ᵂˢᴮ Dmo</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -279,26 +290,26 @@
           <div class="member-name">WsB_ohitskatie</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
       </div>
-      <div class="member-card has-stats" data-fn-user="ᵂˢᴮ iinsanity ᵗᵗ" data-fn-platform="pc">
+      <div class="member-card has-stats" data-fn-user="ᵂˢᴮ iinsanity ᵀᵀ" data-fn-platform="pc">
         <div class="member-emblem">I</div>
         <div class="member-info">
-          <div class="member-name">ᵂˢᴮ iinsanity ᵗᵗ</div>
+          <div class="member-name">ᵂˢᴮ iinsanity ᵀᵀ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -309,11 +320,11 @@
           <div class="member-name">WsB_Rina</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -324,11 +335,11 @@
           <div class="member-name">WsB_Bee</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -339,11 +350,11 @@
           <div class="member-name">ᵂˢᴮᴇɴᴠɪᴏᴜꜱǃ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -354,11 +365,11 @@
           <div class="member-name">ᵀᵀMelloᵂˢᴮ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
@@ -369,15 +380,45 @@
           <div class="member-name">ᵂˢᴮGloSznFvᵀᵀ</div>
           <div class="member-meta"><b>Unreal</b></div>
           <div class="member-stats">
-            <div class="member-stat"><span>K/D</span><b data-stat="kd">—</b></div>
-            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">—</b></div>
-            <div class="member-stat"><span>WINS</span><b data-stat="wins">—</b></div>
-            <div class="member-stat"><span>KILLS</span><b data-stat="kills">—</b></div>
-            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">—</b></div>
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
+            <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
+          </div>
+        </div>`r`n      </div>
+      <div class="member-card has-stats" data-fn-user="Runito_" data-fn-platform="pc">
+        <div class="member-emblem">B</div>
+        <div class="member-info">
+          <div class="member-name">ᵂˢᴮBurrtio</div>
+          <div class="member-meta"><b>Unreal</b></div>
+          <div class="member-stats">
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
             <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
           </div>
         </div>
-      </div>    </div>
+      </div>
+      <div class="member-card has-stats" data-fn-user="Skrewwww" data-fn-platform="pc">
+        <div class="member-emblem">S</div>
+        <div class="member-info">
+          <div class="member-name">ᵂˢᴮ Skrewwww</div>
+          <div class="member-meta"><b>Unreal</b></div>
+          <div class="member-stats">
+            <div class="member-stat"><span>K/D</span><b data-stat="kd">-</b></div>
+            <div class="member-stat"><span>WIN %</span><b data-stat="winrate">-</b></div>
+            <div class="member-stat"><span>WINS</span><b data-stat="wins">-</b></div>
+            <div class="member-stat"><span>KILLS</span><b data-stat="kills">-</b></div>
+            <div class="member-stat"><span>MATCHES</span><b data-stat="matches">-</b></div>
+            <div class="member-stat"><span>RANK</span><b>Unreal</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -387,7 +428,7 @@
   <div class="socials">
     <a href="#">X / TWITTER</a><a href="#">YOUTUBE</a><a href="#">TWITCH</a><a href="#">DISCORD</a>
   </div>
-  <small>© 2026 WsB — WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
+  <small>© 2026 WsB - WE SHOOT BODIES. NOT AFFILIATED WITH OR ENDORSED BY EPIC GAMES.</small>
 </footer>
 <script src="script.js?v=mini-games-20260920"></script>
 </body>
