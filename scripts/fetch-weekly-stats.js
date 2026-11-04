@@ -110,12 +110,18 @@ async function loadPendingRosterMembers() {
       id: document.name.split("/").pop(),
       displayName: firestoreString(fields, "displayName"),
       username: firestoreString(fields, "fortniteUsername"),
-      rosterStatus: firestoreString(fields, "rosterStatus")
+      rosterStatus: firestoreString(fields, "rosterStatus"),
+      updateTime: document.updateTime
     };
   }).filter((member) => !isDisplayOnlyMember(member.id) && member.rosterStatus === "pending" && /^[a-z0-9-]+$/.test(member.id) && member.displayName && member.username);
+  const pendingById = new Map(pending.map(member => [member.id, member]));
   async function markSynced(id) {
+    const revision = pendingById.get(id)?.updateTime;
+    if (!revision) { console.warn('  -> keeping pending member without a source revision: ' + id); return; }
     const documentPath = "https://firestore.googleapis.com/v1/projects/" + encodeURIComponent(serviceAccount.project_id) + "/databases/(default)/documents/memberAccess/" + encodeURIComponent(id) + "?updateMask.fieldPaths=rosterStatus&updateMask.fieldPaths=rosterSyncedAt";
-    const saved = await fetch(documentPath, {
+    // An admin may correct the name again while API requests are in progress.
+    // Never acknowledge that newer correction using this older queue snapshot.
+    const saved = await fetch(documentPath + '&currentDocument.updateTime=' + encodeURIComponent(revision), {
       method: "PATCH",
       headers: { Authorization: "Bearer " + token, "Content-Type": "application/json" },
       body: JSON.stringify({ fields: {
@@ -190,26 +196,31 @@ async function main() {
   const roster = savedRoster.filter(player => !isDisplayOnlyMember(player.id));
   const queue = await loadPendingRosterMembers();
   const pendingRosterIds = new Set(queue.pending.map((member) => member.id));
-  const newRosterIds = new Set();
+  const rosterById = new Map(roster.map(player => [player.id, player]));
+  let rosterChanged = roster.length !== savedRoster.length;
   for (const member of queue.pending) {
-    if (roster.some((player) => player.id === member.id)) continue;
-    roster.push({
-      id: member.id,
-      displayName: member.displayName,
-      username: member.username,
-      platform: "epic",
-      profileImage: null
-    });
+    const existing = rosterById.get(member.id);
+    if (existing) {
+      // Names are exact Epic identifiers, including invisible Unicode. Update
+      // queued edits by site ID, preserving the saved Epic ID, photo and platform.
+      if (existing.displayName !== member.displayName || existing.username !== member.username) {
+        existing.displayName = member.displayName;
+        existing.username = member.username;
+        rosterChanged = true;
+        console.log('Applied pending roster correction for ' + member.id + '.');
+      }
+    } else {
+      const added = { id: member.id, displayName: member.displayName, username: member.username, platform: 'epic', profileImage: null };
+      roster.push(added); rosterById.set(member.id, added); rosterChanged = true;
+      console.log("Added pending member " + member.displayName + " to the roster.");
+    }
     createStatsProfilePage(member.id);
-    newRosterIds.add(member.id);
-    console.log("Added pending member " + member.displayName + " to the roster.");
   }
 
   const previous = recoverPrevious(fs.existsSync(LATEST_PATH) ? JSON.parse(fs.readFileSync(LATEST_PATH, 'utf8')) : null,
     fs.existsSync(HISTORY_PATH) ? JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf8')) : null);
   const results = {}, sync = {};
   const timestamp = new Date().toISOString();
-  let rosterChanged = newRosterIds.size > 0 || roster.length !== savedRoster.length;
   for (const player of roster) {
     const lookup = player.accountId ? "saved account ID" : 'name "' + player.username + '"';
     console.log(`Fetching ${player.displayName} by ${lookup}...`);
@@ -235,7 +246,7 @@ async function main() {
 
   if (rosterChanged) {
     fs.writeFileSync(ROSTER_PATH, JSON.stringify(roster, null, 2) + "\n");
-    console.log("Saved newly discovered Epic account IDs to data/roster.json.");
+    console.log("Saved roster corrections and newly discovered Epic account IDs to data/roster.json.");
   }
   const snapshot = {
     schemaVersion: 2, fetchedAt: timestamp,

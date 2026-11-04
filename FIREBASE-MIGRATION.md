@@ -8,6 +8,8 @@ The canonical source remains `adetrick7/WsB-eSports`, branch `main`. GitHub is s
 
 - Merge website changes into canonical `main`. Firebase Hosting Production publishes the complete current main checkout.
 - Fortnite Stats Refresh runs hourly, using the existing private GitHub secrets. Stable Epic account IDs and pending Firebase roster requests continue to work unchanged.
+- Pending corrections update existing roster entries by site member ID before fetching stats, preserving the exact Fortnite username (including special Unicode characters), saved Epic account ID, platform and photo. They do not create a second profile or replace a known Epic identity.
+- Failed lookups keep their correction queued and preserve the last successful stats. A successful lookup clears the pending flag only if the Firebase record has not changed since it was read; newer admin edits remain queued for the next refresh.
 - A successful stats job triggers a Firebase production release through `workflow_run`, including newly generated player pages. GitHub's bot commits alone do not trigger push workflows.
 - Firebase Hourly Stats Sync is a recovery check. It compares the public `deployment.json` with current main and publishes only if needed.
 - Production and recovery share one deployment queue. All deployment jobs check out current main rather than mixing old fork code with fresh player data. Forks do not publish or run scheduled stats.
