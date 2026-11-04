@@ -33,7 +33,7 @@ jobs:
         env:
           FORTNITE_API_KEY: ${{ secrets.FORTNITE_API_KEY }}
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-        run: node .tests/bounties/stats-roster-queue.test.cjs && node scripts/fetch-weekly-stats.js && node scripts/build-shared-pages.cjs
+        run: node scripts/fetch-weekly-stats.js && node scripts/build-shared-pages.cjs
 
       - name: Commit and push refreshed snapshots
         run: |
