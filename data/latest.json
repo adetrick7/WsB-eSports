@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "fetchedAt": "2026-11-18T18:31:05.295Z",
+  "fetchedAt": "2026-11-19T00:51:59.807Z",
   "players": {
     "lizzie": {
       "displayName": "ᵂˢᴮŁìzzíeᵀᵀʚїɞ",
@@ -449,366 +449,366 @@
     "lizzie": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "jen": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "barrelroll": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "botlupitaa": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "dubs": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "btajordan": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "shloozyyy": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "allieontt": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "lazy": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "elusion": {
       "state": "stale",
       "lastSuccessAt": "2026-09-23T02:05:57.313Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 406
+      "failures": 407
     },
     "mysterious": {
       "state": "stale",
       "lastSuccessAt": "2026-11-06T22:35:20.933Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 43
+      "failures": 44
     },
     "dmo": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "ohitskatie": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "iinsanity": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "rina": {
       "state": "stale",
       "lastSuccessAt": "2026-09-24T00:06:49.123Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 406
+      "failures": 407
     },
     "bee": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 406
+      "failures": 407
     },
     "envious": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "mello": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "glosznfv": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "burrtio": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "skrewwww": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "pink420": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 406
+      "failures": 407
     },
     "gabett4": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "taz": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 406
+      "failures": 407
     },
     "yoshi": {
       "state": "stale",
       "lastSuccessAt": "2026-10-16T20:19:30.120Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 151
+      "failures": 152
     },
     "kato": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "bri": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "i-s-b-s-55f10f5": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "mastrykurama-2e3b2e5": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 176
+      "failures": 177
     },
     "i-love-toes-0046a1e": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 150
+      "failures": 151
     },
     "wsb-female-dmo-4216d5b": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 150
+      "failures": 151
     },
     "wsb-zyn-8bbd1fb": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 150
+      "failures": 151
     },
     "wsbjd-70f4d6e": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 150
+      "failures": 151
     },
     "dragz-ekitten-93d014e": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 142
+      "failures": 143
     },
     "bta-ekitty-sky-57a33c9": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "n-f382df1": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "ttiplaynakedttv-da3011b": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsb-chris-5b705f5": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsb223-2105800": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 118
+      "failures": 119
     },
     "keaa-e03b072": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 107
+      "failures": 108
     },
     "eliwtw-673abdc": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 100
+      "failures": 101
     },
     "wsbkays-goodboy-107e7ba": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsbkays-goodboy-47ace64": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 100
+      "failures": 101
     },
     "wsbmamakay-tt-87a09c7": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 100
+      "failures": 101
     },
     "tiktok-adhdfear-e7f4f94": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsbnostalgictt-54ca496": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsb-k3nny-tt-1e724d4": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "wsb-prodigy-tt-5d264c4": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "byaqku-e0baa47": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "changott-81bd35e": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "i-hate-zb-3f0c8a2": {
       "state": "stale",
       "lastSuccessAt": "2026-11-08T18:41:29.330Z",
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 35
+      "failures": 36
     },
     "ttv-itsstorm7770-913afab": {
       "state": "waiting",
       "lastSuccessAt": null,
-      "lastAttemptAt": "2026-11-18T18:31:05.295Z",
+      "lastAttemptAt": "2026-11-19T00:51:59.807Z",
       "issue": "The stats service is temporarily unavailable. It will retry next hour.",
-      "failures": 61
+      "failures": 62
     }
   }
 }
